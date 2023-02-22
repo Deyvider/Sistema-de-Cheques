@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Cheques
 {
-    public partial class Form3 : Form
+    public partial class HomePage : Form
     {
-        public Form3()
+        public HomePage()
         {
             InitializeComponent();
         }

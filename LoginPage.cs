@@ -2,9 +2,9 @@ using System.Runtime.InteropServices;
 
 namespace Sistema_de_Cheques
 {
-    public partial class Form1 : Form
+    public partial class LoginPage : Form
     {
-        public Form1()
+        public LoginPage()
         {
             InitializeComponent();
         }
@@ -59,7 +59,7 @@ namespace Sistema_de_Cheques
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form2 form2 = new Form2();
+            SignUpPage form2 = new SignUpPage();
             form2.Show();
         }
 
