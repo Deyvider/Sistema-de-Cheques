@@ -19,10 +19,15 @@ namespace Sistema_de_Cheques
             }
             if (label.Text.Equals(""))
             {
-                label.Text = placeholer;
-                label.ForeColor = Color.DimGray;
+                placeholderDesign(label, placeholer);
                 if (label.Text.ToLower().Contains("contraseña")) label.UseSystemPasswordChar = false;
             }
+        }
+
+        public static void placeholderDesign(TextBox label, string text)
+        {
+            label.Text = text;
+            label.ForeColor = Color.DimGray;
         }
     }
 }

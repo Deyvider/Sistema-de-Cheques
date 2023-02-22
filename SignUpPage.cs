@@ -147,7 +147,7 @@ namespace Sistema_de_Cheques
                                 "Problema en el registro",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
-                txtInitialState.Text = phInitialState;
+                HelperMethods.placeholderDesign(txtInitialState, phInitialState);
                 txtInitialState.Focus();
                 return;
             }
@@ -188,9 +188,9 @@ namespace Sistema_de_Cheques
 
         private void CleanTextBoxes()
         {
-            txtPassword.Text = phPassword;
+            HelperMethods.placeholderDesign(txtPassword, phPassword);
             txtPassword.UseSystemPasswordChar = false;
-            txtConfirmPassword.Text = phConfirmPassword;
+            HelperMethods.placeholderDesign(txtConfirmPassword, phConfirmPassword);
             txtConfirmPassword.UseSystemPasswordChar = false;
         }
 
