@@ -1,3 +1,4 @@
+using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 
 namespace Sistema_de_Cheques
@@ -8,6 +9,8 @@ namespace Sistema_de_Cheques
         {
             InitializeComponent();
         }
+
+        DataBaseConnection dataBase = new DataBaseConnection("DESKTOP-5JB90L7\\SQLEXPRESS","paco", "1234", "SistemaDeCheques");
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void RealeseCapture();
@@ -66,6 +69,12 @@ namespace Sistema_de_Cheques
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+
+            // MessageBox.Show(dataBase.VerifyConnection());
         }
     }
 }

@@ -9,13 +9,13 @@ namespace Sistema_de_Cheques
 {
     internal class DataBaseConnection
     {
-        string ConnectionData { get; set; }
-        string Source { get; set; }
-        string User { get; set; }
-        string Password { get; set; }
-        string DBName { get; set; }
+        public string ConnectionData { get; set; }
+        public string Source { get; set; }
+        public string User { get; set; }
+        public string Password { get; set; }
+        public string DBName { get; set; }
 
-        private SqlConnection Connection;
+        public SqlConnection Connection;
 
         public DataBaseConnection(string Source, string User, string Password, string DBName)
         {
