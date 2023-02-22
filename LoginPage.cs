@@ -14,7 +14,7 @@ namespace Sistema_de_Cheques
         }
 
         private string phUsername = "Usuario";
-        private string phPassword = "Contraseña";
+        private string phPassword = "Contraseï¿½a";
 
         DataBaseConnection dataBase = new DataBaseConnection("DESKTOP-5JB90L7\\SQLEXPRESS","paco", "1234", "SistemaDeCheques");
 
@@ -109,13 +109,13 @@ namespace Sistema_de_Cheques
                         homePage.Show();
                     } else
                     {
-                        MessageBox.Show("Usuario o contraseña erroneos");
+                        MessageBox.Show("Usuario o contraseï¿½a erroneos");
                         CleanTextBoxes();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Sin información");
+                    MessageBox.Show("Sin informaciï¿½n");
                 }
 
             }
