@@ -90,6 +90,7 @@
             this.txtPassword.Size = new System.Drawing.Size(340, 30);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "Contraseña";
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
