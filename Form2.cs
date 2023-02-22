@@ -19,22 +19,18 @@ namespace Sistema_de_Cheques
 
         private void txtUser_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -44,102 +40,59 @@ namespace Sistema_de_Cheques
 
         private void txtUser_Enter(object sender, EventArgs e)
         {
-            if (txtUser.Text == "Nombre")
-            {
-                txtUser.Text = "";
-                txtUser.ForeColor = Color.Black;
-            }
+            HelperMethods.placeholderController(txtUser, "Nombre");
+
         }
 
         private void txtUser_Leave(object sender, EventArgs e)
         {
-            if (txtUser.Text == "")
-            {
-                txtUser.Text = "Nombre";
-                txtUser.ForeColor = Color.DimGray;
-            }
+            HelperMethods.placeholderController(txtUser, "Nombre");
         }
 
         private void textBox3_Enter(object sender, EventArgs e)
         {
-            if (txtUser.Text == "Usuario")
-            {
-                txtUser.Text = "";
-                txtUser.ForeColor = Color.Black;
-            }
+            HelperMethods.placeholderController(textBox3, "Usuario");
+
         }
 
         private void textBox3_Leave(object sender, EventArgs e)
         {
-            if (txtUser.Text == "")
-            {
-                txtUser.Text = "Usuario";
-                txtUser.ForeColor = Color.DimGray;
-            }
+            HelperMethods.placeholderController(textBox3, "Usuario");
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-            if (txtUser.Text == "Contraseña")
-            {
-                txtUser.Text = "";
-                txtUser.ForeColor = Color.Black;
-            }
+            HelperMethods.placeholderController(txtPassword, "Contraseña");
         }
 
         private void txtPassword_Leave(object sender, EventArgs e)
         {
-            if (txtUser.Text == "")
-            {
-                txtUser.Text = "Contraseña";
-                txtUser.ForeColor = Color.DimGray;
-                txtPassword.UseSystemPasswordChar = false;
-            }
+            HelperMethods.placeholderController(txtPassword, "Contraseña");
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            if (txtUser.Text == "Contraseña")
-            {
-                txtUser.Text = "";
-                txtUser.ForeColor = Color.Black;
-                txtPassword.UseSystemPasswordChar = true;
-            }
+            HelperMethods.placeholderController(textBox1, "Confirmar contraseña");
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            if (txtUser.Text == "")
-            {
-                txtUser.Text = "Contraseña";
-                txtUser.ForeColor = Color.DimGray;
-                txtPassword.UseSystemPasswordChar = false;
-            }
+            HelperMethods.placeholderController(textBox1, "Confirmar contraseña");
         }
 
         private void textBox2_Enter(object sender, EventArgs e)
         {
-            if (txtUser.Text == "Confirmar Contraseña")
-            {
-                txtUser.Text = "";
-                txtUser.ForeColor = Color.Black;
-                txtPassword.UseSystemPasswordChar = true;
-            }
+            HelperMethods.placeholderController(textBox2, "Saldo Inicial");
         }
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-            if (txtUser.Text == "")
-            {
-                txtUser.Text = "Confirmar Contraseña";
-                txtUser.ForeColor = Color.DimGray;
-                txtPassword.UseSystemPasswordChar = false;
-            }
+            HelperMethods.placeholderController(textBox2, "Saldo Inicial");
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
