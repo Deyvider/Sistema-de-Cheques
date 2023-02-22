@@ -41,5 +41,10 @@ namespace Sistema_de_Cheques
         {
 
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

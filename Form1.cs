@@ -17,39 +17,36 @@ namespace Sistema_de_Cheques
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            if(txtUser.Text == "Usuario")
-            {
-                txtUser.Text = "";
-                txtUser.ForeColor = Color.Black;
-            }
+            placeholderController(txtUser, "Usuario");
         }
 
         private void txtUser_Leave(object sender, EventArgs e)
         {
-            if (txtUser.Text == "")
-            {
-                txtUser.Text = "Usuario";
-                txtUser.ForeColor = Color.DimGray;
-            }
+            placeholderController(txtUser, "Usuario");
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "Contraseña")
-            {
-                txtPassword.Text = "";
-                txtPassword.ForeColor = Color.Black;
-                txtPassword.UseSystemPasswordChar = true;
-            }
+            placeholderController(txtPassword, "Contraseña");
         }
 
         private void txtPassword_Leave(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "")
+            placeholderController(txtPassword, "Contraseña");
+        }
+
+        private void placeholderController(TextBox label, string placeholer)
+        {
+            if (label.Text.Equals(placeholer))
             {
-                txtPassword.Text = "Contraseña";
-                txtPassword.ForeColor = Color.DimGray;
-                txtPassword.UseSystemPasswordChar = false;
+                label.Text = "";
+                label.ForeColor = Color.Black;
+                return;
+            } 
+            if(label.Text.Equals(""))
+            {
+                label.Text = placeholer;
+                label.ForeColor = Color.DimGray;
             }
         }
 
