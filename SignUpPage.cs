@@ -154,7 +154,7 @@ namespace Sistema_de_Cheques
 
 
 
-            // MessageBox.Show(dataBase.VerifyConnection());
+            // Creación de usuario y creación de cuenta
             string query = $"INSERT INTO [Users] values ('{username}', '{name}', '{password}');";
             SqlCommand command = new SqlCommand(query, dataBase.Connection);
             try
@@ -168,7 +168,7 @@ namespace Sistema_de_Cheques
                 command.CommandText = query;
                 command.ExecuteNonQuery();
                 MessageBox.Show(
-                    $"Usuario '${username}' creado exitosamente",
+                    $"Usuario '{username}' creado exitosamente",
                     "Registro de usuario",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information

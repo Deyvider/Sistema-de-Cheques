@@ -1,5 +1,8 @@
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
+using System.Xml.Linq;
+using Microsoft.VisualBasic.ApplicationServices;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace Sistema_de_Cheques
 {
@@ -9,6 +12,9 @@ namespace Sistema_de_Cheques
         {
             InitializeComponent();
         }
+
+        private string phUsername = "Usuario";
+        private string phPassword = "Contraseña";
 
         DataBaseConnection dataBase = new DataBaseConnection("DESKTOP-5JB90L7\\SQLEXPRESS","paco", "1234", "SistemaDeCheques");
 
@@ -20,22 +26,22 @@ namespace Sistema_de_Cheques
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            HelperMethods.placeholderController(txtUser, "Usuario");
+            HelperMethods.placeholderController(txtUser, phUsername);
         }
 
         private void txtUser_Leave(object sender, EventArgs e)
         {
-            HelperMethods.placeholderController(txtUser, "Usuario");
+            HelperMethods.placeholderController(txtUser, phUsername);
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-            HelperMethods.placeholderController(txtPassword, "Contraseña");
+            HelperMethods.placeholderController(txtPassword, phPassword);
         }
 
         private void txtPassword_Leave(object sender, EventArgs e)
         {
-            HelperMethods.placeholderController(txtPassword, "Contraseña");
+            HelperMethods.placeholderController(txtPassword, phPassword);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -73,8 +79,67 @@ namespace Sistema_de_Cheques
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            // Verificar que todos los campos tengan texto
+            if (!IsDataValid())
+            {
+                MessageBox.Show("Debes llenar todos los campos para poder continuar",
+                                "Problema en el registro",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return;
+            }
+            string username = txtUser.Text;
+            string password = txtPassword.Text;
 
-            // MessageBox.Show(dataBase.VerifyConnection());
+            // SELECT id FROM[Users] where username = 'Username')
+            string query = $"SELECT [name] FROM[Users] where username = '{username}' AND password = '{password}'";
+            SqlCommand command = new SqlCommand(query, dataBase.Connection);
+            try
+            {
+                dataBase.Connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader != null)
+                {
+                    if (reader.Read())
+                    {
+                        HomePage homePage = new HomePage();
+                        MessageBox.Show($"Bienvenido {reader.GetString(0)}");
+                        CleanTextBoxes();
+                        homePage.Show();
+                    } else
+                    {
+                        MessageBox.Show("Usuario o contraseña erroneos");
+                        CleanTextBoxes();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Sin información");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrio un error {ex}");
+            }
+            finally
+            {
+                dataBase.Connection.Close();
+            }
+        }
+        private bool IsDataValid()
+        {
+            bool verification = txtUser.Text.Contains(phUsername)
+                                || txtPassword.Text.Contains(phPassword);
+            return !verification;
+        }
+
+        private void CleanTextBoxes()
+        {
+            txtUser.Text = phUsername;
+            txtPassword.Text = phPassword;
+            txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
         }
     }
 }
