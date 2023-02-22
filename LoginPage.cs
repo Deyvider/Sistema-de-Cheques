@@ -67,5 +67,11 @@ namespace Sistema_de_Cheques
         {
 
         }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            HomePage Home = new HomePage();
+            Home.Show();
+        }
     }
 }
