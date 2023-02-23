@@ -25,6 +25,9 @@ namespace Sistema_de_Cheques
         {
 
         }
+
+        #region Funcionalidades del formulario
+
         //RESIZE METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO EN TIEMPO DE EJECUCION ----------------------------------------------------------
         private int tolerance = 12;
         private const int WM_NCHITTEST = 132;
@@ -58,7 +61,7 @@ namespace Sistema_de_Cheques
         //----------------COLOR Y GRIP DE RECTANGULO INFERIOR
         protected override void OnPaint(PaintEventArgs e)
         {
-            SolidBrush blueBrush = new SolidBrush(Color.FromArgb(244, 244, 244));
+            SolidBrush blueBrush = new SolidBrush(Color.FromArgb(0,0,0));
             e.Graphics.FillRectangle(blueBrush, sizeGripRectangle);
             base.OnPaint(e);
             ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
@@ -111,7 +114,97 @@ namespace Sistema_de_Cheques
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form1>();
+            button1.BackColor = Color.FromArgb(82, 97, 48);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form2>();
+            button2.BackColor = Color.FromArgb(82, 97, 48);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form3>();
+            button3.BackColor = Color.FromArgb(82, 97, 48);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Form4>();
+            button4.BackColor = Color.FromArgb(82,97,48);
+        }
+
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        #endregion 
+
+        //Metodo para abrir Formularios dentro del panel
+        private void AbrirFormulario<MiForm>() where MiForm : Form,new()
+        {
+            Form formulario;
+            formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();//busca en la colección el formulario
+            //si el formulario no existe
+            if (formulario == null)
+            {
+                formulario= new MiForm();
+                formulario.TopLevel = false;
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.Dock = DockStyle.Fill;
+                panelFormularios.Controls.Add(formulario);
+                panelFormularios.Tag = formulario;
+                formulario.Show();
+                formulario.BringToFront();
+                formulario.FormClosed += new FormClosedEventHandler(closedForm);
+            }
+            else
+            {
+                formulario.BringToFront();
+            }
+
+        }
+        private void closedForm(object sender, FormClosedEventArgs e) {
+            if (Application.OpenForms["Form1"] == null)
+            {
+                button1.BackColor = Color.FromArgb(128, 151, 75);
+                
+            }
+            if (Application.OpenForms["Form2"] == null)
+            {
+                button2.BackColor = Color.FromArgb(128, 151, 75);
+                
+            }
+                
+
+            if (Application.OpenForms["Form3"] == null)
+            {
+                button3.BackColor = Color.FromArgb(128, 151, 75);
+                
+            }
+
+            if (Application.OpenForms["Form4"] == null)
+            {
+                button4.BackColor = Color.FromArgb(128, 151, 75);
+                 
+            }
+        }
+        private void btnCerrarOtrosFormularios_Click(object sender, EventArgs e)
+        {
+            // Recorre todos los formularios abiertos en la aplicación
+            foreach (Form form in Application.OpenForms)
+            {
+                // Si el formulario no es el actual y no es el formulario principal de la aplicación
+                if (form != this && form.Name != "frmPrincipal")
+                {
+                    // Cierra el formulario
+                    form.Close();
+                }
+            }
+        }
+
     }
 }

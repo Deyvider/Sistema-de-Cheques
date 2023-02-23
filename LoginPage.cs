@@ -141,5 +141,11 @@ namespace Sistema_de_Cheques
             HelperMethods.placeholderDesign(txtPassword, phPassword);
             txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HomePage home= new HomePage();
+            home.Show();
+        }
     }
 }
