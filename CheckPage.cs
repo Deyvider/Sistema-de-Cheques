@@ -20,9 +20,6 @@ namespace Sistema_de_Cheques
             UpdateChecksTable();
         }
 
-        string phInvoice = "Folio";
-        string phMount = "Monto";
-
         Concept conceptSQL = new Concept();
         Beneficiary beneficiarySQL = new Beneficiary();
         Check checkSQL = new Check();
@@ -44,20 +41,86 @@ namespace Sistema_de_Cheques
 
         private void btnDepositar_Click(object sender, EventArgs e)
         {
-            //CleanTextBoxes();
-            MessageBox.Show($"{cbConcepts.SelectedIndex}");
-            MessageBox.Show($"{cbBeneficiaries.SelectedIndex}");
+            CleanTextBoxes();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            if (CheckValidations()) return;
+
             string invoice = txtInvoice.Text;
             decimal mount = Decimal.Parse(txtMount.Text);
             int beneficiary = (cbBeneficiaries.SelectedIndex + 1);
             int concept = (cbConcepts.SelectedIndex + 1);
             DateTime date = dateTimePicker.Value;
             checkSQL.CreateCheckSQL(invoice, mount, date, beneficiary, concept);
+            CleanTextBoxes();
             UpdateChecksTable();
+        }
+
+        private void CleanTextBoxes()
+        {
+            txtInvoice.Text = "";
+            txtMount.Text = "";
+            cbBeneficiaries.SelectedIndex = -1;
+            cbConcepts.SelectedIndex = -1;
+        }
+
+        private bool CheckValidations()
+        {
+            bool validMount = true;
+            bool checkInvalid = !HelperMethods.IsNumeric(txtMount.Text) 
+                || !HelperMethods.IsNumeric(txtInvoice.Text)
+                || cbBeneficiaries.SelectedIndex == -1 
+                || cbConcepts.SelectedIndex == -1;
+
+            if (txtMount.Text.Equals("") || txtInvoice.Text.Equals("") || cbBeneficiaries.SelectedIndex == -1 || cbConcepts.SelectedIndex == -1)
+            {
+                MessageBox.Show(
+                    "Debes llenar todos los campos",
+                    "Problema con el deposito",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                txtInvoice.Text = null;
+                return true;
+            }
+
+            if (!HelperMethods.IsNumeric(txtMount.Text))
+            {
+                MessageBox.Show(
+                    "Solo puedes ingresar montos numericas",
+                    "Problema con el deposito",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                txtMount.Text = null;
+                txtMount.Focus();
+            } else
+            {
+                if (Decimal.Parse(txtMount.Text) > Account.Balance)
+                {
+                    MessageBox.Show(
+                        "No hay fondos suficientes para el deposito",
+                        "Problema con el deposito",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    txtMount.Text = null;
+                    txtMount.Focus();
+                    validMount = false;
+                }
+            }
+            
+            if (!HelperMethods.IsNumeric(txtInvoice.Text))
+            {
+                MessageBox.Show(
+                    "El folio debe tener formato numerico",
+                    "Problema con el deposito",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                txtInvoice.Text = null;
+                txtInvoice.Focus();
+            }
+
+            return (checkInvalid || !validMount);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -114,32 +177,6 @@ namespace Sistema_de_Cheques
             {
                 int row = cbBeneficiaries.Items.Add(beneficiary.Name);
             }
-        }
-
-        private void CleanTextBoxes()
-        {
-            HelperMethods.placeholderDesign(txtInvoice, phInvoice);
-            HelperMethods.placeholderDesign(txtMount, phMount);
-        }
-
-        private void txtInvoice_Enter(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtInvoice, phInvoice);
-        }
-
-        private void txtInvoice_Leave(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtInvoice, phInvoice);
-        }
-
-        private void txtMount_Enter(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtMount, phMount);
-        }
-
-        private void txtMount_Leave(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtMount, phMount);
         }
     }
 }
