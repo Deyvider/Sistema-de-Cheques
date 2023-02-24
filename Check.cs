@@ -18,7 +18,8 @@ namespace Sistema_de_Cheques
 
         private DataBaseConnection dataBase = new DataBaseConnection();
 
-
+        private Account account = new Account();
+        
         public Check() { }
 
         public Check(int id, string invoice, decimal mount, DateTime date, int beneficiary, int concept)
@@ -53,6 +54,7 @@ namespace Sistema_de_Cheques
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
+                account.MakeDeposit(-mount);
             }
             catch (Exception ex)
             {

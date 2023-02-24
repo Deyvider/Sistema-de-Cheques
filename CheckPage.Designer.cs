@@ -62,9 +62,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(781, 246);
+            this.button1.Location = new System.Drawing.Point(547, 148);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(331, 42);
+            this.button1.Size = new System.Drawing.Size(232, 25);
             this.button1.TabIndex = 29;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = false;
@@ -80,12 +81,13 @@
             this.Monto,
             this.Fecha,
             this.Concepto});
-            this.checksTable.Location = new System.Drawing.Point(91, 304);
+            this.checksTable.Location = new System.Drawing.Point(64, 182);
+            this.checksTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checksTable.Name = "checksTable";
             this.checksTable.ReadOnly = true;
             this.checksTable.RowHeadersWidth = 62;
             this.checksTable.RowTemplate.Height = 33;
-            this.checksTable.Size = new System.Drawing.Size(1021, 188);
+            this.checksTable.Size = new System.Drawing.Size(715, 113);
             this.checksTable.TabIndex = 28;
             this.checksTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -146,9 +148,10 @@
             this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporte.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnReporte.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReporte.Location = new System.Drawing.Point(869, 20);
+            this.btnReporte.Location = new System.Drawing.Point(608, 12);
+            this.btnReporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(221, 42);
+            this.btnReporte.Size = new System.Drawing.Size(155, 25);
             this.btnReporte.TabIndex = 27;
             this.btnReporte.Text = "Filtrar";
             this.btnReporte.UseVisualStyleBackColor = false;
@@ -163,9 +166,10 @@
             this.btnDepositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDepositar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDepositar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDepositar.Location = new System.Drawing.Point(431, 246);
+            this.btnDepositar.Location = new System.Drawing.Point(302, 148);
+            this.btnDepositar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDepositar.Name = "btnDepositar";
-            this.btnDepositar.Size = new System.Drawing.Size(321, 42);
+            this.btnDepositar.Size = new System.Drawing.Size(225, 25);
             this.btnDepositar.TabIndex = 26;
             this.btnDepositar.Text = "Cancelar";
             this.btnDepositar.UseVisualStyleBackColor = false;
@@ -180,9 +184,10 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAdd.Location = new System.Drawing.Point(92, 246);
+            this.btnAdd.Location = new System.Drawing.Point(64, 148);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(298, 42);
+            this.btnAdd.Size = new System.Drawing.Size(209, 25);
             this.btnAdd.TabIndex = 25;
             this.btnAdd.Text = "Agregar";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -194,14 +199,13 @@
             this.txtMount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMount.ForeColor = System.Drawing.Color.DimGray;
-            this.txtMount.Location = new System.Drawing.Point(688, 95);
+            this.txtMount.Location = new System.Drawing.Point(482, 58);
+            this.txtMount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMount.Multiline = true;
             this.txtMount.Name = "txtMount";
-            this.txtMount.Size = new System.Drawing.Size(424, 34);
+            this.txtMount.Size = new System.Drawing.Size(297, 26);
             this.txtMount.TabIndex = 23;
             this.txtMount.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.txtMount.Enter += new System.EventHandler(this.txtMount_Enter);
-            this.txtMount.Leave += new System.EventHandler(this.txtMount_Leave);
             // 
             // txtInvoice
             // 
@@ -209,23 +213,23 @@
             this.txtInvoice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInvoice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtInvoice.ForeColor = System.Drawing.Color.DimGray;
-            this.txtInvoice.Location = new System.Drawing.Point(153, 73);
+            this.txtInvoice.Location = new System.Drawing.Point(107, 44);
+            this.txtInvoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtInvoice.Multiline = true;
             this.txtInvoice.Name = "txtInvoice";
-            this.txtInvoice.Size = new System.Drawing.Size(375, 30);
+            this.txtInvoice.Size = new System.Drawing.Size(262, 27);
             this.txtInvoice.TabIndex = 21;
             this.txtInvoice.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
-            this.txtInvoice.Enter += new System.EventHandler(this.txtInvoice_Enter);
-            this.txtInvoice.Leave += new System.EventHandler(this.txtInvoice_Leave);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(497, 20);
+            this.label1.Location = new System.Drawing.Point(348, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 30);
+            this.label1.Size = new System.Drawing.Size(127, 20);
             this.label1.TabIndex = 20;
             this.label1.Text = "Datos del Cheque";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -234,28 +238,25 @@
             // 
             this.cbBeneficiaries.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbBeneficiaries.FormattingEnabled = true;
-            this.cbBeneficiaries.Location = new System.Drawing.Point(213, 126);
-            this.cbBeneficiaries.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbBeneficiaries.Location = new System.Drawing.Point(149, 76);
             this.cbBeneficiaries.Name = "cbBeneficiaries";
-            this.cbBeneficiaries.Size = new System.Drawing.Size(315, 38);
+            this.cbBeneficiaries.Size = new System.Drawing.Size(222, 29);
             this.cbBeneficiaries.TabIndex = 32;
             // 
             // cbConcepts
             // 
             this.cbConcepts.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbConcepts.FormattingEnabled = true;
-            this.cbConcepts.Location = new System.Drawing.Point(689, 158);
-            this.cbConcepts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbConcepts.Location = new System.Drawing.Point(482, 95);
             this.cbConcepts.Name = "cbConcepts";
-            this.cbConcepts.Size = new System.Drawing.Size(423, 38);
+            this.cbConcepts.Size = new System.Drawing.Size(297, 29);
             this.cbConcepts.TabIndex = 33;
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(173, 188);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker.Location = new System.Drawing.Point(121, 113);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(355, 31);
+            this.dateTimePicker.Size = new System.Drawing.Size(250, 23);
             this.dateTimePicker.TabIndex = 34;
             // 
             // label2
@@ -263,9 +264,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(91, 75);
+            this.label2.Location = new System.Drawing.Point(64, 45);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 28);
+            this.label2.Size = new System.Drawing.Size(38, 19);
             this.label2.TabIndex = 35;
             this.label2.Text = "Folio";
             // 
@@ -274,9 +276,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(92, 132);
+            this.label3.Location = new System.Drawing.Point(64, 79);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 28);
+            this.label3.Size = new System.Drawing.Size(78, 19);
             this.label3.TabIndex = 36;
             this.label3.Text = "Beneficiario";
             // 
@@ -285,9 +288,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(600, 97);
+            this.label4.Location = new System.Drawing.Point(420, 58);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 28);
+            this.label4.Size = new System.Drawing.Size(51, 19);
             this.label4.TabIndex = 37;
             this.label4.Text = "Monto";
             // 
@@ -296,9 +300,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(575, 162);
+            this.label5.Location = new System.Drawing.Point(402, 97);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 28);
+            this.label5.Size = new System.Drawing.Size(68, 19);
             this.label5.TabIndex = 38;
             this.label5.Text = "Concepto";
             // 
@@ -307,18 +312,19 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(104, 188);
+            this.label6.Location = new System.Drawing.Point(73, 113);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 28);
+            this.label6.Size = new System.Drawing.Size(44, 19);
             this.label6.TabIndex = 39;
             this.label6.Text = "Fecha";
             // 
             // CheckPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1155, 504);
+            this.ClientSize = new System.Drawing.Size(808, 302);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -335,6 +341,7 @@
             this.Controls.Add(this.txtMount);
             this.Controls.Add(this.txtInvoice);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CheckPage";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
