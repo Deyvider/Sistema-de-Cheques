@@ -29,5 +29,11 @@ namespace Sistema_de_Cheques
             label.Text = text;
             label.ForeColor = Color.DimGray;
         }
+
+        public static bool IsNumeric(string str)
+        {
+            bool isNumeric = str.All(char.IsDigit);
+            return isNumeric;
+        }
     }
 }

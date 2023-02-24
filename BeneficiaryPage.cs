@@ -57,11 +57,11 @@ namespace Sistema_de_Cheques
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form5 frmDos = new Form5();
+            SearchBeneciaryPage frmDos = new SearchBeneciaryPage();
             frmDos.ShowDialog();
         }
 
-        private void UpdateBeneficiariesTable()
+        public void UpdateBeneficiariesTable()
         {
             beneficiariesTable.Rows.Clear();
             foreach (Beneficiary beneficiarySQL in beneficiary.GetBeneficiariesSLQ())
@@ -75,6 +75,7 @@ namespace Sistema_de_Cheques
                 beneficiariesTable.Rows[fila].Cells[5].Value = beneficiarySQL.Active ? "Activo" : "Inactivo";
             }
         }
+
         private void CleanTextBoxes()
         {
             HelperMethods.placeholderDesign(txtName, phName);
@@ -143,15 +144,36 @@ namespace Sistema_de_Cheques
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
+        { 
+        }
             
+        private void beneficiariesTable_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            DataGridViewRow row = beneficiariesTable.Rows[e.RowIndex];
+            int id = int.Parse(row.Cells[0].Value.ToString());
+            string name = row.Cells[1].Value.ToString();
+
+            DialogResult result = MessageBox.Show(
+                $"¿Quieres actualizar los datos del beneficiario?\n" +
+                $"Nombre: {name}",
+                "Datos registrados",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information
+            );
+
+            if (result.ToString().Equals("Yes"))
+            {
+                UpdateBenefiaryPage updateBenefiary = new UpdateBenefiaryPage(id, this);
+                updateBenefiary.Show();
+            }
         }
     }
 
 
 
 
-    }
+}
 
 
 

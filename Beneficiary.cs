@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Sistema_de_Cheques
@@ -110,6 +111,129 @@ namespace Sistema_de_Cheques
                 dataBase.Connection.Close();
             }
             return beneficiaries;
+        }
+
+        public Beneficiary GetBeneficiarySQL(int id)
+        {
+            string query = $"SELECT *  FROM [Beneficiaries] WHERE [Id]='{id}';";
+            SqlCommand command = new SqlCommand(query, dataBase.Connection);
+            Beneficiary beneficiary = null;
+            try
+            {
+                dataBase.Connection.Open();
+                command.CommandText = query;
+                SqlDataReader beneficiariesSQL = command.ExecuteReader();
+                if (beneficiariesSQL != null)
+                {
+                    while (beneficiariesSQL.Read())
+                    {
+                        // id, nombre, dirección, telefono, descripcion, estado
+                        string name = beneficiariesSQL.GetString(1);
+                        string address = beneficiariesSQL.GetString(2);
+                        string phone = beneficiariesSQL.GetString(3);
+                        string description = beneficiariesSQL.GetString(4);
+                        bool active = beneficiariesSQL.GetBoolean(5);
+                        beneficiary = new Beneficiary(id, name, address, phone, description, active);
+                    }
+                }
+                return beneficiary;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error, {ex}",
+                    "",
+                    MessageBoxButtons.OK
+                );
+            }
+            finally
+            {
+                dataBase.Connection.Close();
+            }
+            return beneficiary;
+        }
+
+        public List<Beneficiary> GetBeneficiariesByValuesSQL(string searchValue, string filter)
+        {
+            //SELECT* FROM[Beneficiaries] WHERE[Id] = '6' OR[Name] LIKE '%DS%' OR[Phone] LIKE '%4%' OR[Active] = '0';
+            string query = "";
+
+            if (filter.Equals("id")) query = $"SELECT* FROM [Beneficiaries] WHERE [Id] = '{searchValue}'";
+            if (filter.Equals("name")) query = $"SELECT* FROM [Beneficiaries] WHERE [Name] LIKE '%{searchValue}%'";
+            if (filter.Equals("phone")) query = $"SELECT* FROM [Beneficiaries] WHERE [Phone] LIKE '%{searchValue}%'";
+            if (filter.Equals("active")) query = $"SELECT* FROM [Beneficiaries] WHERE [active] = '{searchValue}'";
+
+            SqlCommand command = new SqlCommand(query, dataBase.Connection);
+            List<Beneficiary> beneficiaries = new List<Beneficiary>();
+            try
+            {
+                dataBase.Connection.Open();
+                command.CommandText = query;
+                SqlDataReader beneficiariesSQL = command.ExecuteReader();
+                if (beneficiariesSQL != null)
+                {
+                    while (beneficiariesSQL.Read())
+                    {
+                        // id, nombre, dirección, telefono, descripcion, estado
+                        int id = beneficiariesSQL.GetInt32(0);
+                        string name = beneficiariesSQL.GetString(1);
+                        string address = beneficiariesSQL.GetString(2);
+                        string phone = beneficiariesSQL.GetString(3);
+                        string description = beneficiariesSQL.GetString(4);
+                        bool active = beneficiariesSQL.GetBoolean(5);
+                        beneficiaries.Add(new Beneficiary(id, name, address, phone, description, active));
+                    }
+                }
+                return beneficiaries;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error, {ex}",
+                    "",
+                    MessageBoxButtons.OK
+                );
+            }
+            finally
+            {
+                dataBase.Connection.Close();
+            }
+            return beneficiaries;
+        }
+
+        public void UpdateBeneficiary(Beneficiary beneficiaryUpdated)
+        {
+            string query = $"UPDATE[Beneficiaries] SET" +
+                           $"[name] = '{beneficiaryUpdated.Name}', " +
+                           $"[Address] = '{beneficiaryUpdated.Address}',  " +
+                           $"[Phone] = '{beneficiaryUpdated.Phone}', " +
+                           $"[description] = '{beneficiaryUpdated.Description}', " +
+                           $"[active] = '{beneficiaryUpdated.Active}' WHERE[id] = {beneficiaryUpdated.Id}; ;";
+            SqlCommand command = new SqlCommand(query, dataBase.Connection);
+            try
+            {
+                dataBase.Connection.Open();
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+                MessageBox.Show(
+                    $"Beneficiario '{beneficiaryUpdated.Name}' actualizado exitosamente",
+                    "Registro de beneficiarios",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error, {ex}",
+                    "",
+                    MessageBoxButtons.OK
+                );
+            }
+            finally
+            {
+                dataBase.Connection.Close();
+            }
         }
     }
 }

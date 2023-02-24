@@ -73,7 +73,7 @@
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(225, 30);
-            this.button4.TabIndex = 52;
+            this.button4.TabIndex = 51;
             this.button4.Text = "Confirmar";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -91,12 +91,12 @@
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(225, 30);
-            this.button2.TabIndex = 51;
+            this.button2.TabIndex = 52;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form7
+            // DepostiPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,7 +107,7 @@
             this.Controls.Add(this.txtDeposit);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form7";
+            this.Name = "DepostiPage";
             this.Text = "Realiza tu deposito";
             this.Load += new System.EventHandler(this.Form7_Load);
             this.ResumeLayout(false);
