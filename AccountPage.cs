@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Cheques
 {
-    public partial class Form1 : Form
+    public partial class AccountPage : Form
     {
-        public Form1()
+        public AccountPage()
         {
             InitializeComponent();
+            InitTextBoxes();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,8 +35,15 @@ namespace Sistema_de_Cheques
 
         private void btnDepositar_Click(object sender, EventArgs e)
         {
-            Form7 frmDos = new Form7();
+            DepostiPage frmDos = new DepostiPage(this);
             frmDos.ShowDialog();
+        }
+
+        public void InitTextBoxes()
+        {
+            txtSaldo.Text = Account.Balance.ToString();
+            txtName.Text = Account.Name.ToString();
+            txtUsername.Text = Account.Username.ToString();
         }
     }
 }

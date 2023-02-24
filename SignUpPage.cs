@@ -152,19 +152,16 @@ namespace Sistema_de_Cheques
                 return;
             }
 
-
-
-            // Creación de usuario y creación de cuenta
-            string query = $"INSERT INTO [Users] values ('{username}', '{name}', '{password}');";
+            string query = "INSERT INTO [Accounts] values (" +
+                        $"{initialState}," +
+                        $"{initialState}," +
+                        $"'{username}'," +
+                        $"'{name}'," +
+                        $"'{password}');";
             SqlCommand command = new SqlCommand(query, dataBase.Connection);
             try
             {
                 dataBase.Connection.Open();
-                command.ExecuteNonQuery();
-                query = "INSERT INTO [Accounts] values (" +
-                        $"(SELECT id FROM [Users] where username='{username}')," +
-                        $"{initialState}," +
-                        $"{initialState});";
                 command.CommandText = query;
                 command.ExecuteNonQuery();
                 MessageBox.Show(

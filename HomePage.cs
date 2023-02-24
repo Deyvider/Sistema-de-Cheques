@@ -117,7 +117,7 @@ namespace Sistema_de_Cheques
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form1>();
+            AbrirFormulario<AccountPage>();
             button1.BackColor = Color.FromArgb(82, 97, 48);
         }
 
@@ -168,7 +168,7 @@ namespace Sistema_de_Cheques
 
         }
         private void closedForm(object sender, FormClosedEventArgs e) {
-            if (Application.OpenForms["Form1"] == null)
+            if (Application.OpenForms["AccountPage"] == null)
             {
                 button1.BackColor = Color.FromArgb(128, 151, 75);
                 
