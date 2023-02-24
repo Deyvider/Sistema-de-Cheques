@@ -20,7 +20,7 @@ namespace Sistema_de_Cheques
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)

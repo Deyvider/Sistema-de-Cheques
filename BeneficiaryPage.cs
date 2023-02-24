@@ -141,6 +141,11 @@ namespace Sistema_de_Cheques
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 
 

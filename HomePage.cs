@@ -96,25 +96,32 @@ namespace Sistema_de_Cheques
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             AbrirFormulario<AccountPage>();
+           // CerrarTodosLosFormulariosAbiertos();
             button1.BackColor = Color.FromArgb(82, 97, 48);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             AbrirFormulario<BeneficiaryPage>();
+            //CerrarTodosLosFormulariosAbiertos();
             button2.BackColor = Color.FromArgb(82, 97, 48);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+           
             AbrirFormulario<CheckPage>();
+           // CerrarTodosLosFormulariosAbiertos();
             button3.BackColor = Color.FromArgb(82, 97, 48);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            
             AbrirFormulario<Form4>();
+          //  CerrarTodosLosFormulariosAbiertos();
             button4.BackColor = Color.FromArgb(82,97,48);
         }
 
@@ -123,11 +130,15 @@ namespace Sistema_de_Cheques
         #endregion 
 
         //Metodo para abrir Formularios dentro del panel
-        private void AbrirFormulario<MiForm>() where MiForm : Form,new()
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
+            if (panelFormularios.Controls.Count > 0)
+                panelFormularios.Controls.RemoveAt(0);
+
             Form formulario;
             formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();//busca en la colección el formulario
             //si el formulario no existe
+
             if (formulario == null)
             {
                 formulario= new MiForm();
@@ -147,6 +158,7 @@ namespace Sistema_de_Cheques
 
         }
 
+
         private void panelFormularios_Paint(object sender, PaintEventArgs e)
         {
 
@@ -155,8 +167,8 @@ namespace Sistema_de_Cheques
         private void closedForm(object sender, FormClosedEventArgs e) {
             if (Application.OpenForms["AccountPage"] == null)
             {
-                button1.BackColor = Color.FromArgb(128, 151, 75);
                 
+                button1.BackColor = Color.FromArgb(128, 151, 75);
             }
             if (Application.OpenForms["BeneficiaryPages"] == null)
             {
@@ -166,27 +178,29 @@ namespace Sistema_de_Cheques
             if (Application.OpenForms["CheckPage"] == null)
             {
                 button3.BackColor = Color.FromArgb(128, 151, 75);
-                
             }
             if (Application.OpenForms["Form4"] == null)
             {
                 button4.BackColor = Color.FromArgb(128, 151, 75);
-                 
             }
         }
-        private void btnCerrarOtrosFormularios_Click(object sender, EventArgs e)
+        private void CerrarTodosLosFormulariosAbiertos()
         {
-            // Recorre todos los formularios abiertos en la aplicación
-            foreach (Form form in Application.OpenForms)
+            // Crear una copia de la colección de formularios abiertos
+            Form[] formularios = Application.OpenForms.Cast<Form>().ToArray();
+
+            // Iterar a través de la copia de la colección de formularios abiertos
+            foreach (Form formulario in formularios)
             {
-                // Si el formulario no es el actual y no es el formulario principal de la aplicación
-                if (form != this && form.Name != "frmPrincipal")
+                // Comprobar si el formulario no ha sido eliminado y no es el formulario principal
+                if (!formulario.IsDisposed && formulario.Name != "HomePage")
                 {
-                    // Cierra el formulario
-                    form.Close();
+                    // Cerrar el formulario
+                    formulario.Close();
                 }
             }
         }
+
 
     }
 }
