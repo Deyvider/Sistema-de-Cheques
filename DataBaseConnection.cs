@@ -19,6 +19,9 @@ namespace Sistema_de_Cheques
 
         public DataBaseConnection()
         {
+            //this.Source = "DESKTOP-DT39M66\\SQLEXPRESS";
+            //this.User = "david";
+            //this.Password = "123";
             this.Source = "DESKTOP-DT39M66\\SQLEXPRESS";
             this.User = "david";
             this.Password = "123";
