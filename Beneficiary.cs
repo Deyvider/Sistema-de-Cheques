@@ -22,10 +22,7 @@ namespace Sistema_de_Cheques
         private DataBaseConnection dataBase = new DataBaseConnection("DESKTOP-5JB90L7\\SQLEXPRESS", "paco", "1234", "SistemaDeCheques");
 
 
-        public Beneficiary()
-        {
-
-        }
+        public Beneficiary() { }
 
         public Beneficiary(int id, string name, string address, string phone, string description, bool active) 
         { 
@@ -54,7 +51,7 @@ namespace Sistema_de_Cheques
                 command.ExecuteNonQuery();
                 MessageBox.Show(
                     $"Beneficiario '{name}' registrado exitosamente",
-                    "Registro de usuario",
+                    "Registro de beneficiarios",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
@@ -114,6 +111,5 @@ namespace Sistema_de_Cheques
             }
             return beneficiaries;
         }
-
     }
 }

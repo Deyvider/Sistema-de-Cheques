@@ -29,25 +29,23 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnReporte = new System.Windows.Forms.Button();
-            this.btnDepositar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.checksTable = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Folio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Beneficiario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Concepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnReporte = new System.Windows.Forms.Button();
+            this.btnDepositar = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.txtMount = new System.Windows.Forms.TextBox();
+            this.txtInvoice = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbBeneficiaries = new System.Windows.Forms.ComboBox();
+            this.cbConcepts = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.checksTable)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -59,170 +57,33 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(766, 266);
+            this.button1.Location = new System.Drawing.Point(536, 160);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 42);
+            this.button1.Size = new System.Drawing.Size(128, 25);
             this.button1.TabIndex = 29;
             this.button1.Text = "Modificar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // checksTable
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.checksTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.checksTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.Factura,
+            this.Folio,
             this.Beneficiario,
-            this.Cuenta,
             this.Monto,
             this.Fecha,
             this.Concepto});
-            this.dataGridView1.Location = new System.Drawing.Point(30, 332);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(967, 225);
-            this.dataGridView1.TabIndex = 28;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // btnReporte
-            // 
-            this.btnReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnReporte.FlatAppearance.BorderSize = 0;
-            this.btnReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporte.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnReporte.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReporte.Location = new System.Drawing.Point(529, 266);
-            this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(221, 42);
-            this.btnReporte.TabIndex = 27;
-            this.btnReporte.Text = "Filtrar";
-            this.btnReporte.UseVisualStyleBackColor = false;
-            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
-            // 
-            // btnDepositar
-            // 
-            this.btnDepositar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnDepositar.FlatAppearance.BorderSize = 0;
-            this.btnDepositar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnDepositar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnDepositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDepositar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDepositar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDepositar.Location = new System.Drawing.Point(299, 266);
-            this.btnDepositar.Name = "btnDepositar";
-            this.btnDepositar.Size = new System.Drawing.Size(212, 42);
-            this.btnDepositar.TabIndex = 26;
-            this.btnDepositar.Text = "Cancelar";
-            this.btnDepositar.UseVisualStyleBackColor = false;
-            this.btnDepositar.Click += new System.EventHandler(this.btnDepositar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnActualizar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnActualizar.Location = new System.Drawing.Point(73, 266);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(202, 42);
-            this.btnActualizar.TabIndex = 25;
-            this.btnActualizar.Text = "Agregar";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(487, 133);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(424, 30);
-            this.textBox3.TabIndex = 24;
-            this.textBox3.Text = "Fecha";
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(487, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(424, 30);
-            this.textBox2.TabIndex = 23;
-            this.textBox2.Text = "Monto";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(91, 133);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(348, 30);
-            this.textBox1.TabIndex = 22;
-            this.textBox1.Text = "Beneficiario";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // txtUser
-            // 
-            this.txtUser.BackColor = System.Drawing.Color.White;
-            this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUser.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtUser.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUser.Location = new System.Drawing.Point(91, 74);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(348, 30);
-            this.txtUser.TabIndex = 21;
-            this.txtUser.Text = "Factura";
-            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(91, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 25);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Datos del Cheque";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox4.Location = new System.Drawing.Point(487, 190);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(424, 30);
-            this.textBox4.TabIndex = 31;
-            this.textBox4.Text = "Concepto";
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox5.Location = new System.Drawing.Point(91, 190);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(348, 30);
-            this.textBox5.TabIndex = 30;
-            this.textBox5.Text = "Cuenta";
+            this.checksTable.Location = new System.Drawing.Point(27, 200);
+            this.checksTable.Margin = new System.Windows.Forms.Padding(2);
+            this.checksTable.Name = "checksTable";
+            this.checksTable.RowHeadersWidth = 62;
+            this.checksTable.RowTemplate.Height = 33;
+            this.checksTable.Size = new System.Drawing.Size(677, 135);
+            this.checksTable.TabIndex = 28;
+            this.checksTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Id
             // 
@@ -231,12 +92,12 @@
             this.Id.MinimumWidth = 8;
             this.Id.Name = "Id";
             // 
-            // Factura
+            // Folio
             // 
-            this.Factura.HeaderText = "Factura";
-            this.Factura.MinimumWidth = 8;
-            this.Factura.Name = "Factura";
-            this.Factura.Width = 150;
+            this.Folio.HeaderText = "Factura";
+            this.Folio.MinimumWidth = 8;
+            this.Folio.Name = "Folio";
+            this.Folio.Width = 150;
             // 
             // Beneficiario
             // 
@@ -244,13 +105,6 @@
             this.Beneficiario.MinimumWidth = 8;
             this.Beneficiario.Name = "Beneficiario";
             this.Beneficiario.Width = 150;
-            // 
-            // Cuenta
-            // 
-            this.Cuenta.HeaderText = "Cuenta";
-            this.Cuenta.MinimumWidth = 8;
-            this.Cuenta.Name = "Cuenta";
-            this.Cuenta.Width = 150;
             // 
             // Monto
             // 
@@ -273,28 +127,155 @@
             this.Concepto.Name = "Concepto";
             this.Concepto.Width = 150;
             // 
-            // Form3
+            // btnReporte
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.btnReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnReporte.FlatAppearance.BorderSize = 0;
+            this.btnReporte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnReporte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporte.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnReporte.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnReporte.Location = new System.Drawing.Point(370, 160);
+            this.btnReporte.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(155, 25);
+            this.btnReporte.TabIndex = 27;
+            this.btnReporte.Text = "Filtrar";
+            this.btnReporte.UseVisualStyleBackColor = false;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            // 
+            // btnDepositar
+            // 
+            this.btnDepositar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnDepositar.FlatAppearance.BorderSize = 0;
+            this.btnDepositar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnDepositar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDepositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDepositar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDepositar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDepositar.Location = new System.Drawing.Point(209, 160);
+            this.btnDepositar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDepositar.Name = "btnDepositar";
+            this.btnDepositar.Size = new System.Drawing.Size(148, 25);
+            this.btnDepositar.TabIndex = 26;
+            this.btnDepositar.Text = "Cancelar";
+            this.btnDepositar.UseVisualStyleBackColor = false;
+            this.btnDepositar.Click += new System.EventHandler(this.btnDepositar_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAdd.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAdd.Location = new System.Drawing.Point(51, 160);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(141, 25);
+            this.btnAdd.TabIndex = 25;
+            this.btnAdd.Text = "Agregar";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // txtMount
+            // 
+            this.txtMount.BackColor = System.Drawing.Color.White;
+            this.txtMount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMount.ForeColor = System.Drawing.Color.DimGray;
+            this.txtMount.Location = new System.Drawing.Point(341, 44);
+            this.txtMount.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMount.Multiline = true;
+            this.txtMount.Name = "txtMount";
+            this.txtMount.Size = new System.Drawing.Size(297, 30);
+            this.txtMount.TabIndex = 23;
+            this.txtMount.Text = "Monto";
+            this.txtMount.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtMount.Enter += new System.EventHandler(this.txtMount_Enter);
+            this.txtMount.Leave += new System.EventHandler(this.txtMount_Leave);
+            // 
+            // txtInvoice
+            // 
+            this.txtInvoice.BackColor = System.Drawing.Color.White;
+            this.txtInvoice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInvoice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtInvoice.ForeColor = System.Drawing.Color.DimGray;
+            this.txtInvoice.Location = new System.Drawing.Point(64, 44);
+            this.txtInvoice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtInvoice.Multiline = true;
+            this.txtInvoice.Name = "txtInvoice";
+            this.txtInvoice.Size = new System.Drawing.Size(244, 30);
+            this.txtInvoice.TabIndex = 21;
+            this.txtInvoice.Text = "Folio";
+            this.txtInvoice.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
+            this.txtInvoice.Enter += new System.EventHandler(this.txtInvoice_Enter);
+            this.txtInvoice.Leave += new System.EventHandler(this.txtInvoice_Leave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(64, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 15);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Datos del Cheque";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // cbBeneficiaries
+            // 
+            this.cbBeneficiaries.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbBeneficiaries.FormattingEnabled = true;
+            this.cbBeneficiaries.Location = new System.Drawing.Point(64, 79);
+            this.cbBeneficiaries.Name = "cbBeneficiaries";
+            this.cbBeneficiaries.Size = new System.Drawing.Size(244, 29);
+            this.cbBeneficiaries.TabIndex = 32;
+            this.cbBeneficiaries.Text = "Beneficiario";
+            // 
+            // cbConcepts
+            // 
+            this.cbConcepts.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbConcepts.FormattingEnabled = true;
+            this.cbConcepts.Location = new System.Drawing.Point(341, 79);
+            this.cbConcepts.Name = "cbConcepts";
+            this.cbConcepts.Size = new System.Drawing.Size(297, 29);
+            this.cbConcepts.TabIndex = 33;
+            this.cbConcepts.Text = "Concepto";
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(64, 114);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(244, 23);
+            this.dateTimePicker.TabIndex = 34;
+            // 
+            // CheckPage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1021, 596);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox5);
+            this.ClientSize = new System.Drawing.Size(715, 358);
+            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.cbConcepts);
+            this.Controls.Add(this.cbBeneficiaries);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.checksTable);
             this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.btnDepositar);
-            this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtUser);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.txtMount);
+            this.Controls.Add(this.txtInvoice);
             this.Controls.Add(this.label1);
-            this.Name = "Form3";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "CheckPage";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checksTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,23 +284,21 @@
         #endregion
 
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView checksTable;
         private Button btnReporte;
         private Button btnDepositar;
-        private Button btnActualizar;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private TextBox txtUser;
+        private Button btnAdd;
+        private TextBox txtMount;
+        private TextBox txtInvoice;
         private Label label1;
+        private ComboBox cbBeneficiaries;
+        private ComboBox cbConcepts;
+        private DateTimePicker dateTimePicker;
         private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Factura;
+        private DataGridViewTextBoxColumn Folio;
         private DataGridViewTextBoxColumn Beneficiario;
-        private DataGridViewTextBoxColumn Cuenta;
         private DataGridViewTextBoxColumn Monto;
         private DataGridViewTextBoxColumn Fecha;
         private DataGridViewTextBoxColumn Concepto;
-        private TextBox textBox4;
-        private TextBox textBox5;
     }
 }

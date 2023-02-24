@@ -47,7 +47,7 @@ namespace Sistema_de_Cheques
 
         private void btnDepositar_Click(object sender, EventArgs e)
         {
-
+            CleanTextBoxes();
         }
 
         private void btnReporte_Click(object sender, EventArgs e)

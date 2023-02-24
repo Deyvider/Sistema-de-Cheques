@@ -35,7 +35,7 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnDepositar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.beneficiariesTable = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -154,27 +154,27 @@
             this.btnDepositar.Name = "btnDepositar";
             this.btnDepositar.Size = new System.Drawing.Size(148, 25);
             this.btnDepositar.TabIndex = 16;
-            this.btnDepositar.Text = "Depositar a la cuenta";
+            this.btnDepositar.Text = "Cancelar";
             this.btnDepositar.UseVisualStyleBackColor = false;
             this.btnDepositar.Click += new System.EventHandler(this.btnDepositar_Click);
             // 
-            // btnActualizar
+            // btnAdd
             // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnActualizar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnActualizar.Location = new System.Drawing.Point(17, 121);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(141, 25);
-            this.btnActualizar.TabIndex = 6;
-            this.btnActualizar.Text = "Agregar";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAdd.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAdd.Location = new System.Drawing.Point(17, 121);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(141, 25);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "Agregar";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // beneficiariesTable
             // 
@@ -263,7 +263,7 @@
             this.Controls.Add(this.beneficiariesTable);
             this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.btnDepositar);
-            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtPhone);
@@ -288,7 +288,7 @@
         private TextBox txtDescription;
         private Button btnReporte;
         private Button btnDepositar;
-        private Button btnActualizar;
+        private Button btnAdd;
         private DataGridView beneficiariesTable;
         private Button button1;
         private DataGridViewTextBoxColumn Id;
