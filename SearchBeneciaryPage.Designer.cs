@@ -45,7 +45,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnSearchId = new System.Windows.Forms.Button();
+            this.btnSearchName = new System.Windows.Forms.Button();
+            this.btnSeachrPhone = new System.Windows.Forms.Button();
+            this.btnSearchActive = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.beneficiariesTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,7 +149,7 @@
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.ForeColor = System.Drawing.Color.DimGray;
-            this.txtName.Location = new System.Drawing.Point(132, 87);
+            this.txtName.Location = new System.Drawing.Point(132, 88);
             this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(297, 20);
@@ -200,7 +203,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(41, 87);
+            this.label3.Location = new System.Drawing.Point(41, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 21);
             this.label3.TabIndex = 32;
@@ -222,7 +225,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(41, 150);
+            this.label5.Location = new System.Drawing.Point(41, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 21);
             this.label5.TabIndex = 34;
@@ -233,30 +236,84 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBox1.Location = new System.Drawing.Point(132, 150);
+            this.checkBox1.Location = new System.Drawing.Point(132, 154);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(82, 25);
             this.checkBox1.TabIndex = 35;
             this.checkBox1.Text = "Activo";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // btnSearch
+            // btnSearchId
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSearch.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSearch.Location = new System.Drawing.Point(451, 87);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(132, 25);
-            this.btnSearch.TabIndex = 19;
-            this.btnSearch.Text = "Buscar";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearchId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSearchId.FlatAppearance.BorderSize = 0;
+            this.btnSearchId.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnSearchId.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSearchId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchId.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSearchId.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSearchId.Location = new System.Drawing.Point(447, 55);
+            this.btnSearchId.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchId.Name = "btnSearchId";
+            this.btnSearchId.Size = new System.Drawing.Size(107, 21);
+            this.btnSearchId.TabIndex = 19;
+            this.btnSearchId.Text = "Buscar";
+            this.btnSearchId.UseVisualStyleBackColor = false;
+            this.btnSearchId.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnSearchName
+            // 
+            this.btnSearchName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSearchName.FlatAppearance.BorderSize = 0;
+            this.btnSearchName.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnSearchName.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSearchName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSearchName.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSearchName.Location = new System.Drawing.Point(447, 87);
+            this.btnSearchName.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchName.Name = "btnSearchName";
+            this.btnSearchName.Size = new System.Drawing.Size(107, 21);
+            this.btnSearchName.TabIndex = 36;
+            this.btnSearchName.Text = "Buscar";
+            this.btnSearchName.UseVisualStyleBackColor = false;
+            this.btnSearchName.Click += new System.EventHandler(this.btnSearchName_Click);
+            // 
+            // btnSeachrPhone
+            // 
+            this.btnSeachrPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSeachrPhone.FlatAppearance.BorderSize = 0;
+            this.btnSeachrPhone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnSeachrPhone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSeachrPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeachrPhone.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSeachrPhone.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSeachrPhone.Location = new System.Drawing.Point(447, 121);
+            this.btnSeachrPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSeachrPhone.Name = "btnSeachrPhone";
+            this.btnSeachrPhone.Size = new System.Drawing.Size(107, 21);
+            this.btnSeachrPhone.TabIndex = 37;
+            this.btnSeachrPhone.Text = "Buscar";
+            this.btnSeachrPhone.UseVisualStyleBackColor = false;
+            this.btnSeachrPhone.Click += new System.EventHandler(this.btnSeachrPhone_Click);
+            // 
+            // btnSearchActive
+            // 
+            this.btnSearchActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSearchActive.FlatAppearance.BorderSize = 0;
+            this.btnSearchActive.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnSearchActive.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSearchActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchActive.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSearchActive.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSearchActive.Location = new System.Drawing.Point(447, 154);
+            this.btnSearchActive.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchActive.Name = "btnSearchActive";
+            this.btnSearchActive.Size = new System.Drawing.Size(107, 21);
+            this.btnSearchActive.TabIndex = 38;
+            this.btnSearchActive.Text = "Buscar";
+            this.btnSearchActive.UseVisualStyleBackColor = false;
+            this.btnSearchActive.Click += new System.EventHandler(this.btnSearchActive_Click);
             // 
             // SearchBeneciaryPage
             // 
@@ -264,7 +321,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(630, 393);
-            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnSearchActive);
+            this.Controls.Add(this.btnSeachrPhone);
+            this.Controls.Add(this.btnSearchName);
+            this.Controls.Add(this.btnSearchId);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -303,6 +363,9 @@
         private Label label4;
         private Label label5;
         private CheckBox checkBox1;
-        private Button btnSearch;
+        private Button btnSearchId;
+        private Button btnSearchName;
+        private Button btnSeachrPhone;
+        private Button btnSearchActive;
     }
 }

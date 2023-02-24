@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,18 +33,22 @@ namespace Sistema_de_Cheques
         private void btnSearch_Click(object sender, EventArgs e)
         {
             SetEmptyData();
-            UpdateBeneficiariesTable();
+            UpdateBeneficiariesTable("id");
             CleanTextBoxes();
         }
 
-        private void UpdateBeneficiariesTable()
+        private void UpdateBeneficiariesTable(string filter)
         {
+            // 1 = id, 2 = phone, 3 = name, 4 = active
             beneficiariesTable.Rows.Clear();
-            string id = txtId.Text;
-            string phone = txtPhone.Text;
-            string name = txtName.Text;
-            string active = checkBox1.Checked ? "1" : "0";
-            foreach (Beneficiary beneficiarySQL in beneficiary.GetBeneficiariesByValuesSQL(id, name, phone, active))
+            string searchValue = "";
+
+            if (filter.Equals("id")) searchValue = txtId.Text;
+            if (filter.Equals("name")) searchValue = txtName.Text;
+            if (filter.Equals("phone")) searchValue = txtPhone.Text;
+            if (filter.Equals("active")) searchValue = checkBox1.Checked ? "1" : "0";
+
+            foreach (Beneficiary beneficiarySQL in beneficiary.GetBeneficiariesByValuesSQL(searchValue, filter))
             {
                 int fila = beneficiariesTable.Rows.Add();
                 beneficiariesTable.Rows[fila].Cells[0].Value = beneficiarySQL.Id;
@@ -98,6 +103,27 @@ namespace Sistema_de_Cheques
         private void txtPhone_Leave(object sender, EventArgs e)
         {
             HelperMethods.placeholderController(txtPhone, phPhone);
+        }
+
+        private void btnSearchName_Click(object sender, EventArgs e)
+        {
+            SetEmptyData();
+            UpdateBeneficiariesTable("name");
+            CleanTextBoxes();
+        }
+
+        private void btnSeachrPhone_Click(object sender, EventArgs e)
+        {
+            SetEmptyData();
+            UpdateBeneficiariesTable("phone");
+            CleanTextBoxes();
+        }
+
+        private void btnSearchActive_Click(object sender, EventArgs e)
+        {
+            SetEmptyData();
+            UpdateBeneficiariesTable("active");
+            CleanTextBoxes();
         }
     }
 }

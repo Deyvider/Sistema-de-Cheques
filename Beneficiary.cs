@@ -153,14 +153,16 @@ namespace Sistema_de_Cheques
             return beneficiary;
         }
 
-        public List<Beneficiary> GetBeneficiariesByValuesSQL(string searchId, string searchName, string searchPhone, string searchActive)
+        public List<Beneficiary> GetBeneficiariesByValuesSQL(string searchValue, string filter)
         {
             //SELECT* FROM[Beneficiaries] WHERE[Id] = '6' OR[Name] LIKE '%DS%' OR[Phone] LIKE '%4%' OR[Active] = '0';
-            string query = $"SELECT *  FROM [Beneficiaries] WHERE " +
-                            $"[Active] = '{searchActive}' AND (" +
-                            $"[Id]='{searchId}' OR ";
-            query += searchName.Equals("") ? $"[Name] = '{searchName}' OR " : $"[Name] LIKE '%{searchName}%' OR ";
-            query += searchPhone.Equals("") ? $"[Phone] = '{searchPhone}');" : $"[Phone] LIKE '%{searchPhone}%');";
+            string query = "";
+
+            if (filter.Equals("id")) query = $"SELECT* FROM [Beneficiaries] WHERE [Id] = '{searchValue}'";
+            if (filter.Equals("name")) query = $"SELECT* FROM [Beneficiaries] WHERE [Name] LIKE '%{searchValue}%'";
+            if (filter.Equals("phone")) query = $"SELECT* FROM [Beneficiaries] WHERE [Phone] LIKE '%{searchValue}%'";
+            if (filter.Equals("active")) query = $"SELECT* FROM [Beneficiaries] WHERE [active] = '{searchValue}'";
+
             SqlCommand command = new SqlCommand(query, dataBase.Connection);
             List<Beneficiary> beneficiaries = new List<Beneficiary>();
             try
