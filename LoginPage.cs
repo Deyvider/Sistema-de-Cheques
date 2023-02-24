@@ -91,8 +91,7 @@ namespace Sistema_de_Cheques
             string username = txtUser.Text;
             string password = txtPassword.Text;
 
-            // SELECT id FROM[Users] where username = 'Username')
-            string query = $"SELECT [name] FROM[Users] where username = '{username}' AND password = '{password}'";
+            string query = $"SELECT [id], [name], [username], [balance] FROM [Accounts] where username = '{username}' AND password = '{password}'";
             SqlCommand command = new SqlCommand(query, dataBase.Connection);
             try
             {
@@ -104,24 +103,43 @@ namespace Sistema_de_Cheques
                     if (reader.Read())
                     {
                         HomePage homePage = new HomePage();
-                        MessageBox.Show($"Bienvenido {reader.GetString(0)}");
+                        //MessageBox.Show($"Bienvenido {reader.GetString(0)}");
+                        Account.Id = reader.GetInt32(0);
+                        Account.Name = reader.GetString(1);
+                        Account.Username = reader.GetString(2);
+                        Account.Balance = reader.GetDecimal(3);
                         CleanTextBoxes();
+                        this.Visible = false;
                         homePage.Show();
                     } else
                     {
-                        MessageBox.Show("Usuario o contraseña erroneos");
+                        MessageBox.Show(
+                            "Usuario o contraseña erroneos",
+                            "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
                         CleanTextBoxes();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Sin informaci�n");
+                    MessageBox.Show(
+                        "Sin información",
+                        "",
+                        MessageBoxButtons.OK
+                    );
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocurrio un error {ex}");
+                MessageBox.Show(
+                    $"Ocurrio un error",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
             finally
             {
