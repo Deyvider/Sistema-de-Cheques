@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Sistema_de_Cheques
@@ -84,6 +85,92 @@ namespace Sistema_de_Cheques
                 if (beneficiariesSQL != null )
                 {
                     while(beneficiariesSQL.Read())
+                    {
+                        // id, nombre, dirección, telefono, descripcion, estado
+                        int id = beneficiariesSQL.GetInt32(0);
+                        string name = beneficiariesSQL.GetString(1);
+                        string address = beneficiariesSQL.GetString(2);
+                        string phone = beneficiariesSQL.GetString(3);
+                        string description = beneficiariesSQL.GetString(4);
+                        bool active = beneficiariesSQL.GetBoolean(5);
+                        beneficiaries.Add(new Beneficiary(id, name, address, phone, description, active));
+                    }
+                }
+                return beneficiaries;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error, {ex}",
+                    "",
+                    MessageBoxButtons.OK
+                );
+            }
+            finally
+            {
+                dataBase.Connection.Close();
+            }
+            return beneficiaries;
+        }
+
+        public Beneficiary GetBeneficiarySQL(int id)
+        {
+            string query = $"SELECT *  FROM [Beneficiaries] WHERE [Id]='{id}';";
+            SqlCommand command = new SqlCommand(query, dataBase.Connection);
+            Beneficiary beneficiary = null;
+            try
+            {
+                dataBase.Connection.Open();
+                command.CommandText = query;
+                SqlDataReader beneficiariesSQL = command.ExecuteReader();
+                if (beneficiariesSQL != null)
+                {
+                    while (beneficiariesSQL.Read())
+                    {
+                        // id, nombre, dirección, telefono, descripcion, estado
+                        string name = beneficiariesSQL.GetString(1);
+                        string address = beneficiariesSQL.GetString(2);
+                        string phone = beneficiariesSQL.GetString(3);
+                        string description = beneficiariesSQL.GetString(4);
+                        bool active = beneficiariesSQL.GetBoolean(5);
+                        beneficiary = new Beneficiary(id, name, address, phone, description, active);
+                    }
+                }
+                return beneficiary;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error, {ex}",
+                    "",
+                    MessageBoxButtons.OK
+                );
+            }
+            finally
+            {
+                dataBase.Connection.Close();
+            }
+            return beneficiary;
+        }
+
+        public List<Beneficiary> GetBeneficiariesByValuesSQL(string searchId, string searchName, string searchPhone, string searchActive)
+        {
+            //SELECT* FROM[Beneficiaries] WHERE[Id] = '6' OR[Name] LIKE '%DS%' OR[Phone] LIKE '%4%' OR[Active] = '0';
+            string query = $"SELECT *  FROM [Beneficiaries] WHERE " +
+                            $"[Id]='{searchId}' OR " +
+                            $"[Active] = '{searchActive}' OR";
+            query += searchName.Equals("") ? $"[Name] = '{searchName}' OR " : $"[Name] LIKE '%{searchName}%' OR ";
+            query += searchPhone.Equals("") ? $"[Phone] = '{searchPhone}';" : $"[Phone] LIKE '%{searchPhone}%';";
+            SqlCommand command = new SqlCommand(query, dataBase.Connection);
+            List<Beneficiary> beneficiaries = new List<Beneficiary>();
+            try
+            {
+                dataBase.Connection.Open();
+                command.CommandText = query;
+                SqlDataReader beneficiariesSQL = command.ExecuteReader();
+                if (beneficiariesSQL != null)
+                {
+                    while (beneficiariesSQL.Read())
                     {
                         // id, nombre, dirección, telefono, descripcion, estado
                         int id = beneficiariesSQL.GetInt32(0);

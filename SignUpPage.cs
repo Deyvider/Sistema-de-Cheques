@@ -140,8 +140,8 @@ namespace Sistema_de_Cheques
             }
 
             // Verificación de saldo inicial valido
-            bool isNumeric = initialState.All(char.IsDigit);
-            if (!isNumeric)
+            
+            if (!HelperMethods.IsNumeric(initialState))
             {
                 MessageBox.Show("El saldo inicial debe ser numerico",
                                 "Problema en el registro",

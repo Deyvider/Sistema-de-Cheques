@@ -32,6 +32,16 @@ namespace Sistema_de_Cheques
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (!HelperMethods.IsNumeric(txtDeposit.Text))
+            {
+                MessageBox.Show(
+                    "Solo puedes depositar cantidades numericas",
+                    "Problema en el deposito",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                txtDeposit.Text = null; 
+                return;
+            }
             Account account = new Account();
             account.MakeDeposit(Decimal.Parse(txtDeposit.Text));
             this.accountPageReference.InitTextBoxes();

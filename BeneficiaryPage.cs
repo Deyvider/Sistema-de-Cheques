@@ -57,7 +57,7 @@ namespace Sistema_de_Cheques
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form5 frmDos = new Form5();
+            SearchBeneciaryPage frmDos = new SearchBeneciaryPage();
             frmDos.ShowDialog();
         }
 
@@ -75,6 +75,7 @@ namespace Sistema_de_Cheques
                 beneficiariesTable.Rows[fila].Cells[5].Value = beneficiarySQL.Active ? "Activo" : "Inactivo";
             }
         }
+
         private void CleanTextBoxes()
         {
             HelperMethods.placeholderDesign(txtName, phName);
