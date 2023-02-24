@@ -16,7 +16,7 @@ namespace Sistema_de_Cheques
         private string phUsername = "Usuario";
         private string phPassword = "Contraseña";
 
-        DataBaseConnection dataBase = new DataBaseConnection("DESKTOP-5JB90L7\\SQLEXPRESS","paco", "1234", "SistemaDeCheques");
+        DataBaseConnection dataBase = new DataBaseConnection();
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void RealeseCapture();

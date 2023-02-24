@@ -16,7 +16,7 @@ namespace Sistema_de_Cheques
         public int Beneficiary { get; set; }
         public int Concept { get; set; }
 
-        private DataBaseConnection dataBase = new DataBaseConnection("DESKTOP-5JB90L7\\SQLEXPRESS", "paco", "1234", "SistemaDeCheques");
+        private DataBaseConnection dataBase = new DataBaseConnection();
 
 
         public Check() { }

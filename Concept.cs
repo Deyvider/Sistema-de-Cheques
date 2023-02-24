@@ -12,7 +12,7 @@ namespace Sistema_de_Cheques
         public int Id { get; set; }
         public string Name { get; set; }
 
-        private DataBaseConnection dataBase = new DataBaseConnection("DESKTOP-5JB90L7\\SQLEXPRESS", "paco", "1234", "SistemaDeCheques");
+        private DataBaseConnection dataBase = new DataBaseConnection();
 
         public Concept() { }
 
