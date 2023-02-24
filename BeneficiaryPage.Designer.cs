@@ -186,6 +186,7 @@
             this.beneficiariesTable.RowTemplate.Height = 33;
             this.beneficiariesTable.Size = new System.Drawing.Size(995, 225);
             this.beneficiariesTable.TabIndex = 18;
+            this.beneficiariesTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.beneficiariesTable_CellContentClick);
             // 
             // Id
             // 

@@ -91,5 +91,41 @@ namespace Sistema_de_Cheques
             }
             return concepts;
         }
+
+        public Concept GetConceptSQL(int id)
+        {
+            string query = $"SELECT *  FROM [Concepts] WHERE [Id]='{id}';";
+            SqlCommand command = new SqlCommand(query, dataBase.Connection);
+            Concept concept = null;
+            try
+            {
+                dataBase.Connection.Open();
+                command.CommandText = query;
+                SqlDataReader conceptsSQL = command.ExecuteReader();
+                if (conceptsSQL != null)
+                {
+                    while (conceptsSQL.Read())
+                    {
+                        // id, nombre, dirección, telefono, descripcion, estado
+                        string name = conceptsSQL.GetString(1);
+                        concept = new Concept(id, name);
+                    }
+                }
+                return concept;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error, {ex}",
+                    "",
+                    MessageBoxButtons.OK
+                );
+            }
+            finally
+            {
+                dataBase.Connection.Close();
+            }
+            return concept;
+        }
     }
 }

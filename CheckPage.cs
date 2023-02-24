@@ -44,15 +44,17 @@ namespace Sistema_de_Cheques
 
         private void btnDepositar_Click(object sender, EventArgs e)
         {
-            CleanTextBoxes();
+            //CleanTextBoxes();
+            MessageBox.Show($"{cbConcepts.SelectedIndex}");
+            MessageBox.Show($"{cbBeneficiaries.SelectedIndex}");
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             string invoice = txtInvoice.Text;
             decimal mount = Decimal.Parse(txtMount.Text);
-            int beneficiary = cbBeneficiaries.SelectedIndex + 1;
-            int concept = cbConcepts.SelectedIndex + 1;
+            int beneficiary = (cbBeneficiaries.SelectedIndex + 1);
+            int concept = (cbConcepts.SelectedIndex + 1);
             DateTime date = dateTimePicker.Value;
             checkSQL.CreateCheckSQL(invoice, mount, date, beneficiary, concept);
             UpdateChecksTable();
@@ -87,10 +89,10 @@ namespace Sistema_de_Cheques
                 int fila = checksTable.Rows.Add();
                 checksTable.Rows[fila].Cells[0].Value = check.Id;
                 checksTable.Rows[fila].Cells[1].Value = check.Invoice;
-                checksTable.Rows[fila].Cells[2].Value = check.Beneficiary;
+                checksTable.Rows[fila].Cells[2].Value = beneficiarySQL.GetBeneficiarySQL(check.Beneficiary).Name;
                 checksTable.Rows[fila].Cells[3].Value = check.Mount;
                 checksTable.Rows[fila].Cells[4].Value = check.Date.ToShortDateString();
-                checksTable.Rows[fila].Cells[5].Value = check.Concept;
+                checksTable.Rows[fila].Cells[5].Value = conceptSQL.GetConceptSQL(check.Concept).Name;
             }
         }
 
@@ -106,11 +108,11 @@ namespace Sistema_de_Cheques
 
         private void InitCBBeneficiaries()
         {
-            cbConcepts.Items.Clear();
+            cbBeneficiaries.Items.Clear();
 
-            foreach (Beneficiary concept in beneficiarySQL.GetBeneficiariesSLQ())
+            foreach (Beneficiary beneficiary in beneficiarySQL.GetBeneficiariesSLQ())
             {
-                cbBeneficiaries.Items.Add(concept.Name);
+                int row = cbBeneficiaries.Items.Add(beneficiary.Name);
             }
         }
 
