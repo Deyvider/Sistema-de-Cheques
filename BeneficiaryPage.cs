@@ -144,9 +144,10 @@ namespace Sistema_de_Cheques
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
+        { 
+        }
             
-        private void beneficiariesTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void beneficiariesTable_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
             DataGridViewRow row = beneficiariesTable.Rows[e.RowIndex];
@@ -172,7 +173,7 @@ namespace Sistema_de_Cheques
 
 
 
-    }
+}
 
 
 
