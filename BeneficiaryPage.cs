@@ -61,7 +61,7 @@ namespace Sistema_de_Cheques
             frmDos.ShowDialog();
         }
 
-        private void UpdateBeneficiariesTable()
+        public void UpdateBeneficiariesTable()
         {
             beneficiariesTable.Rows.Clear();
             foreach (Beneficiary beneficiarySQL in beneficiary.GetBeneficiariesSLQ())
@@ -131,6 +131,28 @@ namespace Sistema_de_Cheques
         private void txtPhone_Leave(object sender, EventArgs e)
         {
             HelperMethods.placeholderController(txtPhone, phPhone);
+        }
+
+        private void beneficiariesTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            DataGridViewRow row = beneficiariesTable.Rows[e.RowIndex];
+            int id = int.Parse(row.Cells[0].Value.ToString());
+            string name = row.Cells[1].Value.ToString();
+
+            DialogResult result = MessageBox.Show(
+                $"¿Quieres actualizar los datos del beneficiario?\n" +
+                $"Nombre: {name}",
+                "Datos registrados",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information
+            );
+
+            if (result.ToString().Equals("Yes"))
+            {
+                UpdateBenefiaryPage updateBenefiary = new UpdateBenefiaryPage(id, this);
+                updateBenefiary.Show();
+            }
         }
     }
 

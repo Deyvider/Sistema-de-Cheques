@@ -79,6 +79,7 @@
             this.checksTable.Location = new System.Drawing.Point(27, 200);
             this.checksTable.Margin = new System.Windows.Forms.Padding(2);
             this.checksTable.Name = "checksTable";
+            this.checksTable.ReadOnly = true;
             this.checksTable.RowHeadersWidth = 62;
             this.checksTable.RowTemplate.Height = 33;
             this.checksTable.Size = new System.Drawing.Size(677, 135);
@@ -91,12 +92,14 @@
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 8;
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
             // Folio
             // 
             this.Folio.HeaderText = "Factura";
             this.Folio.MinimumWidth = 8;
             this.Folio.Name = "Folio";
+            this.Folio.ReadOnly = true;
             this.Folio.Width = 150;
             // 
             // Beneficiario
@@ -104,6 +107,7 @@
             this.Beneficiario.HeaderText = "Beneficiario";
             this.Beneficiario.MinimumWidth = 8;
             this.Beneficiario.Name = "Beneficiario";
+            this.Beneficiario.ReadOnly = true;
             this.Beneficiario.Width = 150;
             // 
             // Monto
@@ -111,6 +115,7 @@
             this.Monto.HeaderText = "Monto";
             this.Monto.MinimumWidth = 8;
             this.Monto.Name = "Monto";
+            this.Monto.ReadOnly = true;
             this.Monto.Width = 150;
             // 
             // Fecha
@@ -119,12 +124,14 @@
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.MinimumWidth = 8;
             this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
             // 
             // Concepto
             // 
             this.Concepto.HeaderText = "Concepto";
             this.Concepto.MinimumWidth = 8;
             this.Concepto.Name = "Concepto";
+            this.Concepto.ReadOnly = true;
             this.Concepto.Width = 150;
             // 
             // btnReporte

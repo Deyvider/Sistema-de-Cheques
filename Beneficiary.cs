@@ -157,10 +157,10 @@ namespace Sistema_de_Cheques
         {
             //SELECT* FROM[Beneficiaries] WHERE[Id] = '6' OR[Name] LIKE '%DS%' OR[Phone] LIKE '%4%' OR[Active] = '0';
             string query = $"SELECT *  FROM [Beneficiaries] WHERE " +
-                            $"[Id]='{searchId}' OR " +
-                            $"[Active] = '{searchActive}' OR";
+                            $"[Active] = '{searchActive}' AND (" +
+                            $"[Id]='{searchId}' OR ";
             query += searchName.Equals("") ? $"[Name] = '{searchName}' OR " : $"[Name] LIKE '%{searchName}%' OR ";
-            query += searchPhone.Equals("") ? $"[Phone] = '{searchPhone}';" : $"[Phone] LIKE '%{searchPhone}%';";
+            query += searchPhone.Equals("") ? $"[Phone] = '{searchPhone}');" : $"[Phone] LIKE '%{searchPhone}%');";
             SqlCommand command = new SqlCommand(query, dataBase.Connection);
             List<Beneficiary> beneficiaries = new List<Beneficiary>();
             try
@@ -197,6 +197,41 @@ namespace Sistema_de_Cheques
                 dataBase.Connection.Close();
             }
             return beneficiaries;
+        }
+
+        public void UpdateBeneficiary(Beneficiary beneficiaryUpdated)
+        {
+            string query = $"UPDATE[Beneficiaries] SET" +
+                           $"[name] = '{beneficiaryUpdated.Name}', " +
+                           $"[Address] = '{beneficiaryUpdated.Address}',  " +
+                           $"[Phone] = '{beneficiaryUpdated.Phone}', " +
+                           $"[description] = '{beneficiaryUpdated.Description}', " +
+                           $"[active] = '{beneficiaryUpdated.Active}' WHERE[id] = {beneficiaryUpdated.Id}; ;";
+            SqlCommand command = new SqlCommand(query, dataBase.Connection);
+            try
+            {
+                dataBase.Connection.Open();
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+                MessageBox.Show(
+                    $"Beneficiario '{beneficiaryUpdated.Name}' actualizado exitosamente",
+                    "Registro de beneficiarios",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error, {ex}",
+                    "",
+                    MessageBoxButtons.OK
+                );
+            }
+            finally
+            {
+                dataBase.Connection.Close();
+            }
         }
     }
 }
