@@ -48,16 +48,18 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(151)))), ((int)(((byte)(75)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(123, 460);
+            this.panel1.Size = new System.Drawing.Size(86, 276);
             this.panel1.TabIndex = 0;
             // 
             // btnMinimizar
             // 
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(673, 20);
+            this.btnMinimizar.Location = new System.Drawing.Point(471, 12);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(20, 20);
+            this.btnMinimizar.Size = new System.Drawing.Size(14, 12);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 13;
             this.btnMinimizar.TabStop = false;
@@ -66,9 +68,10 @@
             // btnCerrar
             // 
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(700, 20);
+            this.btnCerrar.Location = new System.Drawing.Point(490, 12);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(20, 20);
+            this.btnCerrar.Size = new System.Drawing.Size(14, 12);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 12;
             this.btnCerrar.TabStop = false;
@@ -83,9 +86,10 @@
             this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignUp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSignUp.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSignUp.Location = new System.Drawing.Point(231, 383);
+            this.btnSignUp.Location = new System.Drawing.Point(162, 230);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(420, 40);
+            this.btnSignUp.Size = new System.Drawing.Size(294, 24);
             this.btnSignUp.TabIndex = 0;
             this.btnSignUp.Text = "Registrar";
             this.btnSignUp.UseVisualStyleBackColor = false;
@@ -96,10 +100,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(373, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(261, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 38);
+            this.label1.Size = new System.Drawing.Size(97, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Registro";
             // 
@@ -109,9 +112,11 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPassword.Location = new System.Drawing.Point(231, 212);
+            this.txtPassword.Location = new System.Drawing.Point(162, 127);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.MaxLength = 255;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(420, 30);
+            this.txtPassword.Size = new System.Drawing.Size(294, 20);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "Contraseña";
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
@@ -124,9 +129,11 @@
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.ForeColor = System.Drawing.Color.DimGray;
-            this.txtName.Location = new System.Drawing.Point(231, 107);
+            this.txtName.Location = new System.Drawing.Point(162, 64);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.MaxLength = 50;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(420, 30);
+            this.txtName.Size = new System.Drawing.Size(294, 20);
             this.txtName.TabIndex = 1;
             this.txtName.Text = "Nombre";
             this.txtName.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
@@ -139,9 +146,11 @@
             this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtConfirmPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.txtConfirmPassword.Location = new System.Drawing.Point(231, 265);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(162, 159);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConfirmPassword.MaxLength = 255;
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(420, 30);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(294, 20);
             this.txtConfirmPassword.TabIndex = 4;
             this.txtConfirmPassword.Text = "Confirmar contraseña";
             this.txtConfirmPassword.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -154,9 +163,10 @@
             this.txtInitialState.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInitialState.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtInitialState.ForeColor = System.Drawing.Color.DimGray;
-            this.txtInitialState.Location = new System.Drawing.Point(231, 322);
+            this.txtInitialState.Location = new System.Drawing.Point(162, 193);
+            this.txtInitialState.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtInitialState.Name = "txtInitialState";
-            this.txtInitialState.Size = new System.Drawing.Size(420, 30);
+            this.txtInitialState.Size = new System.Drawing.Size(294, 20);
             this.txtInitialState.TabIndex = 5;
             this.txtInitialState.Text = "Saldo inicial";
             this.txtInitialState.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -169,9 +179,11 @@
             this.txtUsename.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsename.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsename.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUsename.Location = new System.Drawing.Point(231, 158);
+            this.txtUsename.Location = new System.Drawing.Point(162, 95);
+            this.txtUsename.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsename.MaxLength = 20;
             this.txtUsename.Name = "txtUsename";
-            this.txtUsename.Size = new System.Drawing.Size(420, 30);
+            this.txtUsename.Size = new System.Drawing.Size(294, 20);
             this.txtUsename.TabIndex = 2;
             this.txtUsename.Text = "Usuario";
             this.txtUsename.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
@@ -180,10 +192,10 @@
             // 
             // SignUpPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(746, 460);
+            this.ClientSize = new System.Drawing.Size(522, 276);
             this.Controls.Add(this.txtUsename);
             this.Controls.Add(this.txtInitialState);
             this.Controls.Add(this.txtConfirmPassword);
@@ -195,6 +207,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SignUpPage";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

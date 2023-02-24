@@ -175,7 +175,11 @@ namespace Sistema_de_Cheques
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocurrio un error {ex}");
+                MessageBox.Show(
+                    "Sin información",
+                    "",
+                    MessageBoxButtons.OK
+                );
             }
             finally
             {

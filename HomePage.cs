@@ -123,13 +123,13 @@ namespace Sistema_de_Cheques
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form2>();
+            AbrirFormulario<BeneficiaryPage>();
             button2.BackColor = Color.FromArgb(82, 97, 48);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form3>();
+            AbrirFormulario<CheckPage>();
             button3.BackColor = Color.FromArgb(82, 97, 48);
         }
 
@@ -173,19 +173,16 @@ namespace Sistema_de_Cheques
                 button1.BackColor = Color.FromArgb(128, 151, 75);
                 
             }
-            if (Application.OpenForms["Form2"] == null)
+            if (Application.OpenForms["BeneficiaryPages"] == null)
             {
                 button2.BackColor = Color.FromArgb(128, 151, 75);
                 
             }
-                
-
-            if (Application.OpenForms["Form3"] == null)
+            if (Application.OpenForms["CheckPage"] == null)
             {
                 button3.BackColor = Color.FromArgb(128, 151, 75);
                 
             }
-
             if (Application.OpenForms["Form4"] == null)
             {
                 button4.BackColor = Color.FromArgb(128, 151, 75);

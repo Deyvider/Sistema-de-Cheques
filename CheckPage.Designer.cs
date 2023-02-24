@@ -1,6 +1,6 @@
 ﻿namespace Sistema_de_Cheques
 {
-    partial class Form3
+    partial class CheckPage
     {
         /// <summary>
         /// Required designer variable.
