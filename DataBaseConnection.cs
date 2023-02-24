@@ -17,12 +17,12 @@ namespace Sistema_de_Cheques
 
         public SqlConnection Connection;
 
-        public DataBaseConnection(string Source, string User, string Password, string DBName)
+        public DataBaseConnection()
         {
-            this.Source = Source;
-            this.User = User;
-            this.Password = Password;
-            this.DBName = DBName;
+            this.Source = "DESKTOP-5JB90L7\\SQLEXPRESS";
+            this.User = "paco";
+            this.Password = "1234";
+            this.DBName = "SistemaDeCheques";
             ConnectionData = $"Data Source={Source};Initial Catalog={DBName};User ID={User};Password={Password}";
             Connection = new SqlConnection(ConnectionData);
         }

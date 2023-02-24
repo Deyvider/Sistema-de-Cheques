@@ -14,7 +14,7 @@ namespace Sistema_de_Cheques
         public static string Name { get; set; }
         public static string Username { get; set; }
 
-        private DataBaseConnection dataBase = new DataBaseConnection("DESKTOP-5JB90L7\\SQLEXPRESS", "paco", "1234", "SistemaDeCheques");
+        private DataBaseConnection dataBase = new DataBaseConnection();
 
 
         public void MakeDeposit(decimal total)

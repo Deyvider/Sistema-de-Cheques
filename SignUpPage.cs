@@ -25,7 +25,7 @@ namespace Sistema_de_Cheques
         string phConfirmPassword = "Confirmar contraseña";
         string phInitialState = "Saldo inicial";
 
-        DataBaseConnection dataBase = new DataBaseConnection("DESKTOP-5JB90L7\\SQLEXPRESS", "paco", "1234", "SistemaDeCheques");
+        DataBaseConnection dataBase = new DataBaseConnection();
 
         private void txtUser_TextChanged(object sender, EventArgs e)
         {
