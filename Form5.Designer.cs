@@ -45,6 +45,8 @@
             this.txtUser = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,7 +182,7 @@
             this.textBox3.ForeColor = System.Drawing.Color.DimGray;
             this.textBox3.Location = new System.Drawing.Point(303, 252);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(424, 30);
+            this.textBox3.Size = new System.Drawing.Size(565, 30);
             this.textBox3.TabIndex = 24;
             this.textBox3.Text = "Activo/desactivado";
             // 
@@ -192,7 +194,7 @@
             this.textBox2.ForeColor = System.Drawing.Color.DimGray;
             this.textBox2.Location = new System.Drawing.Point(303, 204);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(424, 30);
+            this.textBox2.Size = new System.Drawing.Size(565, 30);
             this.textBox2.TabIndex = 23;
             this.textBox2.Text = "Celular";
             // 
@@ -204,7 +206,7 @@
             this.textBox1.ForeColor = System.Drawing.Color.DimGray;
             this.textBox1.Location = new System.Drawing.Point(303, 92);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(424, 30);
+            this.textBox1.Size = new System.Drawing.Size(565, 30);
             this.textBox1.TabIndex = 22;
             this.textBox1.Text = "ID";
             // 
@@ -216,7 +218,7 @@
             this.txtUser.ForeColor = System.Drawing.Color.DimGray;
             this.txtUser.Location = new System.Drawing.Point(303, 145);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(424, 30);
+            this.txtUser.Size = new System.Drawing.Size(565, 30);
             this.txtUser.TabIndex = 21;
             this.txtUser.Text = "Nombre del Beneficiario";
             // 
@@ -239,13 +241,45 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button2.Location = new System.Drawing.Point(238, 579);
+            this.button2.Location = new System.Drawing.Point(30, 576);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(404, 42);
+            this.button2.Size = new System.Drawing.Size(230, 42);
             this.button2.TabIndex = 30;
             this.button2.Text = "Inicio";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button3.Location = new System.Drawing.Point(284, 576);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(274, 42);
+            this.button3.TabIndex = 31;
+            this.button3.Text = "Modificar";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button4.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button4.Location = new System.Drawing.Point(583, 576);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(285, 42);
+            this.button4.TabIndex = 32;
+            this.button4.Text = "Generar Reporte";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // Form5
             // 
@@ -253,6 +287,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(900, 655);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
@@ -291,5 +327,7 @@
         private TextBox txtUser;
         private Label label1;
         private Button button2;
+        private Button button3;
+        private Button button4;
     }
 }

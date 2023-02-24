@@ -52,6 +52,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,9 +65,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button2.Location = new System.Drawing.Point(88, 565);
+            this.button2.Location = new System.Drawing.Point(76, 565);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(404, 42);
+            this.button2.Size = new System.Drawing.Size(238, 42);
             this.button2.TabIndex = 41;
             this.button2.Text = "Inicio";
             this.button2.UseVisualStyleBackColor = false;
@@ -327,12 +328,28 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button4.Location = new System.Drawing.Point(510, 565);
+            this.button4.Location = new System.Drawing.Point(613, 565);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(404, 42);
+            this.button4.Size = new System.Drawing.Size(301, 42);
             this.button4.TabIndex = 50;
             this.button4.Text = "Generar reporte";
             this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button5.Location = new System.Drawing.Point(339, 565);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(255, 42);
+            this.button5.TabIndex = 51;
+            this.button5.Text = "Modificar";
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // Form6
             // 
@@ -340,6 +357,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(987, 631);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -393,5 +411,6 @@
         private TextBox textBox4;
         private TextBox textBox5;
         private Button button4;
+        private Button button5;
     }
 }

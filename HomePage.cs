@@ -77,29 +77,8 @@ namespace Sistema_de_Cheques
             Application.Exit();
         }
 
-        //Capturar posicion y tamaño antes de maximizar para restaurar
-        int lx, ly;
-        int sw, sh;
-
-        private void btnMaximizar_Click(object sender, EventArgs e)
-        {
-            lx = this.Location.X;
-            ly = this.Location.Y;
-            sw = this.Size.Width;
-            sh = this.Size.Height;
-            btnMaximizar.Visible = false;
-            btnRestaurar.Visible = true;
-            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            btnMaximizar.Visible = true;
-            btnRestaurar.Visible = false;
-            this.Size = new Size(sw,sh);
-            this.Location = new Point(lx, ly);
-        }
+       
+        
 
         private void panelBarraTitulo_MouseMove(object sender, MouseEventArgs e)
         {
@@ -167,6 +146,12 @@ namespace Sistema_de_Cheques
             }
 
         }
+
+        private void panelFormularios_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void closedForm(object sender, FormClosedEventArgs e) {
             if (Application.OpenForms["AccountPage"] == null)
             {
