@@ -183,16 +183,17 @@ namespace Sistema_de_Cheques
 
         }
 
+        /*
+            Metodo para cambiar el color de los botones de opciones se les da clic
+        */
         private void closedForm(object sender, FormClosedEventArgs e) {
             if (Application.OpenForms["AccountPage"] == null)
             {
-                
                 button1.BackColor = Color.FromArgb(128, 151, 75);
             }
             if (Application.OpenForms["BeneficiaryPages"] == null)
             {
                 button2.BackColor = Color.FromArgb(128, 151, 75);
-                
             }
             if (Application.OpenForms["CheckPage"] == null)
             {

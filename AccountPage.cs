@@ -33,12 +33,19 @@ namespace Sistema_de_Cheques
 
         }
 
+        /**
+            Metodo para abrir la ventana que realiza los depositos
+        */
         private void btnDepositar_Click(object sender, EventArgs e)
         {
             DepostiPage frmDos = new DepostiPage(this);
             frmDos.ShowDialog();
         }
 
+        /**
+            Metodo para actualizar la información desplegada en pantalla,
+            colocando los datos del usuario loggeado
+        */
         public void InitTextBoxes()
         {
             txtSaldo.Text = Account.Balance.ToString();

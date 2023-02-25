@@ -30,6 +30,10 @@ namespace Sistema_de_Cheques
             Connection = new SqlConnection(ConnectionData);
         }
 
+
+        /**
+            Metodo que verifica el estado de la conexión a la base de datos
+        */
         public string VerifyConnection()
         {
             try

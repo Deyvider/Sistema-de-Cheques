@@ -8,6 +8,9 @@ namespace Sistema_de_Cheques
 {
     internal class HelperMethods
     {
+        /*
+            Metodo usado para dar un formato de "Placeholder" a los TextBox
+        */
         public static void placeholderController(TextBox label, string placeholer)
         {
             if (label.Text.Equals(placeholer))
@@ -24,12 +27,19 @@ namespace Sistema_de_Cheques
             }
         }
 
+        /*
+            Metodo usado para dar un formato de color "Placeholder" a los TextBox
+        */
         public static void placeholderDesign(TextBox label, string text)
         {
             label.Text = text;
             label.ForeColor = Color.DimGray;
         }
 
+
+        /*
+            Metodo usado para dar un verificar que una cadena contena solo numeros
+        */
         public static bool IsNumeric(string str)
         {
             bool isNumeric = str.All(char.IsDigit);

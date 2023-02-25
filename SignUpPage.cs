@@ -110,6 +110,9 @@ namespace Sistema_de_Cheques
             this.WindowState = FormWindowState.Minimized;
         }
 
+        /*
+            Metodo usado ejecutar el registro de un nuevo usuario
+        */
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             string name = txtName.Text;
@@ -187,6 +190,9 @@ namespace Sistema_de_Cheques
             }
         }
 
+        /*
+            Metodo usado para limpiar los campos del formulario
+        */
         private void CleanTextBoxes()
         {
             HelperMethods.placeholderDesign(txtPassword, phPassword);
@@ -195,6 +201,9 @@ namespace Sistema_de_Cheques
             txtConfirmPassword.UseSystemPasswordChar = false;
         }
 
+        /*
+            Metodo usado para validar que los campos del formulario esten completos
+        */
         private bool IsDataValid()
         {
             bool verification = txtName.Text.Contains(phName)

@@ -22,7 +22,9 @@ namespace Sistema_de_Cheques
             Name = name;
         }
 
-        // Metodo para agregar un nuevo beneficiario a la base de datos
+        /*
+            Metodo para agregar un nuevo concepto a la base de datos
+        */
         public void CreateConceptSQL(string name)
         {
             string query = "INSERT INTO [Concepts] values (" +
@@ -53,8 +55,9 @@ namespace Sistema_de_Cheques
                 dataBase.Connection.Close();
             }
         }
-
-        // Metodo que retorna una lista con todos los beneficiarios
+        /*
+            Metodo que retorna una lista con todos los conceptos registrados
+        */
         public List<Concept> GetConceptsSLQ()
         {
             string query = "SELECT *  FROM [Concepts]";
@@ -92,6 +95,9 @@ namespace Sistema_de_Cheques
             return concepts;
         }
 
+        /**
+            Metodo que retorna un concepto en base al Id ingresado
+        */
         public Concept GetConceptSQL(int id)
         {
             string query = $"SELECT *  FROM [Concepts] WHERE [Id]='{id}';";

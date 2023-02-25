@@ -23,6 +23,11 @@ namespace Sistema_de_Cheques
 
         Beneficiary beneficiary = new Beneficiary();
 
+
+        /*
+            Metodo usado para obtener los datos de un beneficiario y los coloca en el 
+            formulario de edición
+        */
         private void InitTextBoxes()
         {
             Beneficiary beneficiaryInit = beneficiary.GetBeneficiarySQL(benficiaryId);
@@ -34,11 +39,17 @@ namespace Sistema_de_Cheques
             cbActive.Checked = beneficiaryInit.Active;
         }
 
+        /*
+            Metodo que ejecuta la inicialización de los TextBox
+        */
         private void UpdateBenefiaryPage_Load(object sender, EventArgs e)
         {
             InitTextBoxes();
         }
 
+        /*
+            Metodo usado para ejecta la actualización de un beneficiario
+        */
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Beneficiary beneficiaryUpdated = beneficiary.GetBeneficiarySQL(benficiaryId);

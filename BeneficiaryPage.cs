@@ -28,6 +28,9 @@ namespace Sistema_de_Cheques
             UpdateBeneficiariesTable();
         }
 
+        /**
+            Metodo usado para realizar el registro de un beneficiario 
+        */
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (!IsDataValid())
@@ -40,27 +43,32 @@ namespace Sistema_de_Cheques
             }
             beneficiary.CreateBeneficiarySQL(txtName.Text, txtAddress.Text, txtPhone.Text, txtDescription.Text);
             CleanTextBoxes();
-            UpdateBeneficiariesTable();
 
             //Actualizar tabla de beneficiarios
+            UpdateBeneficiariesTable();
+
         }
 
+        /**
+            Metodo ejecutar la limpieza del formulario de beneficiario
+        */
         private void btnDepositar_Click(object sender, EventArgs e)
         {
             CleanTextBoxes();
         }
 
-        private void btnReporte_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /**
+            Metodo para desplegar la ventana de busqueda de beneficiarios
+        */
         private void button1_Click(object sender, EventArgs e)
         {
             SearchBeneciaryPage frmDos = new SearchBeneciaryPage();
             frmDos.ShowDialog();
         }
 
+        /**
+            Metodo acciona la actualización de datos de un beneficiario
+        */
         public void UpdateBeneficiariesTable()
         {
             beneficiariesTable.Rows.Clear();
@@ -76,6 +84,9 @@ namespace Sistema_de_Cheques
             }
         }
 
+        /**
+            Metodo que limpia los campos del formulario de la pagina
+        */
         private void CleanTextBoxes()
         {
             HelperMethods.placeholderDesign(txtName, phName);
@@ -84,53 +95,16 @@ namespace Sistema_de_Cheques
             HelperMethods.placeholderDesign(txtPhone, phPhone);
         }
 
+        /**
+            Metodo que valida que los campos del formulario no esten vacios
+        */
         private bool IsDataValid()
         {
-            bool verification = txtAddress.Text.Equals(phAddress) 
-                || txtDescription.Text.Equals(phDescription) 
-                || txtName.Text.Equals(phName) 
-                || txtPhone.Text.Equals(phPhone);
+            bool verification = txtAddress.Text.Equals("")
+                || txtDescription.Text.Equals("") 
+                || txtName.Text.Equals("") 
+                || txtPhone.Text.Equals("");
             return !verification;
-        }
-
-        private void txtName_Enter(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtName, phName);
-        }
-
-        private void txtName_Leave(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtName, phName);
-        }
-
-        private void txtAddress_Enter(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtAddress, phAddress);
-        }
-
-        private void txtAddress_Leave(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtAddress, phAddress);
-        }
-
-        private void txtDescription_Enter(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtDescription, phDescription);
-        }
-
-        private void txtDescription_Leave(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtDescription, phDescription);
-        }
-
-        private void txtPhone_Enter(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtPhone, phPhone);
-        }
-
-        private void txtPhone_Leave(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtPhone, phPhone);
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -143,10 +117,10 @@ namespace Sistema_de_Cheques
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        { 
-        }
-            
+        /**
+            Metodo usado para validar si el usuario desea modificar al usuario seleccionada,
+            de ser así deplega el formulario de actualización
+        */
         private void beneficiariesTable_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;

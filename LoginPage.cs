@@ -22,33 +22,50 @@ namespace Sistema_de_Cheques
         private extern static void RealeseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-         
 
+        /*
+            Metodo usado que da formato de placeholder al TextBox
+        */
         private void textBox1_Enter(object sender, EventArgs e)
         {
             HelperMethods.placeholderController(txtUser, phUsername);
         }
 
+        /*
+            Metodo usado que da formato de placeholder al TextBox
+        */
         private void txtUser_Leave(object sender, EventArgs e)
         {
             HelperMethods.placeholderController(txtUser, phUsername);
         }
 
+        /*
+            Metodo usado que da formato de placeholder al TextBox
+        */
         private void txtPassword_Enter(object sender, EventArgs e)
         {
             HelperMethods.placeholderController(txtPassword, phPassword);
         }
 
+        /*
+            Metodo usado que da formato de placeholder al TextBox
+        */
         private void txtPassword_Leave(object sender, EventArgs e)
         {
             HelperMethods.placeholderController(txtPassword, phPassword);
         }
 
+        /*
+            Metodo usado para detener la ejecución de la aplicación
+        */
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /*
+            Metodo usado para minimizar la ventana actual
+        */
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -66,6 +83,9 @@ namespace Sistema_de_Cheques
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        /*
+            Metodo usado desplegar el formulario de registro de usuario
+        */
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             SignUpPage form2 = new SignUpPage();
@@ -77,6 +97,10 @@ namespace Sistema_de_Cheques
 
         }
 
+
+        /*
+            Metodo que valida los datos del inicio de sesión de un usuario
+        */
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             // Verificar que todos los campos tengan texto
@@ -146,6 +170,11 @@ namespace Sistema_de_Cheques
                 dataBase.Connection.Close();
             }
         }
+
+
+        /*
+            Metodo que valida que los campos del formulario no esten vacios al iniciar sesión
+        */
         private bool IsDataValid()
         {
             bool verification = txtUser.Text.Contains(phUsername)
@@ -153,17 +182,14 @@ namespace Sistema_de_Cheques
             return !verification;
         }
 
+        /*
+            Metodo que limpia el formulario de inicio de sesión
+        */
         private void CleanTextBoxes()
         {
             HelperMethods.placeholderDesign(txtUser, phUsername);
             HelperMethods.placeholderDesign(txtPassword, phPassword);
             txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            HomePage home= new HomePage();
-            home.Show();
         }
     }
 }

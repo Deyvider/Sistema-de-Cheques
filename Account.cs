@@ -16,7 +16,9 @@ namespace Sistema_de_Cheques
 
         private DataBaseConnection dataBase = new DataBaseConnection();
 
-
+        /**
+            Metodo para aumentar o diminuir el balance de una cuenta
+        */
         public void MakeDeposit(decimal total)
         {
             Balance += total;
