@@ -19,9 +19,12 @@ namespace Sistema_de_Cheques
 
         public DataBaseConnection()
         {
-            this.Source = "DESKTOP-5JB90L7\\SQLEXPRESS";
-            this.User = "paco";
-            this.Password = "1234";
+            //this.Source = "DESKTOP-DT39M66\\SQLEXPRESS";
+            //this.User = "david";
+            //this.Password = "123";
+            this.Source = "DESKTOP-DT39M66\\SQLEXPRESS";
+            this.User = "david";
+            this.Password = "123";
             this.DBName = "SistemaDeCheques";
             ConnectionData = $"Data Source={Source};Initial Catalog={DBName};User ID={User};Password={Password}";
             Connection = new SqlConnection(ConnectionData);

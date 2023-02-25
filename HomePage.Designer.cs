@@ -57,7 +57,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(0, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1400, 600);
+            this.panelContenedor.Size = new System.Drawing.Size(1400, 1006);
             this.panelContenedor.TabIndex = 0;
             // 
             // panelFormularios
@@ -66,7 +66,7 @@
             this.panelFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormularios.Location = new System.Drawing.Point(223, 40);
             this.panelFormularios.Name = "panelFormularios";
-            this.panelFormularios.Size = new System.Drawing.Size(1177, 560);
+            this.panelFormularios.Size = new System.Drawing.Size(1177, 966);
             this.panelFormularios.TabIndex = 2;
             this.panelFormularios.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFormularios_Paint);
             // 
@@ -80,7 +80,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 40);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(223, 560);
+            this.panelMenu.Size = new System.Drawing.Size(223, 966);
             this.panelMenu.TabIndex = 1;
             // 
             // button4
@@ -201,11 +201,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1400, 600);
+            this.ClientSize = new System.Drawing.Size(1400, 1006);
             this.Controls.Add(this.panelContenedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(1400, 600);
-            this.MinimumSize = new System.Drawing.Size(1400, 600);
+            this.MaximumSize = new System.Drawing.Size(1400, 1006);
+            this.MinimumSize = new System.Drawing.Size(1400, 1006);
             this.Name = "HomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";

@@ -96,31 +96,32 @@ namespace Sistema_de_Cheques
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            AbrirFormulario<AccountPage>();
+            AbrirForm(new AccountPage());
+           // AbrirFormulario<AccountPage>();
            // CerrarTodosLosFormulariosAbiertos();
             button1.BackColor = Color.FromArgb(82, 97, 48);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<BeneficiaryPage>();
+            AbrirForm(new BeneficiaryPage());
+           // AbrirFormulario<BeneficiaryPage>();
             //CerrarTodosLosFormulariosAbiertos();
             button2.BackColor = Color.FromArgb(82, 97, 48);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
-            AbrirFormulario<CheckPage>();
-           // CerrarTodosLosFormulariosAbiertos();
+            AbrirForm(new CheckPage());
+            // AbrirFormulario<CheckPage>();
+            // CerrarTodosLosFormulariosAbiertos();
             button3.BackColor = Color.FromArgb(82, 97, 48);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
-            AbrirFormulario<Form4>();
+            AbrirForm(new Form4());
+            //AbrirFormulario<Form4>();
           //  CerrarTodosLosFormulariosAbiertos();
             button4.BackColor = Color.FromArgb(82,97,48);
         }
@@ -157,7 +158,25 @@ namespace Sistema_de_Cheques
             }
 
         }
-
+        //Abrir Formularios y cerrar los que estén abiertos
+        private Form activeForm;
+        private void AbrirForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelFormularios.Controls.Add(childForm);
+            panelFormularios.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            childForm.FormClosed += new FormClosedEventHandler(closedForm);
+        }
 
         private void panelFormularios_Paint(object sender, PaintEventArgs e)
         {

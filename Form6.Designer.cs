@@ -65,7 +65,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button2.Location = new System.Drawing.Point(76, 565);
+            this.button2.Location = new System.Drawing.Point(87, 824);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(238, 42);
             this.button2.TabIndex = 41;
@@ -98,11 +98,11 @@
             this.Dirección,
             this.Descripción,
             this.Estado});
-            this.dataGridView1.Location = new System.Drawing.Point(76, 321);
+            this.dataGridView1.Location = new System.Drawing.Point(88, 323);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(838, 225);
+            this.dataGridView1.Size = new System.Drawing.Size(838, 470);
             this.dataGridView1.TabIndex = 39;
             // 
             // Id
@@ -328,7 +328,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button4.Location = new System.Drawing.Point(613, 565);
+            this.button4.Location = new System.Drawing.Point(624, 824);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(301, 42);
             this.button4.TabIndex = 50;
@@ -344,7 +344,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button5.Location = new System.Drawing.Point(339, 565);
+            this.button5.Location = new System.Drawing.Point(350, 824);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(255, 42);
             this.button5.TabIndex = 51;
@@ -356,7 +356,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(987, 631);
+            this.ClientSize = new System.Drawing.Size(1155, 910);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
