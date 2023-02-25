@@ -39,11 +39,17 @@ namespace Sistema_de_Cheques
             MessageBox.Show($"{dateTimePicker.Value.ToShortDateString()}");
         }
 
+        /**
+            Metodo que ejecuta la limpieza del formulario de registro de cheques
+        */
         private void btnDepositar_Click(object sender, EventArgs e)
         {
             CleanTextBoxes();
         }
 
+        /**
+            Metodo que ejecuta la creación de nuevo cheque en la base de datos
+        */
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (CheckValidations()) return;
@@ -58,6 +64,9 @@ namespace Sistema_de_Cheques
             UpdateChecksTable();
         }
 
+        /**
+            Metodo para limpiar los campos del formulario de registro
+        */
         private void CleanTextBoxes()
         {
             txtInvoice.Text = "";
@@ -66,6 +75,9 @@ namespace Sistema_de_Cheques
             cbConcepts.SelectedIndex = -1;
         }
 
+        /**
+            Metodo que realiza todas la validaciones necesarias para poder registrar un cheque
+        */
         private bool CheckValidations()
         {
             bool validMount = true;
@@ -133,6 +145,9 @@ namespace Sistema_de_Cheques
 
         }
 
+        /**
+            Metodo que despliega la ventana de busqueda de cheques mediante filtros
+        */
         private void button1_Click(object sender, EventArgs e)
         {
             Form6 frmDos = new Form6();
@@ -144,6 +159,9 @@ namespace Sistema_de_Cheques
 
         }
 
+        /**
+            Metodo que actualiza los datos la tabla que muestra los cheques registrados por el usuario
+        */
         private void UpdateChecksTable()
         {
             checksTable.Rows.Clear();
@@ -159,6 +177,9 @@ namespace Sistema_de_Cheques
             }
         }
 
+        /**
+            Metodo que carga los conceptos disponibles dentro del combo box
+        */
         private void InitCBConcepts()
         {
             cbConcepts.Items.Clear();
@@ -169,6 +190,10 @@ namespace Sistema_de_Cheques
             }
         }
 
+
+        /**
+            Metodo que carga los beneficiarios disponibles dentro del combo box
+        */
         private void InitCBBeneficiaries()
         {
             cbBeneficiaries.Items.Clear();

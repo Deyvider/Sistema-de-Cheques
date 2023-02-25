@@ -34,8 +34,9 @@ namespace Sistema_de_Cheques
             Description = description;
             Active = active;
         }
-
-        // Metodo para agregar un nuevo beneficiario a la base de datos
+        /**
+            Metodo para agregar un nuevo beneficiario a la base de datos
+        */
         public void CreateBeneficiarySQL(string name, string address, string phone, string description)
         {
             string query = "INSERT INTO [Beneficiaries] values (" +
@@ -71,7 +72,9 @@ namespace Sistema_de_Cheques
             }
         }
 
-        // Metodo que retorna una lista con todos los beneficiarios
+        /*
+            Metodo para obtener una lista con todos los beneficiarios registrados
+        */
         public List<Beneficiary> GetBeneficiariesSLQ()
         {
             string query = "SELECT *  FROM [Beneficiaries]";
@@ -113,6 +116,9 @@ namespace Sistema_de_Cheques
             return beneficiaries;
         }
 
+        /**
+            Metodo para obtener un beneficiario en base a su Id
+        */
         public Beneficiary GetBeneficiarySQL(int id)
         {
             string query = $"SELECT *  FROM [Beneficiaries] WHERE [Id]='{id}';";
@@ -153,14 +159,30 @@ namespace Sistema_de_Cheques
             return beneficiary;
         }
 
+        /**
+            Metodo para obtener una lista de beneficiarios en base a un filtro
+            Filtros disponibles:
+                'id': busca en base al id ingresado
+                'name': busca un nombre que coincida con la cadena ingresada
+                'phone': busca un numero de telefono que coincida con la cadena ingresada
+                'active': busca en base al estado ingresado
+        */
         public List<Beneficiary> GetBeneficiariesByValuesSQL(string searchValue, string filter)
         {
             //SELECT* FROM[Beneficiaries] WHERE[Id] = '6' OR[Name] LIKE '%DS%' OR[Phone] LIKE '%4%' OR[Active] = '0';
             string query = "";
 
             if (filter.Equals("id")) query = $"SELECT* FROM [Beneficiaries] WHERE [Id] = '{searchValue}'";
-            if (filter.Equals("name")) query = $"SELECT* FROM [Beneficiaries] WHERE [Name] LIKE '%{searchValue}%'";
-            if (filter.Equals("phone")) query = $"SELECT* FROM [Beneficiaries] WHERE [Phone] LIKE '%{searchValue}%'";
+            if (filter.Equals("name"))
+            {
+                query = $"SELECT* FROM [Beneficiaries] WHERE [Name] LIKE '%{searchValue}%'";
+                if (searchValue.Equals("")) query = $"SELECT* FROM [Beneficiaries] WHERE [Name] = '{searchValue}'";
+            }
+            if (filter.Equals("phone"))
+            {
+                query = $"SELECT* FROM [Beneficiaries] WHERE [Phone] LIKE '%{searchValue}%'";
+                if (searchValue.Equals("")) query = $"SELECT* FROM [Beneficiaries] WHERE [Phone] = '{searchValue}'";
+            }
             if (filter.Equals("active")) query = $"SELECT* FROM [Beneficiaries] WHERE [active] = '{searchValue}'";
 
             SqlCommand command = new SqlCommand(query, dataBase.Connection);
@@ -201,6 +223,9 @@ namespace Sistema_de_Cheques
             return beneficiaries;
         }
 
+        /**
+            Metodo usado para actualizar los datos de un beneficiario
+        */
         public void UpdateBeneficiary(Beneficiary beneficiaryUpdated)
         {
             string query = $"UPDATE[Beneficiaries] SET" +

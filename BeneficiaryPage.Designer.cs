@@ -80,9 +80,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(244, 20);
             this.txtName.TabIndex = 2;
-            this.txtName.Text = "Nombre";
-            this.txtName.Enter += new System.EventHandler(this.txtName_Enter);
-            this.txtName.Leave += new System.EventHandler(this.txtName_Leave);
             // 
             // txtPhone
             // 
@@ -96,9 +93,6 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(244, 20);
             this.txtPhone.TabIndex = 4;
-            this.txtPhone.Text = "Celular";
-            this.txtPhone.Enter += new System.EventHandler(this.txtPhone_Enter);
-            this.txtPhone.Leave += new System.EventHandler(this.txtPhone_Leave);
             // 
             // txtAddress
             // 
@@ -112,9 +106,6 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(297, 20);
             this.txtAddress.TabIndex = 3;
-            this.txtAddress.Text = "Dirección";
-            this.txtAddress.Enter += new System.EventHandler(this.txtAddress_Enter);
-            this.txtAddress.Leave += new System.EventHandler(this.txtAddress_Leave);
             // 
             // txtDescription
             // 
@@ -128,9 +119,6 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(297, 20);
             this.txtDescription.TabIndex = 5;
-            this.txtDescription.Text = "Descripción";
-            this.txtDescription.Enter += new System.EventHandler(this.txtDescription_Enter);
-            this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
             // 
             // btnDepositar
             // 

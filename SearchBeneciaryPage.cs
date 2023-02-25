@@ -25,18 +25,26 @@ namespace Sistema_de_Cheques
         string phId = "Id";
         string phPhone = "Celular";
 
+        /*
+            Metodo usado cerrar la ventana actual
+        */
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /*
+            Metodo usado para ejectar el filtro de busqueda basa en el "Id" de un beneficiario
+        */
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            SetEmptyData();
             UpdateBeneficiariesTable("id");
             CleanTextBoxes();
         }
 
+        /*
+            Metodo usado para actualizar la tabla de beneficiarios
+        */
         private void UpdateBeneficiariesTable(string filter)
         {
             // 1 = id, 2 = phone, 3 = name, 4 = active
@@ -60,68 +68,40 @@ namespace Sistema_de_Cheques
             }
         }
 
+        /*
+            Metodo usado limpiar el formulario de busqueda
+        */
         private void CleanTextBoxes()
         {
-            HelperMethods.placeholderDesign(txtName, phName);
-            HelperMethods.placeholderDesign(txtId, phId);
-            HelperMethods.placeholderDesign(txtPhone, phPhone);
+            txtName.Text = "";
+            txtId.Text = "";
+            txtPhone.Text = "";
             checkBox1.Checked = false;
         }
 
-        private void SetEmptyData()
-        {
-            if (txtId.Text.Equals(phId)) txtId.Text = "";
-            if (txtName.Text.Equals(phName)) txtName.Text = "";
-            if (txtPhone.Text.Equals(phPhone)) txtPhone.Text = "";
-        }
-
-        private void txtId_Enter(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtId, phId);
-        }
-
-        private void txtId_Leave(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtId, phId);
-        }
-
-        private void txtName_Enter(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtName, phName);
-        }
-
-        private void txtName_Leave(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtName, phName);
-        }
-
-        private void txtPhone_Enter(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtPhone, phPhone);
-        }
-
-        private void txtPhone_Leave(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtPhone, phPhone);
-        }
-
+        /*
+            Metodo usado para ejectar el filtro de busqueda basa en el "Nombre" de un beneficiario
+        */
         private void btnSearchName_Click(object sender, EventArgs e)
         {
-            SetEmptyData();
             UpdateBeneficiariesTable("name");
             CleanTextBoxes();
         }
 
+        /*
+            Metodo usado para ejectar el filtro de busqueda basa en el "Telefono" de un beneficiario
+        */
         private void btnSeachrPhone_Click(object sender, EventArgs e)
         {
-            SetEmptyData();
             UpdateBeneficiariesTable("phone");
             CleanTextBoxes();
         }
 
+        /*
+            Metodo usado para ejectar el filtro de busqueda basa en el "Estado" de un beneficiario
+        */
         private void btnSearchActive_Click(object sender, EventArgs e)
         {
-            SetEmptyData();
             UpdateBeneficiariesTable("active");
             CleanTextBoxes();
         }

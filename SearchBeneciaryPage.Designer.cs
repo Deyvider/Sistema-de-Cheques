@@ -124,9 +124,6 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(297, 20);
             this.txtPhone.TabIndex = 23;
-            this.txtPhone.Text = "Celular";
-            this.txtPhone.Enter += new System.EventHandler(this.txtPhone_Enter);
-            this.txtPhone.Leave += new System.EventHandler(this.txtPhone_Leave);
             // 
             // txtId
             // 
@@ -139,9 +136,6 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(297, 20);
             this.txtId.TabIndex = 22;
-            this.txtId.Text = "Id";
-            this.txtId.Enter += new System.EventHandler(this.txtId_Enter);
-            this.txtId.Leave += new System.EventHandler(this.txtId_Leave);
             // 
             // txtName
             // 
@@ -154,9 +148,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(297, 20);
             this.txtName.TabIndex = 21;
-            this.txtName.Text = "Nombre del beneficiario";
-            this.txtName.Enter += new System.EventHandler(this.txtName_Enter);
-            this.txtName.Leave += new System.EventHandler(this.txtName_Leave);
             // 
             // label1
             // 

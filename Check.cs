@@ -31,8 +31,9 @@ namespace Sistema_de_Cheques
             Beneficiary = beneficiary;
             Concept = concept;
         }
-
-        // Metodo para agregar un nuevo beneficiario a la base de datos
+        /*
+            Metodo para agregar un nuevo beneficiario a la base de datos
+        */
         public void CreateCheckSQL(string invoice, decimal mount, DateTime date, int beneficiary, int concept)
         {
             string query = "INSERT INTO [Checks] values (" +
@@ -70,7 +71,9 @@ namespace Sistema_de_Cheques
             }
         }
 
-        // Metodo que retorna una lista con todos los beneficiarios
+        /*
+            Metodo que retorna una lista con todos los cheques registrado
+         */
         public List<Check> GetChecksSLQ()
         {
             string query = "SELECT *  FROM [Checks]";
