@@ -60,10 +60,10 @@
 			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-			this.button1.Location = new System.Drawing.Point(511, 333);
+			this.button1.Location = new System.Drawing.Point(568, 333);
 			this.button1.Margin = new System.Windows.Forms.Padding(2);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(190, 37);
+			this.button1.Size = new System.Drawing.Size(133, 37);
 			this.button1.TabIndex = 17;
 			this.button1.Text = "Salir";
 			this.button1.UseVisualStyleBackColor = false;
@@ -125,11 +125,11 @@
 			// labelAccount
 			// 
 			this.labelAccount.AutoSize = true;
-			this.labelAccount.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.labelAccount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.labelAccount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.labelAccount.Location = new System.Drawing.Point(80, 344);
 			this.labelAccount.Name = "labelAccount";
-			this.labelAccount.Size = new System.Drawing.Size(163, 25);
+			this.labelAccount.Size = new System.Drawing.Size(123, 19);
 			this.labelAccount.TabIndex = 19;
 			this.labelAccount.Text = "Cuenta activa:";
 			// 

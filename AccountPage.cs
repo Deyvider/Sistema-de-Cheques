@@ -37,6 +37,7 @@ namespace Sistema_de_Cheques
             {
                 txtSaldo.Text = User.ActiveAccount.Balance.ToString();
                 txtName.Text = User.ActiveAccount.Name.ToString();
+                txtBankName.Text = User.ActiveAccount.BankName.ToString();
             }
             txtUsername.Text = User.Username.ToString();
         }
@@ -49,8 +50,24 @@ namespace Sistema_de_Cheques
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-            SelectAccount selectAccount = new SelectAccount();
+            SelectAccount selectAccount = new SelectAccount(this);
             selectAccount.Show();
+		}
+
+		private void btnActualizar_Click(object sender, EventArgs e)
+		{
+            if (User.ActiveAccount == null)
+            {
+				MessageBox.Show(
+					$"Necesitas seleccionar una cuenta para poder continuar",
+					"Sin cuenta seleccionada",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error
+				);
+                return;
+			}
+            UpdateAccount updateAccount = new UpdateAccount(this);
+            updateAccount.Show();
 		}
 	}
 }

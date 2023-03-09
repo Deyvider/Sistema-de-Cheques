@@ -41,7 +41,7 @@ namespace Sistema_de_Cheques
                     "Problema en el deposito",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                txtDeposit.Text = null; 
+                txtDeposit.Text = null;
                 return;
             }
             if (deposit <= 0) 

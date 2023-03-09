@@ -285,7 +285,6 @@
 			// name
 			// 
 			this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.name.FillWeight = 130F;
 			this.name.HeaderText = "Nombre";
 			this.name.MinimumWidth = 8;
 			this.name.Name = "name";

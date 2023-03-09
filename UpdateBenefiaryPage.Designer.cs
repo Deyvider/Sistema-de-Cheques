@@ -293,6 +293,7 @@
 			this.Controls.Add(this.label1);
 			this.Name = "UpdateBenefiaryPage";
 			this.Text = "UpdateBenefiaryPage";
+			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UpdateBenefiaryPage_FormClosed);
 			this.Load += new System.EventHandler(this.UpdateBenefiaryPage_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();

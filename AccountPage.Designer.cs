@@ -41,6 +41,8 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
+			this.txtBankName = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// txtSaldo
@@ -49,21 +51,21 @@
 			this.txtSaldo.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtSaldo.Font = new System.Drawing.Font("Segoe UI Semibold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.txtSaldo.ForeColor = System.Drawing.SystemColors.MenuBar;
-			this.txtSaldo.Location = new System.Drawing.Point(195, 114);
+			this.txtSaldo.Location = new System.Drawing.Point(208, 82);
 			this.txtSaldo.Margin = new System.Windows.Forms.Padding(2);
 			this.txtSaldo.Multiline = true;
 			this.txtSaldo.Name = "txtSaldo";
 			this.txtSaldo.ReadOnly = true;
 			this.txtSaldo.Size = new System.Drawing.Size(314, 77);
 			this.txtSaldo.TabIndex = 3;
-			this.txtSaldo.Text = "1500";
+			this.txtSaldo.Text = "0000";
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label1.Location = new System.Drawing.Point(170, 72);
+			this.label1.Location = new System.Drawing.Point(177, 40);
 			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(244, 40);
@@ -75,7 +77,7 @@
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label2.Location = new System.Drawing.Point(164, 217);
+			this.label2.Location = new System.Drawing.Point(177, 234);
 			this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(89, 30);
@@ -87,7 +89,7 @@
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label3.Location = new System.Drawing.Point(164, 261);
+			this.label3.Location = new System.Drawing.Point(183, 184);
 			this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(83, 30);
@@ -97,7 +99,7 @@
 			// txtName
 			// 
 			this.txtName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.txtName.Location = new System.Drawing.Point(257, 214);
+			this.txtName.Location = new System.Drawing.Point(270, 231);
 			this.txtName.Margin = new System.Windows.Forms.Padding(2);
 			this.txtName.Name = "txtName";
 			this.txtName.ReadOnly = true;
@@ -108,7 +110,7 @@
 			// 
 			this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.txtUsername.HideSelection = false;
-			this.txtUsername.Location = new System.Drawing.Point(257, 261);
+			this.txtUsername.Location = new System.Drawing.Point(270, 184);
 			this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
 			this.txtUsername.Name = "txtUsername";
 			this.txtUsername.ReadOnly = true;
@@ -131,6 +133,7 @@
 			this.btnActualizar.TabIndex = 12;
 			this.btnActualizar.Text = "Actualizar mis datos";
 			this.btnActualizar.UseVisualStyleBackColor = false;
+			this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
 			// 
 			// btnDepositar
 			// 
@@ -172,7 +175,7 @@
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label4.Location = new System.Drawing.Point(144, 112);
+			this.label4.Location = new System.Drawing.Point(151, 80);
 			this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(74, 86);
@@ -182,7 +185,7 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.panel1.Location = new System.Drawing.Point(170, 196);
+			this.panel1.Location = new System.Drawing.Point(177, 164);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(500, 4);
 			this.panel1.TabIndex = 17;
@@ -223,12 +226,36 @@
 			this.button2.UseVisualStyleBackColor = false;
 			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
+			// txtBankName
+			// 
+			this.txtBankName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.txtBankName.Location = new System.Drawing.Point(270, 276);
+			this.txtBankName.Margin = new System.Windows.Forms.Padding(2);
+			this.txtBankName.Name = "txtBankName";
+			this.txtBankName.ReadOnly = true;
+			this.txtBankName.Size = new System.Drawing.Size(355, 33);
+			this.txtBankName.TabIndex = 21;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.label5.Location = new System.Drawing.Point(190, 279);
+			this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(70, 30);
+			this.label5.TabIndex = 20;
+			this.label5.Text = "Banco";
+			// 
 			// AccountPage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.ClientSize = new System.Drawing.Size(808, 546);
+			this.Controls.Add(this.txtBankName);
+			this.Controls.Add(this.label5);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.panel1);
@@ -265,5 +292,7 @@
 		private Panel panel1;
 		private Button button1;
 		private Button button2;
+		private TextBox txtBankName;
+		private Label label5;
 	}
 }

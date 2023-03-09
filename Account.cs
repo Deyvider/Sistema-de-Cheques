@@ -137,5 +137,44 @@ namespace Sistema_de_Cheques
 			}
 			return accounts;
 		}
+
+		public bool UpdateAccount(Account accountUpdated)
+		{
+			string query = $"UPDATE[Accounts] SET" +
+						   $"[name] = '{accountUpdated.Name}', " +
+						   $"[bankName] = '{accountUpdated.BankName}',  " +
+						   $"[bankNumber] = '{accountUpdated.AccountNumber}' " +
+						   $"WHERE [id] = {accountUpdated.Id}; ;";
+			SqlCommand command = new SqlCommand(query, dataBase.Connection);
+			try
+			{
+				dataBase.Connection.Open();
+				command.CommandText = query;
+				command.ExecuteNonQuery();
+				MessageBox.Show(
+					$"Cuenta de '{accountUpdated.Name}' actualizada exitosamente",
+					"Registro de beneficiarios",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Information
+				);
+				User.ActiveAccount.Name = accountUpdated.Name;
+				User.ActiveAccount.BankName = accountUpdated.BankName;
+				User.ActiveAccount.AccountNumber = accountUpdated.AccountNumber;
+				return true;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(
+					$"Error, {ex}",
+					"",
+					MessageBoxButtons.OK
+				);
+			}
+			finally
+			{
+				dataBase.Connection.Close();
+			}
+			return false;
+		}
 	}
 }

@@ -13,9 +13,11 @@ namespace Sistema_de_Cheques
 	public partial class SelectAccount : Form
 	{
 		Account account = new Account();
-		public SelectAccount()
+		AccountPage accountPage;
+		public SelectAccount(AccountPage accountPage)
 		{
 			InitializeComponent();
+			this.accountPage = accountPage;
 		}
 		public void UpdateBeneficiariesTable()
 		{
@@ -46,11 +48,11 @@ namespace Sistema_de_Cheques
 			decimal balance = decimal.Parse(row.Cells[1].Value.ToString());
 			string bankName = row.Cells[2].Value.ToString();
 			string accountNumber = row.Cells[3].Value.ToString();
-			int id = int.Parse(row.Cells[3].Value.ToString());
+			int id = int.Parse(row.Cells[4].Value.ToString());
 
 			DialogResult result = MessageBox.Show(
 				$"¿Quieres usar esta cuenta bancaria?\n" +
-				$"Nombre: {name}" +
+				$"Nombre: {name}\n" +
 				$"Banco: {bankName}",
 				"Datos registrados",
 				MessageBoxButtons.YesNo,
@@ -61,6 +63,8 @@ namespace Sistema_de_Cheques
 			{
 				User.ActiveAccount = new Account(id, name, balance, bankName, accountNumber);
 				labelAccount.Text = $"Cuenta activa: {User.ActiveAccount.Name}";
+				accountPage.InitTextBoxes();
+				this.Close();
 			}
 		}
 

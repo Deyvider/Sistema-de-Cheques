@@ -73,7 +73,7 @@ namespace Sistema_de_Cheques
                 int fila = beneficiariesTable.Rows.Add();
                 beneficiariesTable.Rows[fila].Cells[0].Value = beneficiarySQL.Id;
                 beneficiariesTable.Rows[fila].Cells[1].Value = beneficiarySQL.Name;
-                beneficiariesTable.Rows[fila].Cells[2].Value = beneficiarySQL.Phone;
+                beneficiariesTable.Rows[fila].Cells[2].Value = beneficiarySQL.Address;
                 beneficiariesTable.Rows[fila].Cells[3].Value = beneficiarySQL.Active ? "Activo" : "Inactivo";
             }
         }
