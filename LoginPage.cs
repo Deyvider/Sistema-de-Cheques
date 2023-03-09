@@ -16,7 +16,9 @@ namespace Sistema_de_Cheques
         private string phUsername = "Usuario";
         private string phPassword = "Contraseña";
 
-        DataBaseConnection dataBase = new DataBaseConnection();
+
+		private User user = new User();
+		DataBaseConnection dataBase = new DataBaseConnection();
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void RealeseCapture();
@@ -115,60 +117,17 @@ namespace Sistema_de_Cheques
             string username = txtUser.Text;
             string password = txtPassword.Text;
 
-            string query = $"SELECT [id], [name], [username], [balance] FROM [Accounts] where username = '{username}' AND password = '{password}'";
-            SqlCommand command = new SqlCommand(query, dataBase.Connection);
-            try
+            if (!user.LogUser(username, password))
             {
-                dataBase.Connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader != null)
-                {
-                    if (reader.Read())
-                    {
-                        HomePage homePage = new HomePage();
-                        //MessageBox.Show($"Bienvenido {reader.GetString(0)}");
-                        Account.Id = reader.GetInt32(0);
-                        Account.Name = reader.GetString(1);
-                        Account.Username = reader.GetString(2);
-                        Account.Balance = reader.GetDecimal(3);
-                        CleanTextBoxes();
-                        this.Visible = false;
-                        homePage.Show();
-                    } else
-                    {
-                        MessageBox.Show(
-                            "Usuario o contraseña erroneos",
-                            "Error",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error
-                            );
-                        CleanTextBoxes();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show(
-                        "Sin información",
-                        "",
-                        MessageBoxButtons.OK
-                    );
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Ocurrio un error",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-            }
-            finally
-            {
-                dataBase.Connection.Close();
-            }
+				MessageBox.Show("Usuario o contraseña incorrecto",
+								"Problema en el inicio de sesión",
+								MessageBoxButtons.OK,
+								MessageBoxIcon.Error);
+                return;
+			}
+            HomePage homePage= new HomePage();
+            this.Visible = false;
+            homePage.Show();
         }
 
 

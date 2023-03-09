@@ -109,7 +109,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DepostiPage";
             this.Text = "Realiza tu deposito";
-            this.Load += new System.EventHandler(this.Form7_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

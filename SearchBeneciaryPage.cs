@@ -45,7 +45,7 @@ namespace Sistema_de_Cheques
         /*
             Metodo usado para actualizar la tabla de beneficiarios
         */
-        private void UpdateBeneficiariesTable(string filter)
+        public void UpdateBeneficiariesTable(string filter)
         {
             // 1 = id, 2 = phone, 3 = name, 4 = active
             beneficiariesTable.Rows.Clear();
@@ -61,10 +61,8 @@ namespace Sistema_de_Cheques
                 int fila = beneficiariesTable.Rows.Add();
                 beneficiariesTable.Rows[fila].Cells[0].Value = beneficiarySQL.Id;
                 beneficiariesTable.Rows[fila].Cells[1].Value = beneficiarySQL.Name;
-                beneficiariesTable.Rows[fila].Cells[2].Value = beneficiarySQL.Phone;
-                beneficiariesTable.Rows[fila].Cells[3].Value = beneficiarySQL.Address;
-                beneficiariesTable.Rows[fila].Cells[4].Value = beneficiarySQL.Description;
-                beneficiariesTable.Rows[fila].Cells[5].Value = beneficiarySQL.Active ? "Activo" : "Inactivo";
+                beneficiariesTable.Rows[fila].Cells[2].Value = beneficiarySQL.Address;
+                beneficiariesTable.Rows[fila].Cells[3].Value = beneficiarySQL.Active ? "Activo" : "Inactivo";
             }
         }
 
@@ -105,5 +103,33 @@ namespace Sistema_de_Cheques
             UpdateBeneficiariesTable("active");
             CleanTextBoxes();
         }
-    }
+
+		private void beneficiariesTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0) return;
+			DataGridViewRow row = beneficiariesTable.Rows[e.RowIndex];
+			int id = int.Parse(row.Cells[0].Value.ToString());
+			string name = row.Cells[1].Value.ToString();
+
+			DialogResult result = MessageBox.Show(
+				$"¿Quieres ver los datos del beneficiario?\n" +
+				$"Nombre: {name}",
+				"Datos registrados",
+				MessageBoxButtons.YesNo,
+				MessageBoxIcon.Information
+			);
+
+			if (result.ToString().Equals("Yes"))
+			{
+				UpdateBenefiaryPage updateBenefiary = new UpdateBenefiaryPage(id, this);
+                this.Visible = false;
+				updateBenefiary.Show();
+			}
+		}
+
+        public void SetIdTextBox(string value)
+        {
+            txtId.Text = value;
+        }
+	}
 }

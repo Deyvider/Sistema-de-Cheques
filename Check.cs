@@ -40,7 +40,7 @@ namespace Sistema_de_Cheques
                         $"'{invoice}'," +
                         $"{mount}," +
                         $"'{date.Month}/{date.Day}/{date.Year}'," +
-                        $"{Account.Id}," +
+                        $"{User.ActiveAccount.Id}," +
                         $"{beneficiary}," +
                         $"{concept});";
             SqlCommand command = new SqlCommand(query, dataBase.Connection);

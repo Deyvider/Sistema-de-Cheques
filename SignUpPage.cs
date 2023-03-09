@@ -16,24 +16,16 @@ namespace Sistema_de_Cheques
         public SignUpPage()
         {
             InitializeComponent();
+
         }
 
         // Placeholders para los TextBoxes
-        string phName = "Nombre";
         string phUsername = "Usuario";
         string phPassword = "Contraseña";
         string phConfirmPassword = "Confirmar contraseña";
-        string phInitialState = "Saldo inicial";
 
         DataBaseConnection dataBase = new DataBaseConnection();
-
-        private void txtUser_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-        }
+        private User user = new User();
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -46,17 +38,6 @@ namespace Sistema_de_Cheques
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void txtUser_Enter(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtName, phName);
-
-        }
-
-        private void txtUser_Leave(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtName, phName);
         }
 
         private void textBox3_Enter(object sender, EventArgs e)
@@ -90,16 +71,6 @@ namespace Sistema_de_Cheques
             HelperMethods.placeholderController(txtConfirmPassword, phConfirmPassword);
         }
 
-        private void textBox2_Enter(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtInitialState, phInitialState);
-        }
-
-        private void textBox2_Leave(object sender, EventArgs e)
-        {
-            HelperMethods.placeholderController(txtInitialState, phInitialState);
-        }
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -115,11 +86,9 @@ namespace Sistema_de_Cheques
         */
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text;
             string username = txtUsename.Text;
             string password = txtPassword.Text;
             string confirmPassword = txtConfirmPassword.Text;
-            string initialState = txtInitialState.Text;
 
             // Verificación de que todos los TextBoxes tiene contenido
             if (!IsDataValid())
@@ -130,6 +99,16 @@ namespace Sistema_de_Cheques
                                 MessageBoxIcon.Error);
                 return;
             }
+
+            if (user.IsUsernameAvailable(username))
+            {
+				MessageBox.Show("El nombre de usuario ya existe",
+				                "Problema en el registro",
+				                MessageBoxButtons.OK,
+				                MessageBoxIcon.Error);
+				CleanTextBoxes();
+				return;
+			}
 
             // Verifación de igualdad entre contraseñas
             if (!password.Equals(confirmPassword))
@@ -142,52 +121,20 @@ namespace Sistema_de_Cheques
                 return;
             }
 
-            // Verificación de saldo inicial valido
-            
-            if (!HelperMethods.IsNumeric(initialState))
-            {
-                MessageBox.Show("El saldo inicial debe ser numerico",
-                                "Problema en el registro",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                HelperMethods.placeholderDesign(txtInitialState, phInitialState);
-                txtInitialState.Focus();
-                return;
-            }
+            // Verificación de saldo inicial valido        
+            //if (!HelperMethods.IsNumeric(initialState))
+            //{
+            //    MessageBox.Show("El saldo inicial debe ser numerico",
+            //                    "Problema en el registro",
+            //                    MessageBoxButtons.OK,
+            //                    MessageBoxIcon.Error);
+            //    HelperMethods.placeholderDesign(txtInitialState, phInitialState);
+            //    txtInitialState.Focus();
+            //    return;
+            //}
+            if (!user.CreateUser(username, password)) return;
 
-            string query = "INSERT INTO [Accounts] values (" +
-                        $"{initialState}," +
-                        $"{initialState}," +
-                        $"'{username}'," +
-                        $"'{name}'," +
-                        $"'{password}');";
-            SqlCommand command = new SqlCommand(query, dataBase.Connection);
-            try
-            {
-                dataBase.Connection.Open();
-                command.CommandText = query;
-                command.ExecuteNonQuery();
-                MessageBox.Show(
-                    $"Usuario '{username}' creado exitosamente",
-                    "Registro de usuario",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
-
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    "Sin información",
-                    "",
-                    MessageBoxButtons.OK
-                );
-            }
-            finally
-            {
-                dataBase.Connection.Close();
-            }
+            this.Close();
         }
 
         /*
@@ -195,7 +142,8 @@ namespace Sistema_de_Cheques
         */
         private void CleanTextBoxes()
         {
-            HelperMethods.placeholderDesign(txtPassword, phPassword);
+			HelperMethods.placeholderDesign(txtUsename, phUsername);
+			HelperMethods.placeholderDesign(txtPassword, phPassword);
             txtPassword.UseSystemPasswordChar = false;
             HelperMethods.placeholderDesign(txtConfirmPassword, phConfirmPassword);
             txtConfirmPassword.UseSystemPasswordChar = false;
@@ -206,9 +154,7 @@ namespace Sistema_de_Cheques
         */
         private bool IsDataValid()
         {
-            bool verification = txtName.Text.Contains(phName)
-                                || txtPassword.Text.Contains(phPassword)
-                                || txtInitialState.Text.Contains(phInitialState)
+            bool verification = txtPassword.Text.Contains(phPassword)
                                 || txtConfirmPassword.Text.Contains(phConfirmPassword)
                                 || txtUsename.Text.Contains(phUsername);
             return !verification;
