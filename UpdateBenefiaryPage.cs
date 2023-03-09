@@ -67,5 +67,25 @@ namespace Sistema_de_Cheques
         {
             this.Close();
         }
-    }
+
+		private void btnName_Click(object sender, EventArgs e)
+		{
+            txtName.Enabled = !txtName.Enabled;
+		}
+
+		private void btnAddress_Click(object sender, EventArgs e)
+		{
+			txtAddress.Enabled = !txtAddress.Enabled;
+		}
+
+		private void btnPhone_Click(object sender, EventArgs e)
+		{
+            txtPhone.Enabled = !txtPhone.Enabled;
+		}
+
+		private void btnDescription_Click(object sender, EventArgs e)
+		{
+			txtDescription.Enabled = !txtDescription.Enabled;
+		}
+	}
 }

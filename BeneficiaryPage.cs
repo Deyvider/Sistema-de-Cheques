@@ -13,10 +13,6 @@ namespace Sistema_de_Cheques
     public partial class BeneficiaryPage : Form
     {
         Beneficiary beneficiary = new Beneficiary();
-        string phName = "Nombre";
-        string phAddress = "Dirección";
-        string phDescription = "Descripción";
-        string phPhone = "Celular";
 
         public BeneficiaryPage()
         {
@@ -78,9 +74,7 @@ namespace Sistema_de_Cheques
                 beneficiariesTable.Rows[fila].Cells[0].Value = beneficiarySQL.Id;
                 beneficiariesTable.Rows[fila].Cells[1].Value = beneficiarySQL.Name;
                 beneficiariesTable.Rows[fila].Cells[2].Value = beneficiarySQL.Phone;
-                beneficiariesTable.Rows[fila].Cells[3].Value = beneficiarySQL.Address;
-                beneficiariesTable.Rows[fila].Cells[4].Value = beneficiarySQL.Description;
-                beneficiariesTable.Rows[fila].Cells[5].Value = beneficiarySQL.Active ? "Activo" : "Inactivo";
+                beneficiariesTable.Rows[fila].Cells[3].Value = beneficiarySQL.Active ? "Activo" : "Inactivo";
             }
         }
 
@@ -89,10 +83,10 @@ namespace Sistema_de_Cheques
         */
         private void CleanTextBoxes()
         {
-            HelperMethods.placeholderDesign(txtName, phName);
-            HelperMethods.placeholderDesign(txtAddress, phAddress);
-            HelperMethods.placeholderDesign(txtDescription, phDescription);
-            HelperMethods.placeholderDesign(txtPhone, phPhone);
+            txtName.Text = "";
+            txtAddress.Text = "";
+            txtDescription.Text = "";
+            txtPhone.Text = "";
         }
 
         /**
@@ -107,16 +101,6 @@ namespace Sistema_de_Cheques
             return !verification;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         /**
             Metodo usado para validar si el usuario desea modificar al usuario seleccionada,
             de ser así deplega el formulario de actualización
@@ -129,7 +113,7 @@ namespace Sistema_de_Cheques
             string name = row.Cells[1].Value.ToString();
 
             DialogResult result = MessageBox.Show(
-                $"¿Quieres actualizar los datos del beneficiario?\n" +
+                $"¿Quieres ver los datos del beneficiario?\n" +
                 $"Nombre: {name}",
                 "Datos registrados",
                 MessageBoxButtons.YesNo,

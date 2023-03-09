@@ -87,7 +87,6 @@
             this.checksTable.RowTemplate.Height = 33;
             this.checksTable.Size = new System.Drawing.Size(1021, 573);
             this.checksTable.TabIndex = 28;
-            this.checksTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Id
             // 
@@ -199,7 +198,6 @@
             this.txtMount.Name = "txtMount";
             this.txtMount.Size = new System.Drawing.Size(424, 43);
             this.txtMount.TabIndex = 23;
-            this.txtMount.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtInvoice
             // 
@@ -212,7 +210,6 @@
             this.txtInvoice.Name = "txtInvoice";
             this.txtInvoice.Size = new System.Drawing.Size(374, 45);
             this.txtInvoice.TabIndex = 21;
-            this.txtInvoice.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // label1
             // 
@@ -224,7 +221,6 @@
             this.label1.Size = new System.Drawing.Size(185, 30);
             this.label1.TabIndex = 20;
             this.label1.Text = "Datos del Cheque";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cbBeneficiaries
             // 
@@ -333,7 +329,6 @@
             this.Controls.Add(this.label1);
             this.Name = "CheckPage";
             this.Text = "Form3";
-            this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.checksTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -24,16 +24,6 @@ namespace Sistema_de_Cheques
         Beneficiary beneficiarySQL = new Beneficiary();
         Check checkSQL = new Check();
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnReporte_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"{dateTimePicker.Value.ToShortDateString()}");
@@ -108,7 +98,7 @@ namespace Sistema_de_Cheques
                 txtMount.Focus();
             } else
             {
-                if (Decimal.Parse(txtMount.Text) > Account.Balance)
+                if (Decimal.Parse(txtMount.Text) > User.ActiveAccount.Balance)
                 {
                     MessageBox.Show(
                         "No hay fondos suficientes para el deposito",
@@ -135,16 +125,6 @@ namespace Sistema_de_Cheques
             return (checkInvalid || !validMount);
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUser_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         /**
             Metodo que despliega la ventana de busqueda de cheques mediante filtros
         */
@@ -152,11 +132,6 @@ namespace Sistema_de_Cheques
         {
             Form6 frmDos = new Form6();
             frmDos.ShowDialog();
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
         }
 
         /**

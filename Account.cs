@@ -4,15 +4,29 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Sistema_de_Cheques
 {
     internal class Account
     {
-        public static int Id { get; set; }
-        public static decimal Balance { get; set; }
-        public static string Name { get; set; }
-        public static string Username { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public decimal Balance { get; set; }
+        public string BankName { get; set; }
+        public string AccountNumber { get; set; }
+
+		public Account() { }
+
+        public Account(int id, string name, decimal balance, string bankName, string accountNumber)
+        {
+            this.Id = id;
+			this.Name = name;
+            this.Balance = balance;
+            this.Name = name;
+			this.BankName = bankName;
+			this.AccountNumber = accountNumber;
+        }
 
         private DataBaseConnection dataBase = new DataBaseConnection();
 
@@ -22,7 +36,7 @@ namespace Sistema_de_Cheques
         public void MakeDeposit(decimal total)
         {
             Balance += total;
-            string query = $"UPDATE [Accounts] SET [balance] = {Balance} WHERE [username]='{Username}';";
+            string query = $"UPDATE [Accounts] SET [balance] = {Balance} WHERE [id]='{Id}';";
             SqlCommand command = new SqlCommand(query, dataBase.Connection);
             try
             {
@@ -44,5 +58,84 @@ namespace Sistema_de_Cheques
             }
 
         }
-    }
+
+        public bool CreateAccount(decimal balance, string name, string bankName, string bankNumber)
+        {
+			//INSERT INTO[Accounts] values('nombre', 999999, 999999, 'bankname', 'banknumber', 2);
+			string query = "INSERT INTO [Accounts] values (" +
+						$"'{name}'," +
+						$"{balance}," +
+                        $"{balance}," +
+                        $"'{bankName}'," +
+                        $"'{bankNumber}'," +
+                        $"{User.Id});";
+			SqlCommand command = new SqlCommand(query, dataBase.Connection);
+			try
+			{
+				dataBase.Connection.Open();
+				command.CommandText = query;
+				command.ExecuteNonQuery();
+				MessageBox.Show(
+					$"Nueva cuenta registrada exitosamente",
+					"Registro de usuario",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Information
+				);
+				return true;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(
+					$"Sin información {ex}",
+					"",
+					MessageBoxButtons.OK
+				);
+			}
+			finally
+			{
+				dataBase.Connection.Close();
+			}
+			return false;
+		}
+
+		public List<Account> GetAccountsSLQ()
+		{
+			string query = $"SELECT [id], [name], [balance], [bankName], [bankNumber] FROM [Accounts] where [Owner] = {User.Id}";
+			SqlCommand command = new SqlCommand(query, dataBase.Connection);
+			List<Account> accounts = new List<Account>();
+			try
+			{
+				dataBase.Connection.Open();
+				command.CommandText = query;
+				SqlDataReader accountsSQL = command.ExecuteReader();
+				if (accountsSQL != null)
+				{
+					while (accountsSQL.Read())
+					{
+						// id, nombre, dirección, telefono, descripcion, estado
+						int id = accountsSQL.GetInt32(0);
+						string name = accountsSQL.GetString(1);
+						decimal balance = accountsSQL.GetDecimal(2);
+						string bankName = accountsSQL.GetString(3);
+						string accountNumber = accountsSQL.GetString(4);
+						accounts.Add(new Account(id, name, balance, bankName, accountNumber));
+					}
+				}
+				return accounts;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(
+					$"Error, {ex}",
+					"",
+					MessageBoxButtons.OK
+				);
+			}
+			finally
+			{
+				dataBase.Connection.Close();
+			}
+			return accounts;
+		}
+	}
 }
