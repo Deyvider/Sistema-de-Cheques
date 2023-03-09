@@ -95,5 +95,20 @@ namespace Sistema_de_Cheques
 			}
 			return true;
 		}
+
+		private void txtName_Leave(object sender, EventArgs e)
+		{
+			txtName.Enabled = false;
+		}
+
+		private void txtBankName_Leave(object sender, EventArgs e)
+		{
+			txtBankName.Enabled = false;
+		}
+
+		private void txtAccountNumber_Leave(object sender, EventArgs e)
+		{
+			txtAccountNumber.Enabled = false;
+		}
 	}
 }

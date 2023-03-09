@@ -107,5 +107,25 @@ namespace Sistema_de_Cheques
 		{
             if (searchBeneciaryPage != null) searchBeneciaryPage.Visible = true;
 		}
+
+		private void txtName_Leave(object sender, EventArgs e)
+		{
+            txtName.Enabled = false;
+		}
+
+		private void txtAddress_Leave(object sender, EventArgs e)
+		{
+			txtAddress.Enabled = false;
+		}
+
+		private void txtPhone_Leave(object sender, EventArgs e)
+		{
+			txtPhone.Enabled = false;
+		}
+
+		private void txtDescription_Leave(object sender, EventArgs e)
+		{
+			txtDescription.Enabled = false;
+		}
 	}
 }

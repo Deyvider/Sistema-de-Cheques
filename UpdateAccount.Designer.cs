@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateAccount));
 			this.label5 = new System.Windows.Forms.Label();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.btnUpdate = new System.Windows.Forms.Button();
@@ -118,6 +119,7 @@
 			this.txtAccountNumber.Name = "txtAccountNumber";
 			this.txtAccountNumber.Size = new System.Drawing.Size(305, 31);
 			this.txtAccountNumber.TabIndex = 22;
+			this.txtAccountNumber.Leave += new System.EventHandler(this.txtAccountNumber_Leave);
 			// 
 			// label4
 			// 
@@ -138,6 +140,7 @@
 			this.txtBankName.Name = "txtBankName";
 			this.txtBankName.Size = new System.Drawing.Size(306, 31);
 			this.txtBankName.TabIndex = 20;
+			this.txtBankName.Leave += new System.EventHandler(this.txtBankName_Leave);
 			// 
 			// label1
 			// 
@@ -158,58 +161,59 @@
 			this.txtName.Name = "txtName";
 			this.txtName.Size = new System.Drawing.Size(306, 31);
 			this.txtName.TabIndex = 16;
+			this.txtName.Leave += new System.EventHandler(this.txtName_Leave);
 			// 
 			// btnEditName
 			// 
-			this.btnEditName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+			this.btnEditName.BackColor = System.Drawing.Color.Silver;
 			this.btnEditName.FlatAppearance.BorderSize = 0;
 			this.btnEditName.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
 			this.btnEditName.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.btnEditName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnEditName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.btnEditName.ForeColor = System.Drawing.Color.Gainsboro;
-			this.btnEditName.Location = new System.Drawing.Point(521, 134);
+			this.btnEditName.Image = ((System.Drawing.Image)(resources.GetObject("btnEditName.Image")));
+			this.btnEditName.Location = new System.Drawing.Point(521, 135);
 			this.btnEditName.Margin = new System.Windows.Forms.Padding(2);
 			this.btnEditName.Name = "btnEditName";
-			this.btnEditName.Size = new System.Drawing.Size(92, 31);
+			this.btnEditName.Size = new System.Drawing.Size(32, 31);
 			this.btnEditName.TabIndex = 29;
-			this.btnEditName.Text = "Editar";
 			this.btnEditName.UseVisualStyleBackColor = false;
 			this.btnEditName.Click += new System.EventHandler(this.btnEditName_Click);
 			// 
 			// btnEditBankName
 			// 
-			this.btnEditBankName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+			this.btnEditBankName.BackColor = System.Drawing.Color.Silver;
 			this.btnEditBankName.FlatAppearance.BorderSize = 0;
 			this.btnEditBankName.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
 			this.btnEditBankName.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.btnEditBankName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnEditBankName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.btnEditBankName.ForeColor = System.Drawing.Color.Gainsboro;
-			this.btnEditBankName.Location = new System.Drawing.Point(521, 209);
+			this.btnEditBankName.Image = ((System.Drawing.Image)(resources.GetObject("btnEditBankName.Image")));
+			this.btnEditBankName.Location = new System.Drawing.Point(522, 211);
 			this.btnEditBankName.Margin = new System.Windows.Forms.Padding(2);
 			this.btnEditBankName.Name = "btnEditBankName";
-			this.btnEditBankName.Size = new System.Drawing.Size(92, 31);
+			this.btnEditBankName.Size = new System.Drawing.Size(31, 31);
 			this.btnEditBankName.TabIndex = 30;
-			this.btnEditBankName.Text = "Editar";
 			this.btnEditBankName.UseVisualStyleBackColor = false;
 			this.btnEditBankName.Click += new System.EventHandler(this.btnEditBankName_Click);
 			// 
 			// btnEditAccountNumber
 			// 
-			this.btnEditAccountNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+			this.btnEditAccountNumber.BackColor = System.Drawing.Color.Silver;
 			this.btnEditAccountNumber.FlatAppearance.BorderSize = 0;
 			this.btnEditAccountNumber.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
 			this.btnEditAccountNumber.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.btnEditAccountNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnEditAccountNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.btnEditAccountNumber.ForeColor = System.Drawing.Color.Gainsboro;
-			this.btnEditAccountNumber.Location = new System.Drawing.Point(521, 278);
+			this.btnEditAccountNumber.Image = ((System.Drawing.Image)(resources.GetObject("btnEditAccountNumber.Image")));
+			this.btnEditAccountNumber.Location = new System.Drawing.Point(521, 279);
 			this.btnEditAccountNumber.Margin = new System.Windows.Forms.Padding(2);
 			this.btnEditAccountNumber.Name = "btnEditAccountNumber";
-			this.btnEditAccountNumber.Size = new System.Drawing.Size(92, 31);
+			this.btnEditAccountNumber.Size = new System.Drawing.Size(32, 31);
 			this.btnEditAccountNumber.TabIndex = 31;
-			this.btnEditAccountNumber.Text = "Editar";
 			this.btnEditAccountNumber.UseVisualStyleBackColor = false;
 			this.btnEditAccountNumber.Click += new System.EventHandler(this.btnEditAccountNumber_Click);
 			// 

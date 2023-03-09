@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateBenefiaryPage));
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -150,6 +151,7 @@
 			this.txtName.Name = "txtName";
 			this.txtName.Size = new System.Drawing.Size(295, 27);
 			this.txtName.TabIndex = 8;
+			this.txtName.Leave += new System.EventHandler(this.txtName_Leave);
 			// 
 			// txtAddress
 			// 
@@ -159,6 +161,7 @@
 			this.txtAddress.Name = "txtAddress";
 			this.txtAddress.Size = new System.Drawing.Size(295, 27);
 			this.txtAddress.TabIndex = 9;
+			this.txtAddress.Leave += new System.EventHandler(this.txtAddress_Leave);
 			// 
 			// txtPhone
 			// 
@@ -168,6 +171,7 @@
 			this.txtPhone.Name = "txtPhone";
 			this.txtPhone.Size = new System.Drawing.Size(295, 27);
 			this.txtPhone.TabIndex = 10;
+			this.txtPhone.Leave += new System.EventHandler(this.txtPhone_Leave);
 			// 
 			// txtDescription
 			// 
@@ -177,6 +181,7 @@
 			this.txtDescription.Name = "txtDescription";
 			this.txtDescription.Size = new System.Drawing.Size(295, 27);
 			this.txtDescription.TabIndex = 11;
+			this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
 			// 
 			// btnUpdate
 			// 
@@ -228,41 +233,41 @@
 			// 
 			// btnName
 			// 
+			this.btnName.Image = ((System.Drawing.Image)(resources.GetObject("btnName.Image")));
 			this.btnName.Location = new System.Drawing.Point(443, 107);
 			this.btnName.Name = "btnName";
-			this.btnName.Size = new System.Drawing.Size(56, 27);
+			this.btnName.Size = new System.Drawing.Size(31, 27);
 			this.btnName.TabIndex = 17;
-			this.btnName.Text = "Editar";
 			this.btnName.UseVisualStyleBackColor = true;
 			this.btnName.Click += new System.EventHandler(this.btnName_Click);
 			// 
 			// btnAddress
 			// 
+			this.btnAddress.Image = ((System.Drawing.Image)(resources.GetObject("btnAddress.Image")));
 			this.btnAddress.Location = new System.Drawing.Point(443, 140);
 			this.btnAddress.Name = "btnAddress";
-			this.btnAddress.Size = new System.Drawing.Size(56, 27);
+			this.btnAddress.Size = new System.Drawing.Size(31, 27);
 			this.btnAddress.TabIndex = 18;
-			this.btnAddress.Text = "Editar";
 			this.btnAddress.UseVisualStyleBackColor = true;
 			this.btnAddress.Click += new System.EventHandler(this.btnAddress_Click);
 			// 
 			// btnPhone
 			// 
+			this.btnPhone.Image = ((System.Drawing.Image)(resources.GetObject("btnPhone.Image")));
 			this.btnPhone.Location = new System.Drawing.Point(443, 173);
 			this.btnPhone.Name = "btnPhone";
-			this.btnPhone.Size = new System.Drawing.Size(56, 27);
+			this.btnPhone.Size = new System.Drawing.Size(31, 27);
 			this.btnPhone.TabIndex = 19;
-			this.btnPhone.Text = "Editar";
 			this.btnPhone.UseVisualStyleBackColor = true;
 			this.btnPhone.Click += new System.EventHandler(this.btnPhone_Click);
 			// 
 			// btnDescription
 			// 
+			this.btnDescription.Image = ((System.Drawing.Image)(resources.GetObject("btnDescription.Image")));
 			this.btnDescription.Location = new System.Drawing.Point(443, 206);
 			this.btnDescription.Name = "btnDescription";
-			this.btnDescription.Size = new System.Drawing.Size(56, 27);
+			this.btnDescription.Size = new System.Drawing.Size(31, 27);
 			this.btnDescription.TabIndex = 20;
-			this.btnDescription.Text = "Editar";
 			this.btnDescription.UseVisualStyleBackColor = true;
 			this.btnDescription.Click += new System.EventHandler(this.btnDescription_Click);
 			// 
