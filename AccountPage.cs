@@ -18,21 +18,6 @@ namespace Sistema_de_Cheques
             InitTextBoxes();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         /**
             Metodo para abrir la ventana que realiza los depositos
         */
@@ -48,9 +33,41 @@ namespace Sistema_de_Cheques
         */
         public void InitTextBoxes()
         {
-            txtSaldo.Text = Account.Balance.ToString();
-            txtName.Text = Account.Name.ToString();
-            txtUsername.Text = Account.Username.ToString();
+            if (User.ActiveAccount != null)
+            {
+                txtSaldo.Text = User.ActiveAccount.Balance.ToString();
+                txtName.Text = User.ActiveAccount.Name.ToString();
+                txtBankName.Text = User.ActiveAccount.BankName.ToString();
+            }
+            txtUsername.Text = User.Username.ToString();
         }
-    }
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+            CreateAccount createAccount = new CreateAccount();
+            createAccount.Show();
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+            SelectAccount selectAccount = new SelectAccount(this);
+            selectAccount.Show();
+		}
+
+		private void btnActualizar_Click(object sender, EventArgs e)
+		{
+            if (User.ActiveAccount == null)
+            {
+				MessageBox.Show(
+					$"Necesitas seleccionar una cuenta para poder continuar",
+					"Sin cuenta seleccionada",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error
+				);
+                return;
+			}
+            UpdateAccount updateAccount = new UpdateAccount(this);
+            updateAccount.Show();
+		}
+	}
 }

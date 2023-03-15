@@ -20,11 +20,6 @@ namespace Sistema_de_Cheques
             this.accountPageReference = accountPage;
         }
 
-        private void Form7_Load(object sender, EventArgs e)
-        {
-
-        }
-
         /**
             Metodo que ejecuta el cierre de la ventana actual
         */
@@ -46,7 +41,7 @@ namespace Sistema_de_Cheques
                     "Problema en el deposito",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                txtDeposit.Text = null; 
+                txtDeposit.Text = null;
                 return;
             }
             if (deposit <= 0) 
