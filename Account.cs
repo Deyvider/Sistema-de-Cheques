@@ -59,7 +59,7 @@ namespace Sistema_de_Cheques
 
         }
 
-        public bool CreateAccount(decimal balance, string name, string bankName, string bankNumber)
+        public bool CreateAccount(decimal balance, string name, string bankName, string bankNumber, int firstInvoice, int lastInvoice)
         {
 			//INSERT INTO[Accounts] values('nombre', 999999, 999999, 'bankname', 'banknumber', 2);
 			string query = "INSERT INTO [Accounts] values (" +
@@ -68,19 +68,21 @@ namespace Sistema_de_Cheques
                         $"{balance}," +
                         $"'{bankName}'," +
                         $"'{bankNumber}'," +
-                        $"{User.Id});";
+                        $"{User.Id}," +
+						$"{firstInvoice}," +
+						$"{lastInvoice});";
 			SqlCommand command = new SqlCommand(query, dataBase.Connection);
 			try
 			{
 				dataBase.Connection.Open();
 				command.CommandText = query;
 				command.ExecuteNonQuery();
-				MessageBox.Show(
-					$"Nueva cuenta registrada exitosamente",
-					"Registro de usuario",
-					MessageBoxButtons.OK,
-					MessageBoxIcon.Information
-				);
+				//MessageBox.Show(
+				//	$"Nueva cuenta registrada exitosamente",
+				//	"Registro de usuario",
+				//	MessageBoxButtons.OK,
+				//	MessageBoxIcon.Information
+				//);
 				return true;
 			}
 			catch (Exception ex)

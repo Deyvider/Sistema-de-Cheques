@@ -43,13 +43,11 @@ namespace Sistema_de_Cheques
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (CheckValidations()) return;
-
-            string invoice = txtInvoice.Text;
             decimal mount = Decimal.Parse(txtMount.Text);
             int beneficiary = (cbBeneficiaries.SelectedIndex + 1);
             int concept = (cbConcepts.SelectedIndex + 1);
             DateTime date = dateTimePicker.Value;
-            checkSQL.CreateCheckSQL(invoice, mount, date, beneficiary, concept);
+            checkSQL.CreateCheckSQL(mount, date, beneficiary, concept);
             CleanTextBoxes();
             UpdateChecksTable();
         }
@@ -59,7 +57,6 @@ namespace Sistema_de_Cheques
         */
         private void CleanTextBoxes()
         {
-            txtInvoice.Text = "";
             txtMount.Text = "";
             cbBeneficiaries.SelectedIndex = -1;
             cbConcepts.SelectedIndex = -1;
@@ -72,18 +69,16 @@ namespace Sistema_de_Cheques
         {
             bool validMount = true;
             bool checkInvalid = !HelperMethods.IsNumeric(txtMount.Text) 
-                || !HelperMethods.IsNumeric(txtInvoice.Text)
                 || cbBeneficiaries.SelectedIndex == -1 
                 || cbConcepts.SelectedIndex == -1;
 
-            if (txtMount.Text.Equals("") || txtInvoice.Text.Equals("") || cbBeneficiaries.SelectedIndex == -1 || cbConcepts.SelectedIndex == -1)
+            if (txtMount.Text.Equals("") || cbBeneficiaries.SelectedIndex == -1 || cbConcepts.SelectedIndex == -1)
             {
                 MessageBox.Show(
                     "Debes llenar todos los campos",
                     "Problema con el deposito",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                txtInvoice.Text = null;
                 return true;
             }
 
@@ -110,17 +105,6 @@ namespace Sistema_de_Cheques
                     validMount = false;
                 }
             }
-            
-            if (!HelperMethods.IsNumeric(txtInvoice.Text))
-            {
-                MessageBox.Show(
-                    "El folio debe tener formato numerico",
-                    "Problema con el deposito",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                txtInvoice.Text = null;
-                txtInvoice.Focus();
-            }
 
             return (checkInvalid || !validMount);
         }
@@ -143,12 +127,10 @@ namespace Sistema_de_Cheques
             foreach (Check check in checkSQL.GetChecksSLQ())
             {
                 int fila = checksTable.Rows.Add();
-                checksTable.Rows[fila].Cells[0].Value = check.Id;
-                checksTable.Rows[fila].Cells[1].Value = check.Invoice;
-                checksTable.Rows[fila].Cells[2].Value = beneficiarySQL.GetBeneficiarySQL(check.Beneficiary).Name;
-                checksTable.Rows[fila].Cells[3].Value = check.Mount;
-                checksTable.Rows[fila].Cells[4].Value = check.Date.ToShortDateString();
-                checksTable.Rows[fila].Cells[5].Value = conceptSQL.GetConceptSQL(check.Concept).Name;
+                checksTable.Rows[fila].Cells[0].Value = check.Invoice;
+                checksTable.Rows[fila].Cells[1].Value = beneficiarySQL.GetBeneficiarySQL(check.Beneficiary).Name;
+                checksTable.Rows[fila].Cells[2].Value = check.Mount;
+                checksTable.Rows[fila].Cells[3].Value = check.Date.ToShortDateString();
             }
         }
 

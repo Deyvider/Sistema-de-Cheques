@@ -19,6 +19,7 @@ namespace Sistema_de_Cheques
             //Estas lineas eliminan los parpadeos del formulario o controles en la interfaz grafica (Pero no en un 100%)
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.DoubleBuffered = true;
+            IniLabel();
         }
 
         private void HomePage_Load(object sender, EventArgs e)
@@ -104,6 +105,14 @@ namespace Sistema_de_Cheques
 
         private void button2_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(
+                $"Debes seleccionar una cuenta para poder continuar",
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+            );
+            AbrirForm(new SelectAccount(this));
+            return;
             AbrirForm(new BeneficiaryPage());
            // AbrirFormulario<BeneficiaryPage>();
             //CerrarTodosLosFormulariosAbiertos();
@@ -112,6 +121,17 @@ namespace Sistema_de_Cheques
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (User.ActiveAccount == null)
+            {
+                MessageBox.Show(
+                    $"Debes seleccionar una cuenta para poder continuar",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                AbrirForm(new SelectAccount(this));
+                return;
+            }
             AbrirForm(new CheckPage());
             // AbrirFormulario<CheckPage>();
             // CerrarTodosLosFormulariosAbiertos();
@@ -221,6 +241,19 @@ namespace Sistema_de_Cheques
             }
         }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new SelectAccount(this));
+        }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new CreateAccount());
+        }
+
+        public void IniLabel()
+        {
+            lbActualUser.Text = User.ActiveAccount != null ? $"Cuenta activa: {User.ActiveAccount.Name}" : $"Selecciona una cuenta";
+        }
     }
 }
