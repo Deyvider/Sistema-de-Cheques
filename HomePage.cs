@@ -151,33 +151,33 @@ namespace Sistema_de_Cheques
         #endregion 
 
         //Metodo para abrir Formularios dentro del panel
-        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
-        {
-            if (panelFormularios.Controls.Count > 0)
-                panelFormularios.Controls.RemoveAt(0);
+        //private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        //{
+        //    if (panelFormularios.Controls.Count > 0)
+        //        panelFormularios.Controls.RemoveAt(0);
 
-            Form formulario;
-            formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();//busca en la colección el formulario
-            //si el formulario no existe
+        //    Form formulario;
+        //    formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();//busca en la colección el formulario
+        //    //si el formulario no existe
 
-            if (formulario == null)
-            {
-                formulario= new MiForm();
-                formulario.TopLevel = false;
-                formulario.FormBorderStyle = FormBorderStyle.None;
-                formulario.Dock = DockStyle.Fill;
-                panelFormularios.Controls.Add(formulario);
-                panelFormularios.Tag = formulario;
-                formulario.Show();
-                formulario.BringToFront();
-                formulario.FormClosed += new FormClosedEventHandler(closedForm);
-            }
-            else
-            {
-                formulario.BringToFront();
-            }
+        //    if (formulario == null)
+        //    {
+        //        formulario= new MiForm();
+        //        formulario.TopLevel = false;
+        //        formulario.FormBorderStyle = FormBorderStyle.None;
+        //        formulario.Dock = DockStyle.Fill;
+        //        panelFormularios.Controls.Add(formulario);
+        //        panelFormularios.Tag = formulario;
+        //        formulario.Show();
+        //        formulario.BringToFront();
+        //        formulario.FormClosed += new FormClosedEventHandler(closedForm);
+        //    }
+        //    else
+        //    {
+        //        formulario.BringToFront();
+        //    }
 
-        }
+        //}
         //Abrir Formularios y cerrar los que estén abiertos
         private Form activeForm;
         private void AbrirForm(Form childForm)
