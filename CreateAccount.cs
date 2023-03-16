@@ -32,8 +32,11 @@ namespace Sistema_de_Cheques
 			decimal mount = decimal.Parse(txtMount.Text);
 			string bankName = txtBankName.Text;
 			string accountNumber = txtAccountNumber.Text;
+			int firstInvoice = int.Parse(txtFirstInvoice.Text);
+			int lastInvoice = int.Parse(txtLastInvoice.Text);
 
-			if (!account.CreateAccount(mount, name, bankName, accountNumber))
+
+            if (!account.CreateAccount(mount, name, bankName, accountNumber, firstInvoice, lastInvoice))
 			{
 				MessageBox.Show(
 					"La cuenta no pudo ser creada",
@@ -76,7 +79,29 @@ namespace Sistema_de_Cheques
 				return false;
 			}
 
-			return true;
+            if (!HelperMethods.IsNumeric(txtFirstInvoice.Text) || !HelperMethods.IsNumeric(txtLastInvoice.Text))
+            {
+                MessageBox.Show(
+                    "Los folios deben ser númericos",
+                    "Problema en el registro",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                CleanTextBoxes();
+                return false;
+            }
+
+			if(int.Parse(txtFirstInvoice.Text) >= int.Parse(txtLastInvoice.Text))
+			{
+                MessageBox.Show(
+					"El folio inicial debe ser menor al folio final",
+					"Problema en el registro",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error);
+                CleanTextBoxes();
+                return false;
+            }
+
+            return true;
 		}
 
 		private void CleanTextBoxes()
@@ -85,6 +110,8 @@ namespace Sistema_de_Cheques
 			txtMount.Text = "";
 			txtBankName.Text = "";
 			txtName.Text = "";
+			txtFirstInvoice.Text = "";
+			txtLastInvoice.Text = "";
 		}
-	}
+    }
 }
