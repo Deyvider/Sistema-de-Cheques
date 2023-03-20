@@ -14,20 +14,25 @@ namespace Sistema_de_Cheques
 	{
 		Account account = new Account();
 		AccountPage accountPage;
-		HomePage homePage;
-
-		public SelectAccount(HomePage home) 
-		{
-            InitializeComponent();
-			this.homePage = home;
-        }
+		//Dashboard homePage;
+		
+		//public SelectAccount(Dashboard home) 
+		//{
+  //          InitializeComponent();
+		//	//this.homePage = home;
+  //      }
         public SelectAccount(AccountPage accountPage)
 		{
 			InitializeComponent();
 			this.accountPage = accountPage;
 		}
 
-		public void UpdateBeneficiariesTable()
+        public SelectAccount()
+        {
+            InitializeComponent();
+        }
+
+        public void UpdateBeneficiariesTable()
 		{
 			accountsTable.Rows.Clear();
 			foreach (Account accountSQL in account.GetAccountsSLQ())
@@ -72,8 +77,8 @@ namespace Sistema_de_Cheques
 				User.ActiveAccount = new Account(id, name, balance, bankName, accountNumber);
 				labelAccount.Text = $"Cuenta activa: {User.ActiveAccount.Name}";
 				if (accountPage != null) accountPage.InitTextBoxes();
-				if (homePage != null) homePage.IniLabel();
-				this.Close();
+				//if (homePage != null) homePage.IniLabel();
+				//this.Close();
 			}
 		}
 
@@ -86,6 +91,11 @@ namespace Sistema_de_Cheques
         {
 			CreateAccount createAccount = new CreateAccount();
 			createAccount.Show();
+        }
+
+        private void labelAccount_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

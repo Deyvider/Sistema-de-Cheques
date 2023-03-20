@@ -126,6 +126,11 @@ namespace Sistema_de_Cheques
                 updateBenefiary.Show();
             }
         }
+
+        private void btnActualizar_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

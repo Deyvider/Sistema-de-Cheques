@@ -113,5 +113,30 @@ namespace Sistema_de_Cheques
 			txtFirstInvoice.Text = "";
 			txtLastInvoice.Text = "";
 		}
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBankName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFirstInvoice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateAccount_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

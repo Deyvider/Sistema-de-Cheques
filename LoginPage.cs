@@ -125,9 +125,12 @@ namespace Sistema_de_Cheques
 								MessageBoxIcon.Error);
                 return;
 			}
-            HomePage homePage= new HomePage();
-            this.Visible = false;
-            homePage.Show();
+            //HomePage homePage= new HomePage();
+            //this.Visible = false;
+            //homePage.Show();
+            Dashboard dash = new Dashboard();
+            this.Visible= false;
+            dash.Show();
         }
 
 

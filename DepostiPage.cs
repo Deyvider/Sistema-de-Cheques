@@ -14,6 +14,11 @@ namespace Sistema_de_Cheques
     {
         AccountPage accountPageReference;
 
+        public DepostiPage()
+        {
+            InitializeComponent();
+        }
+
         public DepostiPage(AccountPage accountPage)
         {
             InitializeComponent();
@@ -58,6 +63,11 @@ namespace Sistema_de_Cheques
             account.MakeDeposit(deposit);
             this.accountPageReference.InitTextBoxes();
             this.Close();
+        }
+
+        private void DepostiPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

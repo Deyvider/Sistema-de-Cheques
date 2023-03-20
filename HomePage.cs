@@ -13,6 +13,7 @@ namespace Sistema_de_Cheques
 {
     public partial class HomePage : Form
     {
+       
         public HomePage()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace Sistema_de_Cheques
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-
+            button6_Click(null, e);
         }
 
         #region Funcionalidades del formulario
@@ -100,23 +101,26 @@ namespace Sistema_de_Cheques
             AbrirForm(new AccountPage());
            // AbrirFormulario<AccountPage>();
            // CerrarTodosLosFormulariosAbiertos();
-            button1.BackColor = Color.FromArgb(82, 97, 48);
+            btnCuenta.BackColor = Color.FromArgb(82, 97, 48);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                $"Debes seleccionar una cuenta para poder continuar",
-                "Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-            );
-            AbrirForm(new SelectAccount(this));
-            return;
+            if (User.ActiveAccount == null)
+            {
+                MessageBox.Show(
+                    $"Debes seleccionar una cuenta para poder continuar",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+               // AbrirForm(new SelectAccount(this));
+                return;
+            }
             AbrirForm(new BeneficiaryPage());
            // AbrirFormulario<BeneficiaryPage>();
             //CerrarTodosLosFormulariosAbiertos();
-            button2.BackColor = Color.FromArgb(82, 97, 48);
+            btnBene.BackColor = Color.FromArgb(82, 97, 48);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -129,13 +133,13 @@ namespace Sistema_de_Cheques
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
-                AbrirForm(new SelectAccount(this));
+               // AbrirForm(new SelectAccount(this));
                 return;
             }
             AbrirForm(new CheckPage());
             // AbrirFormulario<CheckPage>();
             // CerrarTodosLosFormulariosAbiertos();
-            button3.BackColor = Color.FromArgb(82, 97, 48);
+            btnCheques.BackColor = Color.FromArgb(82, 97, 48);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -150,34 +154,7 @@ namespace Sistema_de_Cheques
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         #endregion 
 
-        //Metodo para abrir Formularios dentro del panel
-        //private void AbrirFormulario<MiForm>() where MiForm : Form, new()
-        //{
-        //    if (panelFormularios.Controls.Count > 0)
-        //        panelFormularios.Controls.RemoveAt(0);
-
-        //    Form formulario;
-        //    formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();//busca en la colección el formulario
-        //    //si el formulario no existe
-
-        //    if (formulario == null)
-        //    {
-        //        formulario= new MiForm();
-        //        formulario.TopLevel = false;
-        //        formulario.FormBorderStyle = FormBorderStyle.None;
-        //        formulario.Dock = DockStyle.Fill;
-        //        panelFormularios.Controls.Add(formulario);
-        //        panelFormularios.Tag = formulario;
-        //        formulario.Show();
-        //        formulario.BringToFront();
-        //        formulario.FormClosed += new FormClosedEventHandler(closedForm);
-        //    }
-        //    else
-        //    {
-        //        formulario.BringToFront();
-        //    }
-
-        //}
+        
         //Abrir Formularios y cerrar los que estén abiertos
         private Form activeForm;
         private void AbrirForm(Form childForm)
@@ -209,20 +186,25 @@ namespace Sistema_de_Cheques
         private void closedForm(object sender, FormClosedEventArgs e) {
             if (Application.OpenForms["AccountPage"] == null)
             {
-                button1.BackColor = Color.FromArgb(128, 151, 75);
+                btnCuenta.BackColor = Color.FromArgb(128, 151, 75);
             }
             if (Application.OpenForms["BeneficiaryPages"] == null)
             {
-                button2.BackColor = Color.FromArgb(128, 151, 75);
+                btnBene.BackColor = Color.FromArgb(128, 151, 75);
             }
             if (Application.OpenForms["CheckPage"] == null)
             {
-                button3.BackColor = Color.FromArgb(128, 151, 75);
+                btnCheques.BackColor = Color.FromArgb(128, 151, 75);
             }
             if (Application.OpenForms["Form4"] == null)
             {
                 button4.BackColor = Color.FromArgb(128, 151, 75);
             }
+            if (Application.OpenForms["Inicio"] == null)
+            {
+                button6.BackColor= Color.FromArgb(128, 151, 75);
+            }
+
         }
         private void CerrarTodosLosFormulariosAbiertos()
         {
@@ -243,7 +225,7 @@ namespace Sistema_de_Cheques
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            AbrirForm(new SelectAccount(this));
+           // AbrirForm(new SelectAccount(this));
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -254,6 +236,37 @@ namespace Sistema_de_Cheques
         public void IniLabel()
         {
             lbActualUser.Text = User.ActiveAccount != null ? $"Cuenta activa: {User.ActiveAccount.Name}" : $"Selecciona una cuenta";
+        }
+
+        private void lbActualUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new Inicio(this));
+            btnCuenta.BackColor = Color.FromArgb(82, 97, 48);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
