@@ -27,23 +27,7 @@ namespace Sistema_de_Cheques
         /**
             Metodo usado para realizar el registro de un beneficiario 
         */
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            if (!IsDataValid())
-            {
-                MessageBox.Show("Debes llenar todos los campos para poder registrar un beneficiario",
-                                "Problema en el registro",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                return;
-            }
-            beneficiary.CreateBeneficiarySQL(txtName.Text, txtAddress.Text, txtPhone.Text, txtDescription.Text);
-            CleanTextBoxes();
-
-            //Actualizar tabla de beneficiarios
-            UpdateBeneficiariesTable();
-
-        }
+        
 
         /**
             Metodo ejecutar la limpieza del formulario de beneficiario
@@ -129,7 +113,19 @@ namespace Sistema_de_Cheques
 
         private void btnActualizar_Click_1(object sender, EventArgs e)
         {
+            if (!IsDataValid())
+            {
+                MessageBox.Show("Debes llenar todos los campos para poder registrar un beneficiario",
+                                "Problema en el registro",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return;
+            }
+            beneficiary.CreateBeneficiarySQL(txtName.Text, txtAddress.Text, txtPhone.Text, txtDescription.Text);
+            CleanTextBoxes();
 
+            //Actualizar tabla de beneficiarios
+            UpdateBeneficiariesTable();
         }
     }
 

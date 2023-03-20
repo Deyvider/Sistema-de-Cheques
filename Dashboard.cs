@@ -87,8 +87,9 @@ namespace Sistema_de_Cheques
                 );
                 return;
             }
-            openChildForm(new AccountPage());
+            openChildForm(new UpdateAccount());
             hideSubMenu();
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -118,6 +119,7 @@ namespace Sistema_de_Cheques
 
         private void button10_Click(object sender, EventArgs e)
         {
+            openChildForm(new SearchBeneciaryPage());
             //codigo
             hideSubMenu();
         }
@@ -130,6 +132,7 @@ namespace Sistema_de_Cheques
 
         private void button14_Click(object sender, EventArgs e)
         {
+            openChildForm(new Form6());
             //codigo
             hideSubMenu();
         }
@@ -142,17 +145,16 @@ namespace Sistema_de_Cheques
 
         private void button8_Click(object sender, EventArgs e)
         {
-            //if (User.ActiveAccount == null)
-            //{
-            //    MessageBox.Show(
-            //        $"Debes seleccionar una cuenta para poder continuar",
-            //        "Error",
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Error
-            //    );
-            //    // AbrirForm(new SelectAccount(this));
-            //    return;
-            //}
+            if (User.ActiveAccount == null)
+            {
+                MessageBox.Show(
+                    $"Debes seleccionar una cuenta para poder continuar",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                return;
+            }
             openChildForm(new BeneficiaryPage());
             showShubMenu(panelBeneSubmenu);
         }

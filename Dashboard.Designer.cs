@@ -43,7 +43,6 @@
             this.button12 = new System.Windows.Forms.Button();
             this.panelBeneSubmenu = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panelCuentaSubmenu = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
@@ -65,7 +64,7 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(224, 118);
+            this.panelLogo.Size = new System.Drawing.Size(250, 118);
             this.panelLogo.TabIndex = 0;
             // 
             // btnInicio
@@ -77,7 +76,7 @@
             this.btnInicio.Location = new System.Drawing.Point(0, 118);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnInicio.Size = new System.Drawing.Size(224, 45);
+            this.btnInicio.Size = new System.Drawing.Size(250, 45);
             this.btnInicio.TabIndex = 1;
             this.btnInicio.Text = "Inicio";
             this.btnInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -92,7 +91,7 @@
             this.panelInicioSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInicioSubmenu.Location = new System.Drawing.Point(0, 163);
             this.panelInicioSubmenu.Name = "panelInicioSubmenu";
-            this.panelInicioSubmenu.Size = new System.Drawing.Size(224, 80);
+            this.panelInicioSubmenu.Size = new System.Drawing.Size(250, 80);
             this.panelInicioSubmenu.TabIndex = 2;
             // 
             // button3
@@ -104,7 +103,7 @@
             this.button3.Location = new System.Drawing.Point(0, 40);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(224, 40);
+            this.button3.Size = new System.Drawing.Size(250, 40);
             this.button3.TabIndex = 1;
             this.button3.Text = "Seleccionar Cuenta";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -121,7 +120,7 @@
             this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(224, 40);
+            this.button2.Size = new System.Drawing.Size(250, 40);
             this.button2.TabIndex = 0;
             this.button2.Text = "Crear Cuenta";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -137,7 +136,7 @@
             this.button4.Location = new System.Drawing.Point(0, 243);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(224, 45);
+            this.button4.Size = new System.Drawing.Size(250, 45);
             this.button4.TabIndex = 3;
             this.button4.Text = "Cuenta";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -162,7 +161,7 @@
             this.panelSideMenu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 692);
+            this.panelSideMenu.Size = new System.Drawing.Size(250, 744);
             this.panelSideMenu.TabIndex = 0;
             // 
             // btnAyuda
@@ -171,10 +170,10 @@
             this.btnAyuda.FlatAppearance.BorderSize = 0;
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyuda.ForeColor = System.Drawing.Color.Silver;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 664);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 624);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAyuda.Size = new System.Drawing.Size(224, 45);
+            this.btnAyuda.Size = new System.Drawing.Size(250, 45);
             this.btnAyuda.TabIndex = 9;
             this.btnAyuda.Text = "Ayuda e Información";
             this.btnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -186,9 +185,9 @@
             this.panelChequesSubmenu.Controls.Add(this.button14);
             this.panelChequesSubmenu.Controls.Add(this.button15);
             this.panelChequesSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelChequesSubmenu.Location = new System.Drawing.Point(0, 584);
+            this.panelChequesSubmenu.Location = new System.Drawing.Point(0, 544);
             this.panelChequesSubmenu.Name = "panelChequesSubmenu";
-            this.panelChequesSubmenu.Size = new System.Drawing.Size(224, 80);
+            this.panelChequesSubmenu.Size = new System.Drawing.Size(250, 80);
             this.panelChequesSubmenu.TabIndex = 8;
             // 
             // button14
@@ -200,7 +199,7 @@
             this.button14.Location = new System.Drawing.Point(0, 40);
             this.button14.Name = "button14";
             this.button14.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button14.Size = new System.Drawing.Size(224, 40);
+            this.button14.Size = new System.Drawing.Size(250, 40);
             this.button14.TabIndex = 1;
             this.button14.Text = "Buscar";
             this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -216,9 +215,9 @@
             this.button15.Location = new System.Drawing.Point(0, 0);
             this.button15.Name = "button15";
             this.button15.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button15.Size = new System.Drawing.Size(224, 40);
+            this.button15.Size = new System.Drawing.Size(250, 40);
             this.button15.TabIndex = 0;
-            this.button15.Text = "Agregar";
+            this.button15.Text = "Agregar Concepto";
             this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
@@ -229,10 +228,10 @@
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.ForeColor = System.Drawing.Color.Silver;
-            this.button12.Location = new System.Drawing.Point(0, 539);
+            this.button12.Location = new System.Drawing.Point(0, 499);
             this.button12.Name = "button12";
             this.button12.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button12.Size = new System.Drawing.Size(224, 45);
+            this.button12.Size = new System.Drawing.Size(250, 45);
             this.button12.TabIndex = 7;
             this.button12.Text = "Cheques";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,11 +242,10 @@
             // 
             this.panelBeneSubmenu.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panelBeneSubmenu.Controls.Add(this.button10);
-            this.panelBeneSubmenu.Controls.Add(this.btnAgregar);
             this.panelBeneSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBeneSubmenu.Location = new System.Drawing.Point(0, 459);
             this.panelBeneSubmenu.Name = "panelBeneSubmenu";
-            this.panelBeneSubmenu.Size = new System.Drawing.Size(224, 80);
+            this.panelBeneSubmenu.Size = new System.Drawing.Size(250, 40);
             this.panelBeneSubmenu.TabIndex = 6;
             // 
             // button10
@@ -256,31 +254,15 @@
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.ForeColor = System.Drawing.Color.LightGray;
-            this.button10.Location = new System.Drawing.Point(0, 40);
+            this.button10.Location = new System.Drawing.Point(0, 0);
             this.button10.Name = "button10";
             this.button10.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(224, 40);
+            this.button10.Size = new System.Drawing.Size(250, 40);
             this.button10.TabIndex = 1;
             this.button10.Text = "Buscar";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnAgregar.Location = new System.Drawing.Point(0, 0);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAgregar.Size = new System.Drawing.Size(224, 40);
-            this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // button8
             // 
@@ -291,7 +273,7 @@
             this.button8.Location = new System.Drawing.Point(0, 414);
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(224, 45);
+            this.button8.Size = new System.Drawing.Size(250, 45);
             this.button8.TabIndex = 5;
             this.button8.Text = "Beneficiarios";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -307,7 +289,7 @@
             this.panelCuentaSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCuentaSubmenu.Location = new System.Drawing.Point(0, 288);
             this.panelCuentaSubmenu.Name = "panelCuentaSubmenu";
-            this.panelCuentaSubmenu.Size = new System.Drawing.Size(224, 126);
+            this.panelCuentaSubmenu.Size = new System.Drawing.Size(250, 126);
             this.panelCuentaSubmenu.TabIndex = 4;
             this.panelCuentaSubmenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCuentaSubmenu_Paint);
             // 
@@ -320,7 +302,7 @@
             this.button5.Location = new System.Drawing.Point(0, 80);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(224, 40);
+            this.button5.Size = new System.Drawing.Size(250, 40);
             this.button5.TabIndex = 2;
             this.button5.Text = "Generar Reporte";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -336,7 +318,7 @@
             this.button6.Location = new System.Drawing.Point(0, 40);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(224, 40);
+            this.button6.Size = new System.Drawing.Size(250, 40);
             this.button6.TabIndex = 1;
             this.button6.Text = "Hacer Depositos";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -352,7 +334,7 @@
             this.button7.Location = new System.Drawing.Point(0, 0);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(224, 40);
+            this.button7.Size = new System.Drawing.Size(250, 40);
             this.button7.TabIndex = 0;
             this.button7.Text = "Actualizar Datos\r\n";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -366,14 +348,14 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(250, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(824, 692);
+            this.panelContenedor.Size = new System.Drawing.Size(978, 744);
             this.panelContenedor.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(238, 202);
+            this.pictureBox1.Location = new System.Drawing.Point(333, 243);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(349, 313);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -384,11 +366,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1074, 692);
+            this.ClientSize = new System.Drawing.Size(1228, 744);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelSideMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MinimumSize = new System.Drawing.Size(1096, 748);
+            this.MinimumSize = new System.Drawing.Size(1200, 800);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.panelInicioSubmenu.ResumeLayout(false);
@@ -418,7 +400,6 @@
         private Button button12;
         private Panel panelBeneSubmenu;
         private Button button10;
-        private Button btnAgregar;
         private Button button8;
         private Panel panelCuentaSubmenu;
         private Button button5;

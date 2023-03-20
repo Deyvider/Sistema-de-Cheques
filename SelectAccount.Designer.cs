@@ -43,10 +43,11 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(237, 54);
+            this.label5.Location = new System.Drawing.Point(237, 51);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(343, 28);
@@ -55,6 +56,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -62,7 +64,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(439, 580);
+            this.button1.Location = new System.Drawing.Point(439, 559);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(280, 38);
             this.button1.TabIndex = 17;
@@ -72,6 +74,7 @@
             // 
             // accountsTable
             // 
+            this.accountsTable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.accountsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.accountsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UserName,
@@ -79,7 +82,7 @@
             this.BankName,
             this.AccountNumber,
             this.id});
-            this.accountsTable.Location = new System.Drawing.Point(108, 111);
+            this.accountsTable.Location = new System.Drawing.Point(108, 108);
             this.accountsTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.accountsTable.Name = "accountsTable";
             this.accountsTable.RowHeadersWidth = 62;
@@ -133,10 +136,11 @@
             // 
             // labelAccount
             // 
+            this.labelAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelAccount.AutoSize = true;
             this.labelAccount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelAccount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelAccount.Location = new System.Drawing.Point(108, 510);
+            this.labelAccount.Location = new System.Drawing.Point(108, 489);
             this.labelAccount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAccount.Name = "labelAccount";
             this.labelAccount.Size = new System.Drawing.Size(184, 28);
@@ -146,6 +150,7 @@
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -153,7 +158,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button2.Location = new System.Drawing.Point(108, 580);
+            this.button2.Location = new System.Drawing.Point(108, 559);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(280, 38);
             this.button2.TabIndex = 20;

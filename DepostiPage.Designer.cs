@@ -39,6 +39,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -50,6 +51,7 @@
             // 
             // txtDeposit
             // 
+            this.txtDeposit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDeposit.BackColor = System.Drawing.Color.White;
             this.txtDeposit.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDeposit.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -63,6 +65,7 @@
             // 
             // button4
             // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -80,6 +83,7 @@
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -97,6 +101,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(297, 58);
             this.pictureBox1.Name = "pictureBox1";

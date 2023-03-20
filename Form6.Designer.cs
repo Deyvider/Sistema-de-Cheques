@@ -65,7 +65,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button2.Location = new System.Drawing.Point(87, 824);
+            this.button2.Location = new System.Drawing.Point(41, 605);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(238, 42);
             this.button2.TabIndex = 41;
@@ -81,7 +81,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(104, 186);
+            this.button1.Location = new System.Drawing.Point(41, 197);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(210, 42);
             this.button1.TabIndex = 40;
@@ -98,11 +98,11 @@
             this.Dirección,
             this.Descripción,
             this.Estado});
-            this.dataGridView1.Location = new System.Drawing.Point(88, 323);
+            this.dataGridView1.Location = new System.Drawing.Point(41, 322);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(838, 470);
+            this.dataGridView1.Size = new System.Drawing.Size(810, 277);
             this.dataGridView1.TabIndex = 39;
             // 
             // Id
@@ -157,7 +157,7 @@
             this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporte.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnReporte.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReporte.Location = new System.Drawing.Point(104, 239);
+            this.btnReporte.Location = new System.Drawing.Point(41, 250);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(210, 42);
             this.btnReporte.TabIndex = 38;
@@ -173,7 +173,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnActualizar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnActualizar.Location = new System.Drawing.Point(104, 75);
+            this.btnActualizar.Location = new System.Drawing.Point(41, 86);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(210, 42);
             this.btnActualizar.TabIndex = 36;
@@ -186,7 +186,7 @@
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(349, 244);
+            this.textBox3.Location = new System.Drawing.Point(286, 255);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(565, 30);
             this.textBox3.TabIndex = 35;
@@ -198,7 +198,7 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(467, 200);
+            this.textBox2.Location = new System.Drawing.Point(404, 211);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(151, 30);
             this.textBox2.TabIndex = 34;
@@ -210,7 +210,7 @@
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUser.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUser.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUser.Location = new System.Drawing.Point(349, 79);
+            this.txtUser.Location = new System.Drawing.Point(286, 90);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(565, 30);
             this.txtUser.TabIndex = 32;
@@ -219,10 +219,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(88, 20);
+            this.label1.Location = new System.Drawing.Point(41, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 25);
+            this.label1.Size = new System.Drawing.Size(228, 32);
             this.label1.TabIndex = 31;
             this.label1.Text = "Filtrado de Cheques";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -236,7 +237,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button3.Location = new System.Drawing.Point(104, 131);
+            this.button3.Location = new System.Drawing.Point(41, 142);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(210, 42);
             this.button3.TabIndex = 42;
@@ -249,7 +250,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(732, 201);
+            this.textBox1.Location = new System.Drawing.Point(669, 212);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(182, 30);
             this.textBox1.TabIndex = 43;
@@ -259,7 +260,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(357, 199);
+            this.label2.Location = new System.Drawing.Point(294, 210);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 25);
             this.label2.TabIndex = 44;
@@ -269,7 +270,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(624, 201);
+            this.label3.Location = new System.Drawing.Point(561, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 25);
             this.label3.TabIndex = 45;
@@ -279,7 +280,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(624, 144);
+            this.label4.Location = new System.Drawing.Point(561, 155);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 25);
             this.label4.TabIndex = 49;
@@ -289,7 +290,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(357, 142);
+            this.label5.Location = new System.Drawing.Point(294, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 25);
             this.label5.TabIndex = 48;
@@ -301,7 +302,7 @@
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox4.Location = new System.Drawing.Point(662, 144);
+            this.textBox4.Location = new System.Drawing.Point(599, 155);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(252, 30);
             this.textBox4.TabIndex = 47;
@@ -313,7 +314,7 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox5.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox5.Location = new System.Drawing.Point(411, 139);
+            this.textBox5.Location = new System.Drawing.Point(348, 150);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(207, 30);
             this.textBox5.TabIndex = 46;
@@ -328,9 +329,9 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button4.Location = new System.Drawing.Point(624, 824);
+            this.button4.Location = new System.Drawing.Point(575, 605);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(301, 42);
+            this.button4.Size = new System.Drawing.Size(276, 42);
             this.button4.TabIndex = 50;
             this.button4.Text = "Generar reporte";
             this.button4.UseVisualStyleBackColor = false;
@@ -344,7 +345,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button5.Location = new System.Drawing.Point(350, 824);
+            this.button5.Location = new System.Drawing.Point(300, 605);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(255, 42);
             this.button5.TabIndex = 51;
@@ -356,7 +357,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1155, 910);
+            this.ClientSize = new System.Drawing.Size(900, 655);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
