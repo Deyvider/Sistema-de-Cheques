@@ -23,7 +23,6 @@ namespace Sistema_de_Cheques
             InitDatePicker();
         }
 
-
         private void InitCBBeneficiaries()
         {
             cbBeneficiaries.Items.Clear();
@@ -120,16 +119,6 @@ namespace Sistema_de_Cheques
             {
                 MessageBox.Show(
                 "Si quiere buscar por folio debe usar los dos campos",
-                "Problema con la busqueda",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-                return false;
-            }
-
-            if (txtInitialDate.Value > DateTime.Today.AddDays(1) && txtLastDate.Value > DateTime.Today)
-            {
-                MessageBox.Show(
-                "No puede filtrar por fechas que estan en el futuro",
                 "Problema con la busqueda",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);

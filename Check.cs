@@ -276,5 +276,89 @@ namespace Sistema_de_Cheques
             }
             return checks;
         }
+
+        /**
+    Metodo para obtener un beneficiario en base a su Id
+*/
+        public Check GetCheckSQL(int id)
+        {
+            string query = $"SELECT *  FROM [Checks] WHERE [id]={id};";
+            SqlCommand command = new SqlCommand(query, dataBase.Connection);
+            Check check = null;
+            try
+            {
+                dataBase.Connection.Open();
+                command.CommandText = query;
+                SqlDataReader checksSQL = command.ExecuteReader();
+                if (checksSQL != null)
+                {
+                    while (checksSQL.Read())
+                    {
+                        // id, invoice, beneficiary, mount, date, state, account, concept
+                        string invoice = checksSQL.GetString(1);
+                        int beneficiary = checksSQL.GetInt32(2);
+                        decimal mount = checksSQL.GetDecimal(3);
+                        DateTime date = checksSQL.GetDateTime(4);
+                        bool state = checksSQL.GetBoolean(5);
+                        int account = checksSQL.GetInt32(6);
+                        int concept = checksSQL.GetInt32(7);
+
+                        check = new Check(id, invoice, mount, date, beneficiary, concept, account, state);
+                    }
+                }
+                return check;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error, {ex}",
+                    "",
+                    MessageBoxButtons.OK
+                );
+            }
+            finally
+            {
+                dataBase.Connection.Close();
+            }
+            return check;
+        }
+
+        /**
+           Metodo usado para actualizar los datos de un cheque
+       */
+        public void UpdateCheck(Check checkUpdated)
+        {
+            string query = $"UPDATE[Checks] SET" +
+                           $"[beneficiary] = {checkUpdated.Beneficiary}, " +
+                           $"[date] = '{checkUpdated.Date.Year}-{checkUpdated.Date.Month}-{checkUpdated.Date.Day}',  " +
+                           $"[concept] = {checkUpdated.Concept}, " +
+                           $"[mount] = {checkUpdated.Mount}, " +
+                           $"[state] = '{checkUpdated.State}' WHERE[id] = {checkUpdated.Id}; ;";
+            SqlCommand command = new SqlCommand(query, dataBase.Connection);
+            try
+            {
+                dataBase.Connection.Open();
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+                MessageBox.Show(
+                    $"Cheque con folio '{checkUpdated.Invoice}' actualizado exitosamente",
+                    "Registro de cheques",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error, {ex}",
+                    "",
+                    MessageBoxButtons.OK
+                );
+            }
+            finally
+            {
+                dataBase.Connection.Close();
+            }
+        }
     }
 }
