@@ -114,7 +114,7 @@ namespace Sistema_de_Cheques
         */
         private void button1_Click(object sender, EventArgs e)
         {
-            Form6 frmDos = new Form6();
+            SearchChecks frmDos = new SearchChecks();
             frmDos.ShowDialog();
         }
 

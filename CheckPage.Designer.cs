@@ -56,12 +56,13 @@
             this.Beneficiario,
             this.Monto,
             this.Fecha});
-            this.checksTable.Location = new System.Drawing.Point(54, 359);
+            this.checksTable.Location = new System.Drawing.Point(38, 215);
+            this.checksTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checksTable.Name = "checksTable";
             this.checksTable.ReadOnly = true;
             this.checksTable.RowHeadersWidth = 62;
             this.checksTable.RowTemplate.Height = 33;
-            this.checksTable.Size = new System.Drawing.Size(698, 310);
+            this.checksTable.Size = new System.Drawing.Size(489, 186);
             this.checksTable.TabIndex = 28;
             // 
             // Folio
@@ -106,9 +107,10 @@
             this.btnDepositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDepositar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDepositar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDepositar.Location = new System.Drawing.Point(422, 295);
+            this.btnDepositar.Location = new System.Drawing.Point(295, 177);
+            this.btnDepositar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDepositar.Name = "btnDepositar";
-            this.btnDepositar.Size = new System.Drawing.Size(330, 41);
+            this.btnDepositar.Size = new System.Drawing.Size(231, 25);
             this.btnDepositar.TabIndex = 26;
             this.btnDepositar.Text = "Cancelar";
             this.btnDepositar.UseVisualStyleBackColor = false;
@@ -124,9 +126,10 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAdd.Location = new System.Drawing.Point(54, 295);
+            this.btnAdd.Location = new System.Drawing.Point(38, 177);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(330, 41);
+            this.btnAdd.Size = new System.Drawing.Size(231, 25);
             this.btnAdd.TabIndex = 25;
             this.btnAdd.Text = "Agregar";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -139,10 +142,11 @@
             this.txtMount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMount.ForeColor = System.Drawing.Color.DimGray;
-            this.txtMount.Location = new System.Drawing.Point(396, 124);
+            this.txtMount.Location = new System.Drawing.Point(277, 74);
+            this.txtMount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMount.Multiline = true;
             this.txtMount.Name = "txtMount";
-            this.txtMount.Size = new System.Drawing.Size(356, 42);
+            this.txtMount.Size = new System.Drawing.Size(249, 25);
             this.txtMount.TabIndex = 23;
             // 
             // label1
@@ -151,9 +155,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(54, 38);
+            this.label1.Location = new System.Drawing.Point(38, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 30);
+            this.label1.Size = new System.Drawing.Size(127, 20);
             this.label1.TabIndex = 20;
             this.label1.Text = "Datos del Cheque";
             // 
@@ -162,10 +167,9 @@
             this.cbBeneficiaries.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbBeneficiaries.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbBeneficiaries.FormattingEnabled = true;
-            this.cbBeneficiaries.Location = new System.Drawing.Point(54, 123);
-            this.cbBeneficiaries.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbBeneficiaries.Location = new System.Drawing.Point(38, 74);
             this.cbBeneficiaries.Name = "cbBeneficiaries";
-            this.cbBeneficiaries.Size = new System.Drawing.Size(315, 38);
+            this.cbBeneficiaries.Size = new System.Drawing.Size(222, 29);
             this.cbBeneficiaries.TabIndex = 32;
             // 
             // cbConcepts
@@ -173,19 +177,17 @@
             this.cbConcepts.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbConcepts.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbConcepts.FormattingEnabled = true;
-            this.cbConcepts.Location = new System.Drawing.Point(448, 211);
-            this.cbConcepts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbConcepts.Location = new System.Drawing.Point(314, 127);
             this.cbConcepts.Name = "cbConcepts";
-            this.cbConcepts.Size = new System.Drawing.Size(304, 38);
+            this.cbConcepts.Size = new System.Drawing.Size(214, 29);
             this.cbConcepts.TabIndex = 33;
             // 
             // dateTimePicker
             // 
             this.dateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimePicker.Location = new System.Drawing.Point(54, 214);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker.Location = new System.Drawing.Point(38, 128);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(356, 31);
+            this.dateTimePicker.Size = new System.Drawing.Size(250, 23);
             this.dateTimePicker.TabIndex = 34;
             // 
             // label3
@@ -194,9 +196,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(54, 81);
+            this.label3.Location = new System.Drawing.Point(38, 49);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 28);
+            this.label3.Size = new System.Drawing.Size(78, 19);
             this.label3.TabIndex = 36;
             this.label3.Text = "Beneficiario";
             // 
@@ -206,9 +209,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(396, 81);
+            this.label4.Location = new System.Drawing.Point(277, 49);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 28);
+            this.label4.Size = new System.Drawing.Size(51, 19);
             this.label4.TabIndex = 37;
             this.label4.Text = "Monto";
             // 
@@ -218,9 +222,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(448, 178);
+            this.label5.Location = new System.Drawing.Point(314, 107);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 28);
+            this.label5.Size = new System.Drawing.Size(68, 19);
             this.label5.TabIndex = 38;
             this.label5.Text = "Concepto";
             // 
@@ -230,18 +235,19 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(54, 172);
+            this.label6.Location = new System.Drawing.Point(38, 103);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 28);
+            this.label6.Size = new System.Drawing.Size(44, 19);
             this.label6.TabIndex = 39;
             this.label6.Text = "Fecha";
             // 
             // CheckPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(824, 692);
+            this.ClientSize = new System.Drawing.Size(577, 415);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -254,6 +260,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtMount);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CheckPage";
             this.Text = "Form3";
             ((System.ComponentModel.ISupportInitialize)(this.checksTable)).EndInit();

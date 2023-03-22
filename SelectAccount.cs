@@ -14,14 +14,14 @@ namespace Sistema_de_Cheques
 	{
 		Account account = new Account();
 		AccountPage accountPage;
-		//Dashboard homePage;
-		
-		//public SelectAccount(Dashboard home) 
-		//{
-  //          InitializeComponent();
-		//	//this.homePage = home;
-  //      }
-        public SelectAccount(AccountPage accountPage)
+		Dashboard homePage;
+
+		public SelectAccount(Dashboard home)
+		{
+			InitializeComponent();
+			this.homePage = home;
+		}
+		public SelectAccount(AccountPage accountPage)
 		{
 			InitializeComponent();
 			this.accountPage = accountPage;

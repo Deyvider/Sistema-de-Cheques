@@ -4,6 +4,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using static System.Windows.Forms.AxHost;
 
 namespace Sistema_de_Cheques
 {
@@ -21,7 +23,7 @@ namespace Sistema_de_Cheques
         private DataBaseConnection dataBase = new DataBaseConnection();
 
         private Account account = new Account();
-        
+
         public Check() { }
 
         public Check(int id, string invoice, decimal mount, DateTime date, int beneficiary, int concept, int account, bool state)
@@ -41,10 +43,18 @@ namespace Sistema_de_Cheques
 
         private int GetLastInvoice()
         {
+
+          //  SELECT COUNT(id), 
+		        //(SELECT TOP 1 invoice FROM[Checks] WHERE account = 1 order by id desc), 
+		        //(SELECT firstInvoice FROM[Accounts] WHERE id = 1), 
+		        //(SELECT lastInvoice FROM[Accounts] WHERE id = 1) 
+		        //FROM[Checks] WHERE account = 1;
+
             string query = "SELECT COUNT(id)," +
-                            "(SELECT TOP 1 invoice FROM [Checks] order by id desc)," +
-                            "(SELECT firstInvoice FROM [Accounts] WHERE id = 1)," +
-                            "(SELECT lastInvoice FROM [Accounts] WHERE id = 1) FROM [Checks];";
+                            $"(SELECT TOP 1 invoice FROM [Checks] WHERE account = {User.ActiveAccount.Id} order by id desc)," +
+                            $"(SELECT firstInvoice FROM [Accounts] WHERE id = {User.ActiveAccount.Id})," +
+                            $"(SELECT lastInvoice FROM [Accounts] WHERE id = {User.ActiveAccount.Id})" +
+                            $"FROM [Checks] WHERE account = {User.ActiveAccount.Id};";
 
             SqlCommand command = new SqlCommand(query, dataBase.Connection);
             try
@@ -141,7 +151,7 @@ namespace Sistema_de_Cheques
          */
         public List<Check> GetChecksSLQ()
         {
-            string query = "SELECT *  FROM [Checks]";
+            string query = $"SELECT *  FROM [Checks] WHERE account = {User.ActiveAccount.Id}";
             SqlCommand command = new SqlCommand(query, dataBase.Connection);
             List<Check> chekcs = new List<Check>();
             try
@@ -180,6 +190,91 @@ namespace Sistema_de_Cheques
                 dataBase.Connection.Close();
             }
             return chekcs;
+        }
+
+        /**
+            Metodo para obtener una lista de cheques en base a filtros
+            Filtros disponibles:
+                'id': busca en base al id ingresado
+                'name': busca un nombre que coincida con la cadena ingresada
+                'phone': busca un numero de telefono que coincida con la cadena ingresada
+                'active': busca en base al estado ingresado
+        */
+        public List<Check> GetChecksByValuesSQL(List<string> filters, string benficiary, string[] mounts, DateTime[] dates, string[] invoices)
+        {
+            //SELECT* FROM[Checks];
+            //SELECT* FROM[Checks] WHERE (date >= '2023-02-01' AND date <= '2023-04-01');
+            //SELECT* FROM[Checks] WHERE (mount >= 1000 AND mount <= 2000);
+            //SELECT* FROM[Checks] WHERE (invoice >= 2 AND invoice <= 3);
+            //SELECT* FROM[Checks] WHERE (beneficiary = 1);
+            //SELECT* FROM[Checks]
+            //    WHERE
+            //    (date >= '2023-02-01' AND date <= '2023-04-01') AND
+            //    (mount >= 1000 AND mount <= 2000) AND
+            //    (invoice >= 2 AND invoice <= 3) AND
+            //    (beneficiary = 1);
+
+            List<string> actualFilters = new List<string>();
+            if (filters.Contains("beneficiary")) actualFilters.Add($"(beneficiary = {benficiary})");
+            if (filters.Contains("mount")) actualFilters.Add($"(mount >= {mounts[0]} AND mount <= {mounts[1]})");
+            if (filters.Contains("invoice")) actualFilters.Add($"(invoice >= {invoices[0]} AND invoice <= {invoices[1]})");
+            if (filters.Contains("date")) actualFilters.Add($"(date >= '{dates[0].Year}-{dates[0].Month}-{dates[0].Day}' AND date <= '{dates[1].Year}-{dates[1].Month}-{dates[1].Day}')");
+
+            string query = "SELECT* FROM [Checks] WHERE ";
+
+            if (actualFilters.Count > 0)
+            {
+                for (int i = 0; i < actualFilters.Count; i++) 
+                {
+                    if (i == actualFilters.Count - 1)
+                    {
+                        query += $"{actualFilters[i]}";
+                        break;
+                    }
+                    query += $"{actualFilters[i]} AND ";
+                }
+            }
+
+            query += $"account = {User.ActiveAccount.Id}";
+            SqlCommand command = new SqlCommand(query, dataBase.Connection);
+            List<Check> checks = new List<Check>();
+            try
+            {
+                dataBase.Connection.Open();
+                command.CommandText = query;
+                SqlDataReader checksSQL = command.ExecuteReader();
+                if (checksSQL != null)
+                {
+                    MessageBox.Show(query);
+                    while (checksSQL.Read())
+                    {
+                        // id, invoice, beneficiary, mount, date, state, account, concept,
+                        int id = checksSQL.GetInt32(0);
+                        string invoice = checksSQL.GetString(1);
+                        int beneficiary = checksSQL.GetInt32(2);
+                        decimal mount = checksSQL.GetDecimal(3);
+                        DateTime date = checksSQL.GetDateTime(4);
+                        bool state = checksSQL.GetBoolean(5);
+                        int account = checksSQL.GetInt32(6);
+                        int concept = checksSQL.GetInt32(7);
+                        checks.Add(new Check(id, invoice, mount, date, beneficiary, concept, account, state));
+                    }
+                }
+                return checks;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Error, {ex}",
+                    "",
+                    MessageBoxButtons.OK
+                );
+            }
+            finally
+            {
+                dataBase.Connection.Close();
+            }
+            return checks;
         }
     }
 }

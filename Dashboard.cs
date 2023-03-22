@@ -20,10 +20,10 @@ namespace Sistema_de_Cheques
 
         private void customizeDesign()
         {
-            panelInicioSubmenu.Visible= false;
-            panelCuentaSubmenu.Visible= false;
-            panelChequesSubmenu.Visible= false;
-            panelBeneSubmenu.Visible= false;
+            panelInicioSubmenu.Visible = false;
+            panelCuentaSubmenu.Visible = false;
+            panelChequesSubmenu.Visible = false;
+            panelBeneSubmenu.Visible = false;
         }
         private void hideSubMenu()
         {
@@ -64,7 +64,7 @@ namespace Sistema_de_Cheques
         private void button3_Click(object sender, EventArgs e)
         {
             
-           openChildForm(new SelectAccount());
+            openChildForm(new SelectAccount());
             //codigo
             hideSubMenu();
         }
@@ -94,7 +94,7 @@ namespace Sistema_de_Cheques
 
         private void button6_Click(object sender, EventArgs e)
         {
-            openChildForm(new DepostiPage());
+            openChildForm(new DepostiPage(this));
             //codigo
             hideSubMenu();
         }
@@ -132,13 +132,24 @@ namespace Sistema_de_Cheques
 
         private void button14_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form6());
+            openChildForm(new SearchChecks());
             //codigo
             hideSubMenu();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (User.ActiveAccount == null)
+            {
+                MessageBox.Show(
+                    $"Debes seleccionar una cuenta para poder continuar",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                openChildForm(new SelectAccount(this));
+                return;
+            }
             openChildForm(new AccountPage());
             showShubMenu(panelCuentaSubmenu);
         }
@@ -153,6 +164,7 @@ namespace Sistema_de_Cheques
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
+                openChildForm(new SelectAccount(this));
                 return;
             }
             openChildForm(new BeneficiaryPage());
@@ -161,23 +173,24 @@ namespace Sistema_de_Cheques
 
         private void button12_Click(object sender, EventArgs e)
         {
-            //if (User.ActiveAccount == null)
-            //{
-            //    MessageBox.Show(
-            //        $"Debes seleccionar una cuenta para poder continuar",
-            //        "Error",
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Error
-            //    );
-            //    // AbrirForm(new SelectAccount(this));
-            //    return;
-            //}
+            if (User.ActiveAccount == null)
+            {
+                MessageBox.Show(
+                    $"Debes seleccionar una cuenta para poder continuar",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                openChildForm(new SelectAccount(this));
+                return;
+            }
             openChildForm(new CheckPage());
             showShubMenu(panelChequesSubmenu);
         }
 
         private Form activeForm = null;
-        private void openChildForm(Form childForm)
+
+        public void openChildForm(Form childForm)
         {
             if (activeForm != null)
                 activeForm.Close();
@@ -191,6 +204,9 @@ namespace Sistema_de_Cheques
             childForm.Show();
         }
 
-
+        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -45,5 +45,16 @@ namespace Sistema_de_Cheques
             bool isNumeric = str.All(char.IsDigit);
             return isNumeric;
         }
+
+        public static bool IsMoney(string str)
+        {
+            decimal quantity = 0;
+            if (!decimal.TryParse(str, out quantity))
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

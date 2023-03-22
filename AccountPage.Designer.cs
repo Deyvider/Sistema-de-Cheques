@@ -49,11 +49,13 @@
             this.txtSaldo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSaldo.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSaldo.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.txtSaldo.Location = new System.Drawing.Point(312, 153);
+            this.txtSaldo.HideSelection = false;
+            this.txtSaldo.Location = new System.Drawing.Point(166, 92);
+            this.txtSaldo.Margin = new System.Windows.Forms.Padding(2);
             this.txtSaldo.Multiline = true;
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.ReadOnly = true;
-            this.txtSaldo.Size = new System.Drawing.Size(197, 91);
+            this.txtSaldo.Size = new System.Drawing.Size(314, 55);
             this.txtSaldo.TabIndex = 3;
             this.txtSaldo.Text = "0000";
             // 
@@ -63,9 +65,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(155, 99);
+            this.label1.Location = new System.Drawing.Point(108, 59);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 38);
+            this.label1.Size = new System.Drawing.Size(160, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Saldo disponible";
             // 
@@ -75,9 +78,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(113, 381);
+            this.label2.Location = new System.Drawing.Point(79, 229);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 38);
+            this.label2.Size = new System.Drawing.Size(81, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Nombre";
             // 
@@ -87,9 +91,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(121, 298);
+            this.label3.Location = new System.Drawing.Point(85, 179);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 38);
+            this.label3.Size = new System.Drawing.Size(77, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Usuario";
             // 
@@ -97,10 +102,11 @@
             // 
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.Location = new System.Drawing.Point(246, 376);
+            this.txtName.Location = new System.Drawing.Point(172, 226);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(447, 45);
+            this.txtName.Size = new System.Drawing.Size(314, 32);
             this.txtName.TabIndex = 7;
             // 
             // txtUsername
@@ -108,10 +114,11 @@
             this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsername.HideSelection = false;
-            this.txtUsername.Location = new System.Drawing.Point(246, 298);
+            this.txtUsername.Location = new System.Drawing.Point(172, 179);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.ReadOnly = true;
-            this.txtUsername.Size = new System.Drawing.Size(447, 45);
+            this.txtUsername.Size = new System.Drawing.Size(314, 32);
             this.txtUsername.TabIndex = 8;
             // 
             // btnActualizar
@@ -124,9 +131,10 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnActualizar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnActualizar.Location = new System.Drawing.Point(144, 530);
+            this.btnActualizar.Location = new System.Drawing.Point(101, 318);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(250, 50);
+            this.btnActualizar.Size = new System.Drawing.Size(175, 30);
             this.btnActualizar.TabIndex = 12;
             this.btnActualizar.Text = "Actualizar mis datos";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -142,9 +150,10 @@
             this.btnDepositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDepositar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDepositar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDepositar.Location = new System.Drawing.Point(436, 530);
+            this.btnDepositar.Location = new System.Drawing.Point(305, 318);
+            this.btnDepositar.Margin = new System.Windows.Forms.Padding(2);
             this.btnDepositar.Name = "btnDepositar";
-            this.btnDepositar.Size = new System.Drawing.Size(250, 50);
+            this.btnDepositar.Size = new System.Drawing.Size(175, 30);
             this.btnDepositar.TabIndex = 13;
             this.btnDepositar.Text = "Depositar a la cuenta";
             this.btnDepositar.UseVisualStyleBackColor = false;
@@ -156,9 +165,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(257, 155);
+            this.label4.Location = new System.Drawing.Point(136, 92);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 74);
+            this.label4.Size = new System.Drawing.Size(44, 51);
             this.label4.TabIndex = 15;
             this.label4.Text = "$";
             // 
@@ -166,20 +176,20 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Location = new System.Drawing.Point(136, 262);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(95, 157);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(585, 10);
+            this.panel1.Size = new System.Drawing.Size(410, 6);
             this.panel1.TabIndex = 17;
             // 
             // txtBankName
             // 
             this.txtBankName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBankName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBankName.Location = new System.Drawing.Point(246, 451);
+            this.txtBankName.Location = new System.Drawing.Point(172, 271);
+            this.txtBankName.Margin = new System.Windows.Forms.Padding(2);
             this.txtBankName.Name = "txtBankName";
             this.txtBankName.ReadOnly = true;
-            this.txtBankName.Size = new System.Drawing.Size(447, 45);
+            this.txtBankName.Size = new System.Drawing.Size(314, 32);
             this.txtBankName.TabIndex = 21;
             // 
             // label5
@@ -188,23 +198,24 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(136, 456);
+            this.label5.Location = new System.Drawing.Point(95, 274);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 38);
+            this.label5.Size = new System.Drawing.Size(64, 25);
             this.label5.TabIndex = 20;
             this.label5.Text = "Banco";
             // 
             // AccountPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(824, 692);
+            this.ClientSize = new System.Drawing.Size(577, 415);
+            this.Controls.Add(this.txtSaldo);
             this.Controls.Add(this.txtBankName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtSaldo);
             this.Controls.Add(this.btnDepositar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.txtUsername);
@@ -213,6 +224,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AccountPage";
             this.Text = "Mi cuenta";
             this.ResumeLayout(false);
