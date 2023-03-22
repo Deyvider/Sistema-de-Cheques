@@ -15,7 +15,7 @@ namespace Sistema_de_Cheques
         public CheckPage()
         {
             InitializeComponent();
-            InitCBBeneficiaries();
+            InitCBChecks();
             InitCBConcepts();
             UpdateChecksTable();
         }
@@ -42,12 +42,18 @@ namespace Sistema_de_Cheques
         */
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("antes de validaciones");
             if (CheckValidations()) return;
+            MessageBox.Show("Pase validaciones");
             decimal mount = Decimal.Parse(txtMount.Text);
             int beneficiary = (cbBeneficiaries.SelectedIndex + 1);
             int concept = (cbConcepts.SelectedIndex + 1);
             DateTime date = dateTimePicker.Value;
+            MessageBox.Show("Pase asignación");
+
             checkSQL.CreateCheckSQL(mount, date, beneficiary, concept);
+            MessageBox.Show("Pase creación");
+
             CleanTextBoxes();
             UpdateChecksTable();
         }
@@ -68,7 +74,7 @@ namespace Sistema_de_Cheques
         private bool CheckValidations()
         {
             bool validMount = true;
-            bool checkInvalid = !HelperMethods.IsNumeric(txtMount.Text) 
+            bool checkInvalid = !HelperMethods.IsMoney(txtMount.Text) 
                 || cbBeneficiaries.SelectedIndex == -1 
                 || cbConcepts.SelectedIndex == -1;
 
@@ -82,7 +88,7 @@ namespace Sistema_de_Cheques
                 return true;
             }
 
-            if (!HelperMethods.IsNumeric(txtMount.Text))
+            if (!HelperMethods.IsMoney(txtMount.Text))
             {
                 MessageBox.Show(
                     "Solo puedes ingresar montos numericas",
@@ -104,6 +110,18 @@ namespace Sistema_de_Cheques
                     txtMount.Focus();
                     validMount = false;
                 }
+
+                if (Decimal.Parse(txtMount.Text) < 0)
+                {
+                    MessageBox.Show(
+                        "No puedes hacer cheques con cantidades negativas",
+                        "Problema con el deposito",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    txtMount.Text = null;
+                    txtMount.Focus();
+                    validMount = false;
+                }
             }
 
             return (checkInvalid || !validMount);
@@ -114,23 +132,24 @@ namespace Sistema_de_Cheques
         */
         private void button1_Click(object sender, EventArgs e)
         {
-            Form6 frmDos = new Form6();
+            SearchChecks frmDos = new SearchChecks();
             frmDos.ShowDialog();
         }
 
         /**
             Metodo que actualiza los datos la tabla que muestra los cheques registrados por el usuario
         */
-        private void UpdateChecksTable()
+        public void UpdateChecksTable()
         {
             checksTable.Rows.Clear();
             foreach (Check check in checkSQL.GetChecksSLQ())
             {
                 int fila = checksTable.Rows.Add();
-                checksTable.Rows[fila].Cells[0].Value = check.Invoice;
-                checksTable.Rows[fila].Cells[1].Value = beneficiarySQL.GetBeneficiarySQL(check.Beneficiary).Name;
-                checksTable.Rows[fila].Cells[2].Value = check.Mount;
-                checksTable.Rows[fila].Cells[3].Value = check.Date.ToShortDateString();
+                checksTable.Rows[fila].Cells[0].Value = check.Id;
+                checksTable.Rows[fila].Cells[1].Value = check.Invoice;
+                checksTable.Rows[fila].Cells[2].Value = beneficiarySQL.GetBeneficiarySQL(check.Beneficiary).Name;
+                checksTable.Rows[fila].Cells[3].Value = check.Mount;
+                checksTable.Rows[fila].Cells[4].Value = check.Date.ToShortDateString();
             }
         }
 
@@ -151,13 +170,35 @@ namespace Sistema_de_Cheques
         /**
             Metodo que carga los beneficiarios disponibles dentro del combo box
         */
-        private void InitCBBeneficiaries()
+        public void InitCBChecks()
         {
             cbBeneficiaries.Items.Clear();
 
             foreach (Beneficiary beneficiary in beneficiarySQL.GetBeneficiariesSLQ())
             {
                 int row = cbBeneficiaries.Items.Add(beneficiary.Name);
+            }
+        }
+
+        private void checksTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            DataGridViewRow row = checksTable.Rows[e.RowIndex];
+            int id = int.Parse(row.Cells[0].Value.ToString());
+            string invoice = row.Cells[1].Value.ToString();
+
+            DialogResult result = MessageBox.Show(
+                $"¿Quieres ver los datos de este cheque?\n" +
+                $"Folio: {invoice}",
+                "Datos registrados",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information
+            );
+
+            if (result.ToString().Equals("Yes"))
+            {
+                UpdateCheck updateCheck = new UpdateCheck(this, id);
+                updateCheck.Show();
             }
         }
     }

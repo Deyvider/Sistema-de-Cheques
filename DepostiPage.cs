@@ -13,6 +13,7 @@ namespace Sistema_de_Cheques
     public partial class DepostiPage : Form
     {
         AccountPage accountPageReference;
+        Dashboard dashboard;
 
         public DepostiPage()
         {
@@ -25,11 +26,18 @@ namespace Sistema_de_Cheques
             this.accountPageReference = accountPage;
         }
 
+        public DepostiPage(Dashboard dashboard)
+        {
+            InitializeComponent();
+            this.dashboard = dashboard;
+        }
+
         /**
             Metodo que ejecuta el cierre de la ventana actual
         */
         private void button2_Click(object sender, EventArgs e)
         {
+            if (dashboard != null) dashboard.openChildForm(new AccountPage());
             this.Close();
         }
 
@@ -61,13 +69,9 @@ namespace Sistema_de_Cheques
             }
             Account account = new Account();
             account.MakeDeposit(deposit);
-            this.accountPageReference.InitTextBoxes();
+            if (accountPageReference != null) accountPageReference.InitTextBoxes();
+            if (dashboard != null) dashboard.openChildForm(new AccountPage());
             this.Close();
-        }
-
-        private void DepostiPage_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -35,8 +35,8 @@ namespace Sistema_de_Cheques
         */
         public void MakeDeposit(decimal total)
         {
-            Balance += total;
-            string query = $"UPDATE [Accounts] SET [balance] = {Balance} WHERE [id]='{Id}';";
+			User.ActiveAccount.Balance += total;
+            string query = $"UPDATE [Accounts] SET [balance] = {User.ActiveAccount.Balance} WHERE [id]='{User.ActiveAccount.Id}';";
             SqlCommand command = new SqlCommand(query, dataBase.Connection);
             try
             {

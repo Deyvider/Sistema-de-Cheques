@@ -364,15 +364,16 @@
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 744);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelSideMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MinimumSize = new System.Drawing.Size(1200, 800);
+            this.MinimumSize = new System.Drawing.Size(1200, 766);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dashboard_FormClosed);
             this.panelInicioSubmenu.ResumeLayout(false);
             this.panelSideMenu.ResumeLayout(false);
             this.panelChequesSubmenu.ResumeLayout(false);

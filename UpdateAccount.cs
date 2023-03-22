@@ -14,7 +14,12 @@ namespace Sistema_de_Cheques
 	{
 		Account account = new Account();
 		AccountPage accountPage;
-		public UpdateAccount(AccountPage accountPage)
+
+        public UpdateAccount()
+        {
+            InitializeComponent();
+        }
+        public UpdateAccount(AccountPage accountPage)
 		{
 			InitializeComponent();
 			this.accountPage = accountPage;
@@ -65,7 +70,7 @@ namespace Sistema_de_Cheques
 			Account updatedAccount = new Account(User.ActiveAccount.Id, name, 0, bankName, accountNumber);
 
 			account.UpdateAccount(updatedAccount);
-			accountPage.InitTextBoxes();
+			if (accountPage != null) accountPage.InitTextBoxes();
 			this.Close();
 		}
 

@@ -69,5 +69,5 @@ namespace Sistema_de_Cheques
             UpdateAccount updateAccount = new UpdateAccount(this);
             updateAccount.Show();
 		}
-	}
+    }
 }
