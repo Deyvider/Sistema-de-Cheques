@@ -50,10 +50,10 @@
             // 
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtName.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.Location = new System.Drawing.Point(101, 178);
+            this.txtName.Location = new System.Drawing.Point(312, 330);
             this.txtName.Margin = new System.Windows.Forms.Padding(5);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(303, 33);
+            this.txtName.Size = new System.Drawing.Size(522, 46);
             this.txtName.TabIndex = 0;
             // 
             // label1
@@ -62,10 +62,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(101, 141);
+            this.label1.Location = new System.Drawing.Point(312, 283);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 24);
+            this.label1.Size = new System.Drawing.Size(145, 39);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nombre";
             // 
@@ -75,10 +75,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(451, 141);
+            this.label2.Location = new System.Drawing.Point(882, 283);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 24);
+            this.label2.Size = new System.Drawing.Size(217, 39);
             this.label2.TabIndex = 3;
             this.label2.Text = "Monto inicial";
             // 
@@ -86,10 +86,11 @@
             // 
             this.txtMount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMount.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMount.Location = new System.Drawing.Point(451, 178);
+            this.txtMount.Location = new System.Drawing.Point(882, 330);
             this.txtMount.Margin = new System.Windows.Forms.Padding(5);
+            this.txtMount.Multiline = true;
             this.txtMount.Name = "txtMount";
-            this.txtMount.Size = new System.Drawing.Size(255, 33);
+            this.txtMount.Size = new System.Drawing.Size(522, 46);
             this.txtMount.TabIndex = 2;
             // 
             // label3
@@ -98,10 +99,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(451, 238);
+            this.label3.Location = new System.Drawing.Point(882, 394);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(209, 24);
+            this.label3.Size = new System.Drawing.Size(316, 39);
             this.label3.TabIndex = 7;
             this.label3.Text = "Número de cuenta";
             // 
@@ -109,10 +110,11 @@
             // 
             this.txtAccountNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAccountNumber.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAccountNumber.Location = new System.Drawing.Point(451, 266);
+            this.txtAccountNumber.Location = new System.Drawing.Point(882, 443);
             this.txtAccountNumber.Margin = new System.Windows.Forms.Padding(5);
+            this.txtAccountNumber.Multiline = true;
             this.txtAccountNumber.Name = "txtAccountNumber";
-            this.txtAccountNumber.Size = new System.Drawing.Size(255, 33);
+            this.txtAccountNumber.Size = new System.Drawing.Size(522, 45);
             this.txtAccountNumber.TabIndex = 6;
             // 
             // label4
@@ -121,10 +123,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(101, 230);
+            this.label4.Location = new System.Drawing.Point(312, 394);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(209, 24);
+            this.label4.Size = new System.Drawing.Size(318, 39);
             this.label4.TabIndex = 5;
             this.label4.Text = "Nombre del banco";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -133,10 +135,11 @@
             // 
             this.txtBankName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBankName.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBankName.Location = new System.Drawing.Point(101, 266);
+            this.txtBankName.Location = new System.Drawing.Point(312, 443);
             this.txtBankName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtBankName.Multiline = true;
             this.txtBankName.Name = "txtBankName";
-            this.txtBankName.Size = new System.Drawing.Size(303, 33);
+            this.txtBankName.Size = new System.Drawing.Size(522, 45);
             this.txtBankName.TabIndex = 4;
             this.txtBankName.TextChanged += new System.EventHandler(this.txtBankName_TextChanged);
             // 
@@ -145,10 +148,10 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.Location = new System.Drawing.Point(101, 421);
+            this.panel2.Location = new System.Drawing.Point(315, 701);
             this.panel2.Margin = new System.Windows.Forms.Padding(5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(616, 2);
+            this.panel2.Size = new System.Drawing.Size(1085, 10);
             this.panel2.TabIndex = 9;
             // 
             // btnActualizar
@@ -161,10 +164,10 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnActualizar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnActualizar.Location = new System.Drawing.Point(122, 446);
+            this.btnActualizar.Location = new System.Drawing.Point(308, 770);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(250, 50);
+            this.btnActualizar.Size = new System.Drawing.Size(522, 64);
             this.btnActualizar.TabIndex = 13;
             this.btnActualizar.Text = "Confirmar registro";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -180,10 +183,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(426, 446);
+            this.button1.Location = new System.Drawing.Point(878, 770);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 50);
+            this.button1.Size = new System.Drawing.Size(522, 64);
             this.button1.TabIndex = 14;
             this.button1.Text = "Cancelar registro";
             this.button1.UseVisualStyleBackColor = false;
@@ -195,10 +198,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(103, 56);
+            this.label5.Location = new System.Drawing.Point(431, 114);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(489, 47);
+            this.label5.Size = new System.Drawing.Size(735, 70);
             this.label5.TabIndex = 15;
             this.label5.Text = "Añade cuenta bancaria";
             // 
@@ -208,10 +211,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(104, 321);
+            this.label6.Location = new System.Drawing.Point(315, 520);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 24);
+            this.label6.Size = new System.Drawing.Size(187, 39);
             this.label6.TabIndex = 17;
             this.label6.Text = "Folio inicial";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -220,10 +223,11 @@
             // 
             this.txtFirstInvoice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFirstInvoice.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtFirstInvoice.Location = new System.Drawing.Point(104, 358);
+            this.txtFirstInvoice.Location = new System.Drawing.Point(315, 564);
             this.txtFirstInvoice.Margin = new System.Windows.Forms.Padding(5);
+            this.txtFirstInvoice.Multiline = true;
             this.txtFirstInvoice.Name = "txtFirstInvoice";
-            this.txtFirstInvoice.Size = new System.Drawing.Size(300, 33);
+            this.txtFirstInvoice.Size = new System.Drawing.Size(519, 50);
             this.txtFirstInvoice.TabIndex = 16;
             this.txtFirstInvoice.TextChanged += new System.EventHandler(this.txtFirstInvoice_TextChanged);
             // 
@@ -233,10 +237,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(451, 330);
+            this.label7.Location = new System.Drawing.Point(882, 521);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 24);
+            this.label7.Size = new System.Drawing.Size(162, 39);
             this.label7.TabIndex = 19;
             this.label7.Text = "Folio final";
             // 
@@ -244,18 +248,19 @@
             // 
             this.txtLastInvoice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtLastInvoice.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtLastInvoice.Location = new System.Drawing.Point(451, 358);
+            this.txtLastInvoice.Location = new System.Drawing.Point(882, 564);
             this.txtLastInvoice.Margin = new System.Windows.Forms.Padding(5);
+            this.txtLastInvoice.Multiline = true;
             this.txtLastInvoice.Name = "txtLastInvoice";
-            this.txtLastInvoice.Size = new System.Drawing.Size(255, 33);
+            this.txtLastInvoice.Size = new System.Drawing.Size(522, 50);
             this.txtLastInvoice.TabIndex = 18;
             // 
             // CreateAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(824, 692);
+            this.ClientSize = new System.Drawing.Size(1646, 950);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtLastInvoice);
             this.Controls.Add(this.label6);
@@ -275,6 +280,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "CreateAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateAccount";
             this.Load += new System.EventHandler(this.CreateAccount_Load);
             this.ResumeLayout(false);

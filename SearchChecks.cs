@@ -193,5 +193,46 @@ namespace Sistema_de_Cheques
             txtLastMount.Text = "";
             cbBeneficiaries.SelectedIndex = -1;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!checkValidations()) return;
+            List<string> filters = new List<string>();
+            string beneficiary = "";
+            string[] mounts = new string[2];
+            DateTime[] dates = new DateTime[2];
+            string[] invoices = new string[2];
+
+            if (cbBeneficiaries.SelectedIndex != -1)
+            {
+                beneficiary = (cbBeneficiaries.SelectedIndex + 1).ToString();
+                filters.Add("beneficiary");
+            }
+
+            if (txtInitialInvoice.Text != "" || txtLastInvoice.Text != "")
+            {
+                invoices[0] = txtInitialInvoice.Text;
+                invoices[1] = txtLastInvoice.Text;
+                filters.Add("invoice");
+            }
+
+            if (txtInitialMount.Text != "" || txtLastMount.Text != "")
+            {
+                mounts[0] = txtInitialMount.Text;
+                mounts[1] = txtLastMount.Text;
+                filters.Add("mount");
+            }
+
+            if (txtInitialDate.Value < DateTime.Today.AddDays(1) || txtLastDate.Value < DateTime.Today)
+            {
+                dates[0] = txtInitialDate.Value;
+                dates[1] = txtLastDate.Value;
+                filters.Add("date");
+            }
+
+            List<Check> checks = checkSQL.GetChecksByValuesSQL(filters, beneficiary, mounts, dates, invoices);
+            InitChecksTable(checks);
+            InitTextBoxes();
+        }
     }
 }
