@@ -57,11 +57,11 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(49, 43);
+            this.label1.Location = new System.Drawing.Point(740, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 30);
+            this.label1.Size = new System.Drawing.Size(577, 62);
             this.label1.TabIndex = 0;
             this.label1.Text = "Datos del beneficiario";
             // 
@@ -72,8 +72,9 @@
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.Location = new System.Drawing.Point(49, 119);
+            this.txtName.Location = new System.Drawing.Point(63, 145);
             this.txtName.MaxLength = 50;
+            this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(265, 30);
             this.txtName.TabIndex = 2;
@@ -85,8 +86,9 @@
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
-            this.txtPhone.Location = new System.Drawing.Point(49, 195);
+            this.txtPhone.Location = new System.Drawing.Point(63, 235);
             this.txtPhone.MaxLength = 16;
+            this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(265, 30);
             this.txtPhone.TabIndex = 4;
@@ -98,10 +100,11 @@
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtAddress.Location = new System.Drawing.Point(344, 119);
+            this.txtAddress.Location = new System.Drawing.Point(369, 145);
             this.txtAddress.MaxLength = 80;
+            this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(403, 30);
+            this.txtAddress.Size = new System.Drawing.Size(514, 30);
             this.txtAddress.TabIndex = 3;
             // 
             // txtDescription
@@ -111,10 +114,11 @@
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescription.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDescription.ForeColor = System.Drawing.Color.Black;
-            this.txtDescription.Location = new System.Drawing.Point(344, 195);
+            this.txtDescription.Location = new System.Drawing.Point(369, 235);
             this.txtDescription.MaxLength = 60;
+            this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(403, 30);
+            this.txtDescription.Size = new System.Drawing.Size(514, 30);
             this.txtDescription.TabIndex = 5;
             // 
             // btnDepositar
@@ -127,9 +131,9 @@
             this.btnDepositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDepositar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDepositar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDepositar.Location = new System.Drawing.Point(453, 248);
+            this.btnDepositar.Location = new System.Drawing.Point(917, 226);
             this.btnDepositar.Name = "btnDepositar";
-            this.btnDepositar.Size = new System.Drawing.Size(294, 42);
+            this.btnDepositar.Size = new System.Drawing.Size(400, 46);
             this.btnDepositar.TabIndex = 16;
             this.btnDepositar.Text = "Cancelar";
             this.btnDepositar.UseVisualStyleBackColor = false;
@@ -182,10 +186,11 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(49, 84);
+            this.label2.Location = new System.Drawing.Point(63, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 25);
+            this.label2.Size = new System.Drawing.Size(102, 32);
             this.label2.TabIndex = 20;
             this.label2.Text = "Nombre";
             // 
@@ -193,10 +198,11 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(49, 163);
+            this.label3.Location = new System.Drawing.Point(63, 197);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 25);
+            this.label3.Size = new System.Drawing.Size(88, 32);
             this.label3.TabIndex = 21;
             this.label3.Text = "Celular";
             // 
@@ -204,10 +210,11 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(344, 84);
+            this.label4.Location = new System.Drawing.Point(369, 105);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 25);
+            this.label4.Size = new System.Drawing.Size(114, 32);
             this.label4.TabIndex = 22;
             this.label4.Text = "Dirección";
             // 
@@ -215,10 +222,11 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(344, 163);
+            this.label5.Location = new System.Drawing.Point(369, 197);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 25);
+            this.label5.Size = new System.Drawing.Size(138, 32);
             this.label5.TabIndex = 23;
             this.label5.Text = "Descripción";
             // 
@@ -231,10 +239,10 @@
             this.name,
             this.address,
             this.active});
-            this.beneficiariesTable.Location = new System.Drawing.Point(49, 320);
+            this.beneficiariesTable.Location = new System.Drawing.Point(50, 320);
             this.beneficiariesTable.Name = "beneficiariesTable";
             this.beneficiariesTable.RowHeadersWidth = 62;
-            this.beneficiariesTable.Size = new System.Drawing.Size(698, 302);
+            this.beneficiariesTable.Size = new System.Drawing.Size(1283, 446);
             this.beneficiariesTable.TabIndex = 25;
             this.beneficiariesTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.beneficiariesTable_CellContentClick_1);
             // 
@@ -282,9 +290,9 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnActualizar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnActualizar.Location = new System.Drawing.Point(49, 248);
+            this.btnActualizar.Location = new System.Drawing.Point(917, 139);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(340, 42);
+            this.btnActualizar.Size = new System.Drawing.Size(400, 46);
             this.btnActualizar.TabIndex = 26;
             this.btnActualizar.Text = "Agregar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -295,7 +303,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(824, 692);
+            this.ClientSize = new System.Drawing.Size(1371, 817);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);

@@ -47,12 +47,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(179, 58);
+            this.label5.Location = new System.Drawing.Point(485, 63);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(443, 63);
+            this.label5.Size = new System.Drawing.Size(433, 62);
             this.label5.TabIndex = 27;
             this.label5.Text = "Actualizar datos";
             // 
@@ -65,9 +65,9 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCancel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCancel.Location = new System.Drawing.Point(422, 543);
+            this.btnCancel.Location = new System.Drawing.Point(765, 708);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(287, 62);
+            this.btnCancel.Size = new System.Drawing.Size(481, 62);
             this.btnCancel.TabIndex = 26;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -82,9 +82,9 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnUpdate.Location = new System.Drawing.Point(112, 543);
+            this.btnUpdate.Location = new System.Drawing.Point(193, 708);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(286, 62);
+            this.btnUpdate.Size = new System.Drawing.Size(481, 62);
             this.btnUpdate.TabIndex = 25;
             this.btnUpdate.Text = "Actualizar datos";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -94,10 +94,10 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.Location = new System.Drawing.Point(112, 508);
+            this.panel2.Location = new System.Drawing.Point(168, 661);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(597, 3);
+            this.panel2.Size = new System.Drawing.Size(1095, 3);
             this.panel2.TabIndex = 24;
             // 
             // label3
@@ -105,7 +105,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(154, 388);
+            this.label3.Location = new System.Drawing.Point(176, 491);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(308, 38);
@@ -116,10 +116,11 @@
             // 
             this.txtAccountNumber.Enabled = false;
             this.txtAccountNumber.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAccountNumber.Location = new System.Drawing.Point(154, 434);
+            this.txtAccountNumber.Location = new System.Drawing.Point(176, 537);
             this.txtAccountNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtAccountNumber.Multiline = true;
             this.txtAccountNumber.Name = "txtAccountNumber";
-            this.txtAccountNumber.Size = new System.Drawing.Size(434, 42);
+            this.txtAccountNumber.Size = new System.Drawing.Size(988, 52);
             this.txtAccountNumber.TabIndex = 22;
             this.txtAccountNumber.Leave += new System.EventHandler(this.txtAccountNumber_Leave);
             // 
@@ -128,7 +129,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(153, 273);
+            this.label4.Location = new System.Drawing.Point(176, 327);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(310, 38);
@@ -139,10 +140,11 @@
             // 
             this.txtBankName.Enabled = false;
             this.txtBankName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBankName.Location = new System.Drawing.Point(153, 319);
+            this.txtBankName.Location = new System.Drawing.Point(176, 373);
             this.txtBankName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBankName.Multiline = true;
             this.txtBankName.Name = "txtBankName";
-            this.txtBankName.Size = new System.Drawing.Size(435, 42);
+            this.txtBankName.Size = new System.Drawing.Size(985, 54);
             this.txtBankName.TabIndex = 20;
             this.txtBankName.Leave += new System.EventHandler(this.txtBankName_Leave);
             // 
@@ -151,7 +153,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(153, 148);
+            this.label1.Location = new System.Drawing.Point(176, 186);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 38);
@@ -162,10 +164,11 @@
             // 
             this.txtName.Enabled = false;
             this.txtName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.Location = new System.Drawing.Point(153, 194);
+            this.txtName.Location = new System.Drawing.Point(176, 232);
             this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(435, 42);
+            this.txtName.Size = new System.Drawing.Size(985, 52);
             this.txtName.TabIndex = 16;
             this.txtName.Leave += new System.EventHandler(this.txtName_Leave);
             // 
@@ -179,7 +182,7 @@
             this.btnEditName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEditName.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEditName.Image = ((System.Drawing.Image)(resources.GetObject("btnEditName.Image")));
-            this.btnEditName.Location = new System.Drawing.Point(614, 196);
+            this.btnEditName.Location = new System.Drawing.Point(1200, 232);
             this.btnEditName.Name = "btnEditName";
             this.btnEditName.Size = new System.Drawing.Size(46, 52);
             this.btnEditName.TabIndex = 29;
@@ -196,7 +199,7 @@
             this.btnEditBankName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEditBankName.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEditBankName.Image = ((System.Drawing.Image)(resources.GetObject("btnEditBankName.Image")));
-            this.btnEditBankName.Location = new System.Drawing.Point(616, 323);
+            this.btnEditBankName.Location = new System.Drawing.Point(1202, 375);
             this.btnEditBankName.Name = "btnEditBankName";
             this.btnEditBankName.Size = new System.Drawing.Size(44, 52);
             this.btnEditBankName.TabIndex = 30;
@@ -213,7 +216,7 @@
             this.btnEditAccountNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEditAccountNumber.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEditAccountNumber.Image = ((System.Drawing.Image)(resources.GetObject("btnEditAccountNumber.Image")));
-            this.btnEditAccountNumber.Location = new System.Drawing.Point(614, 436);
+            this.btnEditAccountNumber.Location = new System.Drawing.Point(1199, 537);
             this.btnEditAccountNumber.Name = "btnEditAccountNumber";
             this.btnEditAccountNumber.Size = new System.Drawing.Size(46, 52);
             this.btnEditAccountNumber.TabIndex = 31;
@@ -225,7 +228,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(824, 692);
+            this.ClientSize = new System.Drawing.Size(1371, 817);
             this.Controls.Add(this.btnEditAccountNumber);
             this.Controls.Add(this.btnEditBankName);
             this.Controls.Add(this.btnEditName);
@@ -241,6 +244,7 @@
             this.Controls.Add(this.txtName);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UpdateAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "UpdateAccount";
             this.Load += new System.EventHandler(this.UpdateAccount_Load);
             this.ResumeLayout(false);

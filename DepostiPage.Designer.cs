@@ -122,6 +122,7 @@
             this.Controls.Add(this.txtDeposit);
             this.Controls.Add(this.label1);
             this.Name = "DepostiPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Realiza tu deposito";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
