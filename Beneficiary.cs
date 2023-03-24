@@ -34,6 +34,7 @@ namespace Sistema_de_Cheques
             Description = description;
             Active = active;
         }
+
         /**
             Metodo para agregar un nuevo beneficiario a la base de datos
         */

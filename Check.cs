@@ -37,18 +37,18 @@ namespace Sistema_de_Cheques
             Account = account;
             State = state;
         }
+
         /*
             Metodo para agregar un nuevo beneficiario a la base de datos
         */
-
         private int GetLastInvoice()
         {
 
-          //  SELECT COUNT(id), 
-		        //(SELECT TOP 1 invoice FROM[Checks] WHERE account = 1 order by id desc), 
-		        //(SELECT firstInvoice FROM[Accounts] WHERE id = 1), 
-		        //(SELECT lastInvoice FROM[Accounts] WHERE id = 1) 
-		        //FROM[Checks] WHERE account = 1;
+            //  SELECT COUNT(id), 
+            //(SELECT TOP 1 invoice FROM[Checks] WHERE account = 1 order by id desc), 
+            //(SELECT firstInvoice FROM[Accounts] WHERE id = 1), 
+            //(SELECT lastInvoice FROM[Accounts] WHERE id = 1) 
+            //FROM[Checks] WHERE account = 1;
 
             string query = "SELECT COUNT(id)," +
                             $"(SELECT TOP 1 invoice FROM [Checks] WHERE account = {User.ActiveAccount.Id} order by id desc)," +
@@ -96,6 +96,9 @@ namespace Sistema_de_Cheques
             return -1;
         }
 
+        /**
+            Método usado para crear un cheque dentro de la base de datos
+         */
         public void CreateCheckSQL(decimal mount, DateTime date, int beneficiary, int concept)
         {
             int invoice = GetLastInvoice();
@@ -117,6 +120,7 @@ namespace Sistema_de_Cheques
                         $"1," +
                         $"{User.ActiveAccount.Id}," +
                         $"{concept});";
+
             //string query = "INSERT INTO [CHECKS] VALUES ('2', 1, 80, '2023/12/28', 1, 1, 1)";
             SqlCommand command = new SqlCommand(query, dataBase.Connection);
             try
@@ -202,18 +206,6 @@ namespace Sistema_de_Cheques
         */
         public List<Check> GetChecksByValuesSQL(List<string> filters, string benficiary, string[] mounts, DateTime[] dates, string[] invoices)
         {
-            //SELECT* FROM[Checks];
-            //SELECT* FROM[Checks] WHERE (date >= '2023-02-01' AND date <= '2023-04-01');
-            //SELECT* FROM[Checks] WHERE (mount >= 1000 AND mount <= 2000);
-            //SELECT* FROM[Checks] WHERE (invoice >= 2 AND invoice <= 3);
-            //SELECT* FROM[Checks] WHERE (beneficiary = 1);
-            //SELECT* FROM[Checks]
-            //    WHERE
-            //    (date >= '2023-02-01' AND date <= '2023-04-01') AND
-            //    (mount >= 1000 AND mount <= 2000) AND
-            //    (invoice >= 2 AND invoice <= 3) AND
-            //    (beneficiary = 1);
-
             List<string> actualFilters = new List<string>();
             if (filters.Contains("beneficiary")) actualFilters.Add($"(beneficiary = {benficiary})");
             if (filters.Contains("mount")) actualFilters.Add($"(mount >= {mounts[0]} AND mount <= {mounts[1]})");
@@ -226,11 +218,6 @@ namespace Sistema_de_Cheques
             {
                 for (int i = 0; i < actualFilters.Count; i++) 
                 {
-                    if (i == actualFilters.Count - 1)
-                    {
-                        query += $"{actualFilters[i]}";
-                        break;
-                    }
                     query += $"{actualFilters[i]} AND ";
                 }
             }
@@ -278,8 +265,8 @@ namespace Sistema_de_Cheques
         }
 
         /**
-    Metodo para obtener un beneficiario en base a su Id
-*/
+            Metodo para obtener un beneficiario en base a su Id
+        */
         public Check GetCheckSQL(int id)
         {
             string query = $"SELECT *  FROM [Checks] WHERE [id]={id};";
