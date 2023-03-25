@@ -55,6 +55,7 @@ namespace Sistema_de_Cheques
                 dataBase.Connection.Close();
             }
         }
+
         /*
             Metodo que retorna una lista con todos los conceptos registrados
         */

@@ -59,6 +59,9 @@ namespace Sistema_de_Cheques
 
         }
 
+		/**
+			Método para registrar una cuenta dentro de la base de datos 
+		*/
         public bool CreateAccount(decimal balance, string name, string bankName, string bankNumber, int firstInvoice, int lastInvoice)
         {
 			//INSERT INTO[Accounts] values('nombre', 999999, 999999, 'bankname', 'banknumber', 2);
@@ -77,12 +80,6 @@ namespace Sistema_de_Cheques
 				dataBase.Connection.Open();
 				command.CommandText = query;
 				command.ExecuteNonQuery();
-				//MessageBox.Show(
-				//	$"Nueva cuenta registrada exitosamente",
-				//	"Registro de usuario",
-				//	MessageBoxButtons.OK,
-				//	MessageBoxIcon.Information
-				//);
 				return true;
 			}
 			catch (Exception ex)
@@ -100,7 +97,11 @@ namespace Sistema_de_Cheques
 			return false;
 		}
 
-		public List<Account> GetAccountsSLQ()
+        /**
+			Método para obtener una lista con todos los usuarios registrados dentro 
+			de la base de datos
+		*/
+        public List<Account> GetAccountsSLQ()
 		{
 			string query = $"SELECT [id], [name], [balance], [bankName], [bankNumber] FROM [Accounts] where [Owner] = {User.Id}";
 			SqlCommand command = new SqlCommand(query, dataBase.Connection);
@@ -140,7 +141,10 @@ namespace Sistema_de_Cheques
 			return accounts;
 		}
 
-		public bool UpdateAccount(Account accountUpdated)
+        /**
+			Método para actualizar los datos de una cuenta dentro de la base de datos
+		*/
+        public bool UpdateAccount(Account accountUpdated)
 		{
 			string query = $"UPDATE[Accounts] SET" +
 						   $"[name] = '{accountUpdated.Name}', " +

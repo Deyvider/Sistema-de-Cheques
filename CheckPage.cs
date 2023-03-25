@@ -15,7 +15,7 @@ namespace Sistema_de_Cheques
         public CheckPage()
         {
             InitializeComponent();
-            InitCBChecks();
+            InitCBBeneficiaries();
             InitCBConcepts();
             UpdateChecksTable();
         }
@@ -156,7 +156,7 @@ namespace Sistema_de_Cheques
         /**
             Metodo que carga los conceptos disponibles dentro del combo box
         */
-        private void InitCBConcepts()
+        public void InitCBConcepts()
         {
             cbConcepts.Items.Clear();
 
@@ -170,7 +170,7 @@ namespace Sistema_de_Cheques
         /**
             Metodo que carga los beneficiarios disponibles dentro del combo box
         */
-        public void InitCBChecks()
+        public void InitCBBeneficiaries()
         {
             cbBeneficiaries.Items.Clear();
 
@@ -200,6 +200,20 @@ namespace Sistema_de_Cheques
                 UpdateCheck updateCheck = new UpdateCheck(this, id);
                 updateCheck.Show();
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            // Crear beneficiario
+            CreateBeneficiary createBeneficiary = new CreateBeneficiary();
+            createBeneficiary.Show(this);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Crear concepto
+            CreateConcept createConcept = new CreateConcept();
+            createConcept.Show(this);
         }
     }
 }

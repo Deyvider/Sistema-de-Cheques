@@ -14,13 +14,35 @@ namespace Sistema_de_Cheques
     {
 
         Beneficiary beneficiarySQL = new Beneficiary();
+        Concept conceptoSQL = new Concept();
         Check checkSQL = new Check();
+        Dashboard dashboard = new Dashboard();
 
         public SearchChecks()
         {
             InitializeComponent();
             InitCBBeneficiaries();
+            InitCBConcepts();
             InitDatePicker();
+        }
+
+        public SearchChecks(Dashboard dashboard)
+        {
+            InitializeComponent();
+            InitCBBeneficiaries();
+            InitCBConcepts();
+            InitDatePicker();
+            this.dashboard = dashboard;
+        }
+
+        private void InitCBConcepts()
+        {
+            cbConcepts.Items.Clear();
+
+            foreach (Concept concept in conceptoSQL.GetConceptsSLQ())
+            {
+                int row = cbConcepts.Items.Add(concept.Name);
+            }
         }
 
         private void InitCBBeneficiaries()
@@ -31,47 +53,6 @@ namespace Sistema_de_Cheques
             {
                 int row = cbBeneficiaries.Items.Add(beneficiary.Name);
             }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (!checkValidations()) return;
-            List<string> filters = new List<string>();
-            string beneficiary = "";
-            string[] mounts = new string[2];
-            DateTime[] dates = new DateTime[2];
-            string[] invoices = new string[2];
-
-            if (cbBeneficiaries.SelectedIndex != -1)
-            {
-                beneficiary = (cbBeneficiaries.SelectedIndex + 1).ToString();
-                filters.Add("beneficiary");
-            }
-
-            if (txtInitialInvoice.Text != "" || txtLastInvoice.Text != "")
-            {
-                invoices[0] = txtInitialInvoice.Text;
-                invoices[1] = txtLastInvoice.Text; 
-                filters.Add("invoice");
-            }
-
-            if (txtInitialMount.Text != "" || txtLastMount.Text != "")
-            {
-                mounts[0] = txtInitialMount.Text;
-                mounts[1] = txtLastMount.Text;
-                filters.Add("mount");
-            }
-
-            if (txtInitialDate.Value < DateTime.Today.AddDays(1) || txtLastDate.Value < DateTime.Today)
-            {
-                dates[0] = txtInitialDate.Value;
-                dates[1] = txtLastDate.Value;
-                filters.Add("date");
-            }
-
-            List<Check> checks = checkSQL.GetChecksByValuesSQL(filters, beneficiary, mounts, dates, invoices);
-            InitChecksTable(checks);
-            InitTextBoxes();
         }
 
         private void InitChecksTable(List<Check> checks)
@@ -89,21 +70,12 @@ namespace Sistema_de_Cheques
 
         private void InitDatePicker()
         {
-            txtInitialDate.Value = DateTime.Today.AddDays(1);
+            txtInitialDate.Value = DateTime.Today;
             txtLastDate.Value = DateTime.Today;
         }
 
         private bool checkValidations()
         {
-            //if (txtInitialDate.Value != DateTime.Today.AddDays(1) && txtLastDate.Value == DateTime.Today.AddDays(1))
-            //{
-            //    MessageBox.Show(
-            //    "Si quiere buscar por fecha debe usar los dos campos",
-            //    "Problema con la busqueda",
-            //    MessageBoxButtons.OK,
-            //    MessageBoxIcon.Error);
-            //    return false;
-            //}
 
             if (txtInitialMount.Text != "" && txtLastMount.Text == "")
             {
@@ -194,45 +166,87 @@ namespace Sistema_de_Cheques
             cbBeneficiaries.SelectedIndex = -1;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cbDate_CheckedChanged(object sender, EventArgs e)
+        {
+           txtInitialDate.Enabled = cbDate.Checked;
+           txtLastDate.Enabled = cbDate.Checked;
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            txtInitialMount.Enabled = cbMount.Checked;
+            txtLastMount.Enabled = cbMount.Checked;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            cbBeneficiaries.Enabled = cbBeneficiary.Checked;
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            txtInitialInvoice.Enabled = cbInvoice.Checked;
+            txtLastInvoice.Enabled = cbInvoice.Checked;
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
         {
             if (!checkValidations()) return;
             List<string> filters = new List<string>();
             string beneficiary = "";
+            string concept = "";
             string[] mounts = new string[2];
             DateTime[] dates = new DateTime[2];
             string[] invoices = new string[2];
 
-            if (cbBeneficiaries.SelectedIndex != -1)
+            if (cbBeneficiaries.SelectedIndex != -1 && cbBeneficiary.Checked)
             {
                 beneficiary = (cbBeneficiaries.SelectedIndex + 1).ToString();
                 filters.Add("beneficiary");
             }
 
-            if (txtInitialInvoice.Text != "" || txtLastInvoice.Text != "")
+            if (cbConcepts.SelectedIndex != -1 && cbConcept.Checked)
+            {
+                concept = (cbConcepts.SelectedIndex + 1).ToString();
+                filters.Add("concept");
+            }
+
+            if (cbInvoice.Checked && (txtInitialInvoice.Text != "" || txtLastInvoice.Text != ""))
             {
                 invoices[0] = txtInitialInvoice.Text;
                 invoices[1] = txtLastInvoice.Text;
                 filters.Add("invoice");
             }
 
-            if (txtInitialMount.Text != "" || txtLastMount.Text != "")
+            if (cbMount.Checked && (txtInitialMount.Text != "" || txtLastMount.Text != ""))
             {
                 mounts[0] = txtInitialMount.Text;
                 mounts[1] = txtLastMount.Text;
                 filters.Add("mount");
             }
 
-            if (txtInitialDate.Value < DateTime.Today.AddDays(1) || txtLastDate.Value < DateTime.Today)
+            if (cbDate.Checked)
             {
                 dates[0] = txtInitialDate.Value;
                 dates[1] = txtLastDate.Value;
                 filters.Add("date");
             }
 
-            List<Check> checks = checkSQL.GetChecksByValuesSQL(filters, beneficiary, mounts, dates, invoices);
+            List<Check> checks = checkSQL.GetChecksByValuesSQL(filters, beneficiary, mounts, dates, invoices, concept);
             InitChecksTable(checks);
             InitTextBoxes();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (dashboard != null) dashboard.openChildForm(new CheckPage());
+            this.Close();
+        }
+
+        private void cbConcept_CheckedChanged(object sender, EventArgs e)
+        {
+            cbConcepts.Enabled = cbConcept.Checked;
         }
     }
 }
