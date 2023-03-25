@@ -78,11 +78,32 @@ namespace Sistema_de_Cheques
         */
         private bool IsDataValid()
         {
+            if (!HelperMethods.IsNumeric(txtPhone.Text))
+            {
+                MessageBox.Show("El telefono debe tener formato numerico",
+                "Problema en el registro",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return false;
+            }
+
+
             bool verification = txtAddress.Text.Equals("")
                 || txtDescription.Text.Equals("") 
                 || txtName.Text.Equals("") 
                 || txtPhone.Text.Equals("");
-            return !verification;
+
+            if (verification)
+            {
+                MessageBox.Show("Debes llenar todos los campos para poder registrar un beneficiario",
+                "Problema en el registro",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return false;
+            }
+
+
+            return true;
         }
 
         /**
@@ -113,14 +134,7 @@ namespace Sistema_de_Cheques
 
         private void btnActualizar_Click_1(object sender, EventArgs e)
         {
-            if (!IsDataValid())
-            {
-                MessageBox.Show("Debes llenar todos los campos para poder registrar un beneficiario",
-                                "Problema en el registro",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                return;
-            }
+            if (!IsDataValid()) return;
             beneficiary.CreateBeneficiarySQL(txtName.Text, txtAddress.Text, txtPhone.Text, txtDescription.Text);
             CleanTextBoxes();
 

@@ -14,10 +14,17 @@ namespace Sistema_de_Cheques
 	{
 		Account account = new Account();
 		AccountPage accountPage;
+		Dashboard dashboard = new Dashboard();
 
         public UpdateAccount()
         {
             InitializeComponent();
+        }
+
+        public UpdateAccount(Dashboard dashboard)
+        {
+            InitializeComponent();
+			this.dashboard = dashboard;
         }
         public UpdateAccount(AccountPage accountPage)
 		{
@@ -42,7 +49,8 @@ namespace Sistema_de_Cheques
 
 		private void btnCancel_Click(object sender, EventArgs e)
 		{
-			this.Close();
+            if (dashboard != null) dashboard.openChildForm(new AccountPage());
+            this.Close();
 		}
 
 		private void InitTextBoxes()
@@ -71,6 +79,7 @@ namespace Sistema_de_Cheques
 
 			account.UpdateAccount(updatedAccount);
 			if (accountPage != null) accountPage.InitTextBoxes();
+			if (dashboard != null) dashboard.openChildForm(new AccountPage());
 			this.Close();
 		}
 

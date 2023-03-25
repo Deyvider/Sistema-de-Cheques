@@ -87,7 +87,7 @@ namespace Sistema_de_Cheques
                 );
                 return;
             }
-            openChildForm(new UpdateAccount());
+            openChildForm(new UpdateAccount(this));
             hideSubMenu();
 
         }
@@ -119,7 +119,7 @@ namespace Sistema_de_Cheques
 
         private void button10_Click(object sender, EventArgs e)
         {
-            openChildForm(new SearchBeneciaryPage());
+            openChildForm(new SearchBeneciaryPage(this));
             //codigo
             hideSubMenu();
         }
@@ -127,12 +127,13 @@ namespace Sistema_de_Cheques
         private void button15_Click(object sender, EventArgs e)
         {
             //codigo
+            openChildForm(new CreateConcept());
             hideSubMenu();
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            openChildForm(new SearchChecks());
+            openChildForm(new SearchChecks(this));
             //codigo
             hideSubMenu();
         }

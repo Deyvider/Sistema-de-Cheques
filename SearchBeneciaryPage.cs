@@ -15,9 +15,17 @@ namespace Sistema_de_Cheques
 {
     public partial class SearchBeneciaryPage : Form
     {
+        Dashboard dashboard;
+
         public SearchBeneciaryPage()
         {
             InitializeComponent();
+        }
+
+        public SearchBeneciaryPage(Dashboard dashboard)
+        {
+            InitializeComponent();
+            this.dashboard = dashboard;
         }
 
         Beneficiary beneficiary = new Beneficiary();
@@ -30,6 +38,7 @@ namespace Sistema_de_Cheques
         */
         private void button2_Click(object sender, EventArgs e)
         {
+            if (dashboard != null) dashboard.openChildForm(new BeneficiaryPage());
             this.Close();
         }
 

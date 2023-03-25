@@ -204,10 +204,11 @@ namespace Sistema_de_Cheques
                 'phone': busca un numero de telefono que coincida con la cadena ingresada
                 'active': busca en base al estado ingresado
         */
-        public List<Check> GetChecksByValuesSQL(List<string> filters, string benficiary, string[] mounts, DateTime[] dates, string[] invoices)
+        public List<Check> GetChecksByValuesSQL(List<string> filters, string benficiary, string[] mounts, DateTime[] dates, string[] invoices, string concept)
         {
             List<string> actualFilters = new List<string>();
             if (filters.Contains("beneficiary")) actualFilters.Add($"(beneficiary = {benficiary})");
+            if (filters.Contains("concept")) actualFilters.Add($"(concept = {concept})");
             if (filters.Contains("mount")) actualFilters.Add($"(mount >= {mounts[0]} AND mount <= {mounts[1]})");
             if (filters.Contains("invoice")) actualFilters.Add($"(invoice >= {invoices[0]} AND invoice <= {invoices[1]})");
             if (filters.Contains("date")) actualFilters.Add($"(date >= '{dates[0].Year}-{dates[0].Month}-{dates[0].Day}' AND date <= '{dates[1].Year}-{dates[1].Month}-{dates[1].Day}')");
@@ -243,8 +244,8 @@ namespace Sistema_de_Cheques
                         DateTime date = checksSQL.GetDateTime(4);
                         bool state = checksSQL.GetBoolean(5);
                         int account = checksSQL.GetInt32(6);
-                        int concept = checksSQL.GetInt32(7);
-                        checks.Add(new Check(id, invoice, mount, date, beneficiary, concept, account, state));
+                        int conceptInt = checksSQL.GetInt32(7);
+                        checks.Add(new Check(id, invoice, mount, date, beneficiary, conceptInt, account, state));
                     }
                 }
                 return checks;
