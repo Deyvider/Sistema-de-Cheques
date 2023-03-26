@@ -42,10 +42,6 @@
             this.txtInitialDate = new System.Windows.Forms.DateTimePicker();
             this.txtLastDate = new System.Windows.Forms.DateTimePicker();
             this.checksTable = new System.Windows.Forms.DataGridView();
-            this.invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.beneficiary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,6 +57,13 @@
             this.cbConcept = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cbConcepts = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.beneficiary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.concept = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.checksTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +71,7 @@
             // 
             this.txtInitialMount.Enabled = false;
             this.txtInitialMount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtInitialMount.Location = new System.Drawing.Point(156, 333);
+            this.txtInitialMount.Location = new System.Drawing.Point(142, 301);
             this.txtInitialMount.Name = "txtInitialMount";
             this.txtInitialMount.Size = new System.Drawing.Size(280, 27);
             this.txtInitialMount.TabIndex = 30;
@@ -78,7 +81,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(113, 330);
+            this.label1.Location = new System.Drawing.Point(99, 298);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 25);
             this.label1.TabIndex = 31;
@@ -89,7 +92,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(119, 365);
+            this.label2.Location = new System.Drawing.Point(105, 333);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 25);
             this.label2.TabIndex = 32;
@@ -99,7 +102,7 @@
             // 
             this.txtLastMount.Enabled = false;
             this.txtLastMount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtLastMount.Location = new System.Drawing.Point(156, 366);
+            this.txtLastMount.Location = new System.Drawing.Point(142, 334);
             this.txtLastMount.Name = "txtLastMount";
             this.txtLastMount.Size = new System.Drawing.Size(280, 27);
             this.txtLastMount.TabIndex = 33;
@@ -108,7 +111,7 @@
             // 
             this.txtLastInvoice.Enabled = false;
             this.txtLastInvoice.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtLastInvoice.Location = new System.Drawing.Point(161, 471);
+            this.txtLastInvoice.Location = new System.Drawing.Point(135, 446);
             this.txtLastInvoice.Name = "txtLastInvoice";
             this.txtLastInvoice.Size = new System.Drawing.Size(280, 27);
             this.txtLastInvoice.TabIndex = 37;
@@ -118,7 +121,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(118, 469);
+            this.label3.Location = new System.Drawing.Point(92, 444);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 25);
             this.label3.TabIndex = 36;
@@ -129,7 +132,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(118, 436);
+            this.label4.Location = new System.Drawing.Point(92, 411);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 25);
             this.label4.TabIndex = 35;
@@ -139,7 +142,7 @@
             // 
             this.txtInitialInvoice.Enabled = false;
             this.txtInitialInvoice.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtInitialInvoice.Location = new System.Drawing.Point(161, 438);
+            this.txtInitialInvoice.Location = new System.Drawing.Point(135, 413);
             this.txtInitialInvoice.Name = "txtInitialInvoice";
             this.txtInitialInvoice.Size = new System.Drawing.Size(280, 27);
             this.txtInitialInvoice.TabIndex = 34;
@@ -149,7 +152,7 @@
             this.cbBeneficiaries.Enabled = false;
             this.cbBeneficiaries.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbBeneficiaries.FormattingEnabled = true;
-            this.cbBeneficiaries.Location = new System.Drawing.Point(41, 63);
+            this.cbBeneficiaries.Location = new System.Drawing.Point(21, 94);
             this.cbBeneficiaries.Name = "cbBeneficiaries";
             this.cbBeneficiaries.Size = new System.Drawing.Size(395, 29);
             this.cbBeneficiaries.TabIndex = 38;
@@ -159,7 +162,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(119, 263);
+            this.label5.Location = new System.Drawing.Point(105, 216);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 25);
             this.label5.TabIndex = 41;
@@ -170,7 +173,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(119, 230);
+            this.label6.Location = new System.Drawing.Point(105, 183);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 25);
             this.label6.TabIndex = 40;
@@ -181,7 +184,7 @@
             this.txtInitialDate.Enabled = false;
             this.txtInitialDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtInitialDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtInitialDate.Location = new System.Drawing.Point(161, 229);
+            this.txtInitialDate.Location = new System.Drawing.Point(147, 182);
             this.txtInitialDate.Name = "txtInitialDate";
             this.txtInitialDate.Size = new System.Drawing.Size(275, 29);
             this.txtInitialDate.TabIndex = 43;
@@ -191,7 +194,7 @@
             this.txtLastDate.Enabled = false;
             this.txtLastDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtLastDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtLastDate.Location = new System.Drawing.Point(161, 264);
+            this.txtLastDate.Location = new System.Drawing.Point(147, 217);
             this.txtLastDate.Name = "txtLastDate";
             this.txtLastDate.Size = new System.Drawing.Size(275, 29);
             this.txtLastDate.TabIndex = 44;
@@ -201,49 +204,17 @@
             this.checksTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.checksTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.invoice,
+            this.state,
             this.beneficiary,
+            this.concept,
             this.mount,
-            this.state});
-            this.checksTable.Location = new System.Drawing.Point(484, 63);
+            this.dataGridViewTextBoxColumn1});
+            this.checksTable.Location = new System.Drawing.Point(445, 154);
             this.checksTable.Name = "checksTable";
             this.checksTable.RowHeadersWidth = 62;
             this.checksTable.RowTemplate.Height = 25;
-            this.checksTable.Size = new System.Drawing.Size(419, 368);
+            this.checksTable.Size = new System.Drawing.Size(756, 368);
             this.checksTable.TabIndex = 46;
-            // 
-            // invoice
-            // 
-            this.invoice.FillWeight = 50F;
-            this.invoice.HeaderText = "Folio";
-            this.invoice.MinimumWidth = 8;
-            this.invoice.Name = "invoice";
-            this.invoice.ReadOnly = true;
-            this.invoice.Width = 150;
-            // 
-            // beneficiary
-            // 
-            this.beneficiary.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.beneficiary.HeaderText = "Beneficiario";
-            this.beneficiary.MinimumWidth = 8;
-            this.beneficiary.Name = "beneficiary";
-            this.beneficiary.ReadOnly = true;
-            // 
-            // mount
-            // 
-            this.mount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mount.FillWeight = 40F;
-            this.mount.HeaderText = "Monto";
-            this.mount.MinimumWidth = 8;
-            this.mount.Name = "mount";
-            this.mount.ReadOnly = true;
-            // 
-            // state
-            // 
-            this.state.HeaderText = "Fecha";
-            this.state.MinimumWidth = 8;
-            this.state.Name = "state";
-            this.state.ReadOnly = true;
-            this.state.Width = 90;
             // 
             // label7
             // 
@@ -259,7 +230,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(41, 38);
+            this.label8.Location = new System.Drawing.Point(21, 69);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(124, 23);
             this.label8.TabIndex = 48;
@@ -270,7 +241,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(35, 229);
+            this.label9.Location = new System.Drawing.Point(21, 184);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 23);
             this.label9.TabIndex = 49;
@@ -281,7 +252,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(29, 346);
+            this.label10.Location = new System.Drawing.Point(15, 314);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(73, 23);
             this.label10.TabIndex = 50;
@@ -292,7 +263,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label11.Location = new System.Drawing.Point(41, 442);
+            this.label11.Location = new System.Drawing.Point(15, 417);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(58, 23);
             this.label11.TabIndex = 51;
@@ -303,7 +274,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(353, 19);
+            this.label12.Location = new System.Drawing.Point(428, 9);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(276, 41);
             this.label12.TabIndex = 52;
@@ -313,7 +284,7 @@
             // 
             this.cbDate.AutoSize = true;
             this.cbDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cbDate.Location = new System.Drawing.Point(35, 299);
+            this.cbDate.Location = new System.Drawing.Point(21, 252);
             this.cbDate.Name = "cbDate";
             this.cbDate.Size = new System.Drawing.Size(139, 19);
             this.cbDate.TabIndex = 55;
@@ -325,7 +296,7 @@
             // 
             this.cbBeneficiary.AutoSize = true;
             this.cbBeneficiary.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cbBeneficiary.Location = new System.Drawing.Point(34, 98);
+            this.cbBeneficiary.Location = new System.Drawing.Point(27, 129);
             this.cbBeneficiary.Name = "cbBeneficiary";
             this.cbBeneficiary.Size = new System.Drawing.Size(172, 19);
             this.cbBeneficiary.TabIndex = 56;
@@ -337,7 +308,7 @@
             // 
             this.cbMount.AutoSize = true;
             this.cbMount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cbMount.Location = new System.Drawing.Point(34, 399);
+            this.cbMount.Location = new System.Drawing.Point(20, 367);
             this.cbMount.Name = "cbMount";
             this.cbMount.Size = new System.Drawing.Size(146, 19);
             this.cbMount.TabIndex = 57;
@@ -349,7 +320,7 @@
             // 
             this.cbInvoice.AutoSize = true;
             this.cbInvoice.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cbInvoice.Location = new System.Drawing.Point(29, 504);
+            this.cbInvoice.Location = new System.Drawing.Point(20, 479);
             this.cbInvoice.Name = "cbInvoice";
             this.cbInvoice.Size = new System.Drawing.Size(134, 19);
             this.cbInvoice.TabIndex = 58;
@@ -363,9 +334,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(484, 505);
+            this.button1.Location = new System.Drawing.Point(908, 95);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 28);
+            this.button1.Size = new System.Drawing.Size(127, 28);
             this.button1.TabIndex = 59;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = false;
@@ -377,7 +348,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button2.Location = new System.Drawing.Point(739, 505);
+            this.button2.Location = new System.Drawing.Point(494, 542);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(164, 28);
             this.button2.TabIndex = 60;
@@ -389,7 +360,7 @@
             // 
             this.cbConcept.AutoSize = true;
             this.cbConcept.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cbConcept.Location = new System.Drawing.Point(34, 187);
+            this.cbConcept.Location = new System.Drawing.Point(477, 129);
             this.cbConcept.Name = "cbConcept";
             this.cbConcept.Size = new System.Drawing.Size(160, 19);
             this.cbConcept.TabIndex = 63;
@@ -402,7 +373,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label13.Location = new System.Drawing.Point(41, 127);
+            this.label13.Location = new System.Drawing.Point(484, 69);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(108, 23);
             this.label13.TabIndex = 62;
@@ -413,17 +384,80 @@
             this.cbConcepts.Enabled = false;
             this.cbConcepts.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbConcepts.FormattingEnabled = true;
-            this.cbConcepts.Location = new System.Drawing.Point(41, 152);
+            this.cbConcepts.Location = new System.Drawing.Point(484, 94);
             this.cbConcepts.Name = "cbConcepts";
             this.cbConcepts.Size = new System.Drawing.Size(395, 29);
             this.cbConcepts.TabIndex = 61;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button3.Location = new System.Drawing.Point(1060, 95);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(141, 28);
+            this.button3.TabIndex = 64;
+            this.button3.Text = "Generar reporte";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // invoice
+            // 
+            this.invoice.FillWeight = 50F;
+            this.invoice.HeaderText = "Folio";
+            this.invoice.MinimumWidth = 8;
+            this.invoice.Name = "invoice";
+            this.invoice.ReadOnly = true;
+            this.invoice.Width = 40;
+            // 
+            // state
+            // 
+            this.state.HeaderText = "Fecha";
+            this.state.MinimumWidth = 8;
+            this.state.Name = "state";
+            this.state.ReadOnly = true;
+            this.state.Width = 75;
+            // 
+            // beneficiary
+            // 
+            this.beneficiary.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.beneficiary.HeaderText = "Beneficiario";
+            this.beneficiary.MinimumWidth = 8;
+            this.beneficiary.Name = "beneficiary";
+            this.beneficiary.ReadOnly = true;
+            // 
+            // concept
+            // 
+            this.concept.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.concept.HeaderText = "Concepto";
+            this.concept.Name = "concept";
+            this.concept.ReadOnly = true;
+            // 
+            // mount
+            // 
+            this.mount.FillWeight = 40F;
+            this.mount.HeaderText = "Monto";
+            this.mount.MinimumWidth = 8;
+            this.mount.Name = "mount";
+            this.mount.ReadOnly = true;
+            this.mount.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Estado";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 70;
             // 
             // SearchChecks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(946, 570);
+            this.ClientSize = new System.Drawing.Size(1228, 593);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.cbConcept);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.cbConcepts);
@@ -476,10 +510,6 @@
         private DateTimePicker txtInitialDate;
         private DateTimePicker txtLastDate;
         private DataGridView checksTable;
-        private DataGridViewTextBoxColumn invoice;
-        private DataGridViewTextBoxColumn beneficiary;
-        private DataGridViewTextBoxColumn mount;
-        private DataGridViewTextBoxColumn state;
         private Label label7;
         private Label label8;
         private Label label9;
@@ -495,5 +525,12 @@
         private CheckBox cbConcept;
         private Label label13;
         private ComboBox cbConcepts;
+        private Button button3;
+        private DataGridViewTextBoxColumn invoice;
+        private DataGridViewTextBoxColumn state;
+        private DataGridViewTextBoxColumn beneficiary;
+        private DataGridViewTextBoxColumn concept;
+        private DataGridViewTextBoxColumn mount;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

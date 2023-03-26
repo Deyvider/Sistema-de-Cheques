@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Sistema_de_Cheques
 {
@@ -106,7 +109,8 @@ namespace Sistema_de_Cheques
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
+            SearchChecks searchChecks = new SearchChecks();
+            searchChecks.Show();
             //codigo
             hideSubMenu();
         }

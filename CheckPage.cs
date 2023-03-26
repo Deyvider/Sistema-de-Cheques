@@ -148,7 +148,7 @@ namespace Sistema_de_Cheques
                 checksTable.Rows[fila].Cells[0].Value = check.Id;
                 checksTable.Rows[fila].Cells[1].Value = check.Invoice;
                 checksTable.Rows[fila].Cells[2].Value = beneficiarySQL.GetBeneficiarySQL(check.Beneficiary).Name;
-                checksTable.Rows[fila].Cells[3].Value = check.Mount;
+                checksTable.Rows[fila].Cells[3].Value = "$" + check.Mount;
                 checksTable.Rows[fila].Cells[4].Value = check.Date.ToShortDateString();
             }
         }
@@ -205,14 +205,14 @@ namespace Sistema_de_Cheques
         private void button1_Click_1(object sender, EventArgs e)
         {
             // Crear beneficiario
-            CreateBeneficiary createBeneficiary = new CreateBeneficiary();
+            CreateBeneficiary createBeneficiary = new CreateBeneficiary(this);
             createBeneficiary.Show(this);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             // Crear concepto
-            CreateConcept createConcept = new CreateConcept();
+            CreateConcept createConcept = new CreateConcept(this);
             createConcept.Show(this);
         }
     }
