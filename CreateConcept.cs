@@ -22,6 +22,7 @@ namespace Sistema_de_Cheques
 
         public CreateConcept(CheckPage checkPage)
         {
+            InitializeComponent();
             this.checkPage = checkPage;
         }
 

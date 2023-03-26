@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 
 namespace Sistema_de_Cheques
 {
@@ -17,7 +19,7 @@ namespace Sistema_de_Cheques
         Concept conceptoSQL = new Concept();
         Check checkSQL = new Check();
         Dashboard dashboard = new Dashboard();
-
+        List<Check> filterChecks;
         public SearchChecks()
         {
             InitializeComponent();
@@ -62,9 +64,11 @@ namespace Sistema_de_Cheques
             {
                 int fila = checksTable.Rows.Add();
                 checksTable.Rows[fila].Cells[0].Value = check.Invoice;
-                checksTable.Rows[fila].Cells[1].Value = beneficiarySQL.GetBeneficiarySQL(check.Beneficiary).Name;
-                checksTable.Rows[fila].Cells[2].Value = check.Mount;
-                checksTable.Rows[fila].Cells[3].Value = check.Date.ToShortDateString();
+                checksTable.Rows[fila].Cells[1].Value = check.Date.ToShortDateString();
+                checksTable.Rows[fila].Cells[2].Value = beneficiarySQL.GetBeneficiarySQL(check.Beneficiary).Name;
+                checksTable.Rows[fila].Cells[3].Value = conceptoSQL.GetConceptSQL(check.Concept).Name;
+                checksTable.Rows[fila].Cells[4].Value = $"${check.Mount}";
+                checksTable.Rows[fila].Cells[5].Value = check.State ? "Activo" : "Inactivo";
             }
         }
 
@@ -233,8 +237,8 @@ namespace Sistema_de_Cheques
                 filters.Add("date");
             }
 
-            List<Check> checks = checkSQL.GetChecksByValuesSQL(filters, beneficiary, mounts, dates, invoices, concept);
-            InitChecksTable(checks);
+            filterChecks = checkSQL.GetChecksByValuesSQL(filters, beneficiary, mounts, dates, invoices, concept);
+            InitChecksTable(filterChecks);
             InitTextBoxes();
         }
 
@@ -247,6 +251,121 @@ namespace Sistema_de_Cheques
         private void cbConcept_CheckedChanged(object sender, EventArgs e)
         {
             cbConcepts.Enabled = cbConcept.Checked;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (filterChecks == null)
+            {
+                MessageBox.Show(
+                    "No puede generar un reporte vacio",
+                    "Problema con el reporte",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            // Configurar el diálogo de guardar archivo
+            saveFileDialog1.Filter = "Archivo PDF (*.pdf)|*.pdf";
+            saveFileDialog1.Title = "Guardar como PDF";
+
+            // Si el usuario hace clic en el botón Guardar en el diálogo de guardar archivo
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Guardar el archivo en la ubicación seleccionada por el usuario
+                string filePath = saveFileDialog1.FileName;
+                // Lógica para generar el PDF y guardarlo en filePath
+                Document doc = new Document(PageSize.A4.Rotate(), 50, 50, 50, 50);
+                PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
+                doc.Open();
+
+                // Crear la tabla
+                PdfPTable table = new PdfPTable(6); // 5 columnas
+                float[] anchoColumnas = { 7f, 13f, 32f, 32f, 9f, 7f};
+                table.SetWidths(anchoColumnas);
+
+                // Agregar los títulos de las columnas
+                table.AddCell(new PdfPCell(new Phrase("Folio"))
+                {
+                    BackgroundColor = BaseColor.GRAY,
+                    HorizontalAlignment = Element.ALIGN_CENTER,
+                    VerticalAlignment = Element.ALIGN_MIDDLE
+
+                });
+                table.AddCell(new PdfPCell(new Phrase("Fecha de creación"))
+                {
+                    BackgroundColor = BaseColor.GRAY,
+                    HorizontalAlignment = Element.ALIGN_CENTER,
+                    VerticalAlignment = Element.ALIGN_MIDDLE
+                });
+                table.AddCell(new PdfPCell(new Phrase("Nombre de beneficiario"))
+                {
+                    BackgroundColor = BaseColor.GRAY,
+                    HorizontalAlignment = Element.ALIGN_CENTER,
+                    VerticalAlignment = Element.ALIGN_MIDDLE
+                });
+                table.AddCell(new PdfPCell(new Phrase("Concepto"))
+                {
+                    BackgroundColor = BaseColor.GRAY,
+                    HorizontalAlignment = Element.ALIGN_CENTER,
+                    VerticalAlignment = Element.ALIGN_MIDDLE
+                });
+                table.AddCell(new PdfPCell(new Phrase("Monto"))
+                {
+                    BackgroundColor = BaseColor.GRAY,
+                    HorizontalAlignment = Element.ALIGN_CENTER,
+                    VerticalAlignment = Element.ALIGN_MIDDLE
+                });
+
+                table.AddCell(new PdfPCell(new Phrase("Monto"))
+                {
+                    BackgroundColor = BaseColor.GRAY,
+                    HorizontalAlignment = Element.ALIGN_CENTER,
+                    VerticalAlignment = Element.ALIGN_MIDDLE
+                });
+
+                // Agregar los datos de los cheques a la tabla
+                foreach (Check check in filterChecks)
+                {
+                    //table.AddCell(check.Invoice);
+                    table.AddCell(new PdfPCell(new Phrase(check.Invoice))
+                    {
+                        HorizontalAlignment = Element.ALIGN_CENTER,
+                        VerticalAlignment = Element.ALIGN_MIDDLE
+                    });
+                    table.AddCell(new PdfPCell(new Phrase(check.Date.ToShortDateString()))
+                    {
+                        HorizontalAlignment = Element.ALIGN_CENTER,
+                        VerticalAlignment = Element.ALIGN_MIDDLE
+                    });
+                    table.AddCell(new PdfPCell(new Phrase(beneficiarySQL.GetBeneficiarySQL(check.Beneficiary).Name))
+                    {
+                        HorizontalAlignment = Element.ALIGN_LEFT,
+                        VerticalAlignment = Element.ALIGN_MIDDLE
+                    });
+                    table.AddCell(new PdfPCell(new Phrase(conceptoSQL.GetConceptSQL(check.Beneficiary).Name))
+                    {
+                        HorizontalAlignment = Element.ALIGN_LEFT,
+                        VerticalAlignment = Element.ALIGN_MIDDLE
+                    });
+                    table.AddCell(new PdfPCell(new Phrase("$" + check.Mount.ToString()))
+                    {
+                        HorizontalAlignment = Element.ALIGN_CENTER,
+                        VerticalAlignment = Element.ALIGN_MIDDLE
+                    });
+                    table.AddCell(new PdfPCell(new Phrase(check.State ? "Activo" : "Inactivo"))
+                    {
+                        HorizontalAlignment = Element.ALIGN_CENTER,
+                        VerticalAlignment = Element.ALIGN_MIDDLE
+                    });
+                }
+
+                // Agregar la tabla al documento
+                doc.Add(table);
+
+                doc.Close();
+                writer.Close();
+            }
         }
     }
 }
