@@ -13,13 +13,20 @@ namespace Sistema_de_Cheques
 	public partial class CreateAccount : Form
 	{
 		Account account = new Account();
+		SelectAccount selectAccount;
 
 		public CreateAccount()
 		{
 			InitializeComponent();
 		}
 
-		private void button1_Click_1(object sender, EventArgs e)
+        public CreateAccount(SelectAccount selectAccount)
+        {
+            InitializeComponent();
+			this.selectAccount = selectAccount;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
 		{
 			this.Close();
 		}
@@ -50,6 +57,7 @@ namespace Sistema_de_Cheques
 				"Registro correcto",
 				MessageBoxButtons.OK,
 				MessageBoxIcon.Information);
+			if (selectAccount != null) selectAccount.UpdateBeneficiariesTable();
 			this.Close();
 
 		}
@@ -113,30 +121,5 @@ namespace Sistema_de_Cheques
 			txtFirstInvoice.Text = "";
 			txtLastInvoice.Text = "";
 		}
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBankName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFirstInvoice_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CreateAccount_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

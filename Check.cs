@@ -233,7 +233,6 @@ namespace Sistema_de_Cheques
                 SqlDataReader checksSQL = command.ExecuteReader();
                 if (checksSQL != null)
                 {
-                    MessageBox.Show(query);
                     while (checksSQL.Read())
                     {
                         // id, invoice, beneficiary, mount, date, state, account, concept,

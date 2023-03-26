@@ -42,17 +42,13 @@ namespace Sistema_de_Cheques
         */
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("antes de validaciones");
             if (CheckValidations()) return;
-            MessageBox.Show("Pase validaciones");
             decimal mount = Decimal.Parse(txtMount.Text);
             int beneficiary = (cbBeneficiaries.SelectedIndex + 1);
             int concept = (cbConcepts.SelectedIndex + 1);
             DateTime date = dateTimePicker.Value;
-            MessageBox.Show("Pase asignación");
 
             checkSQL.CreateCheckSQL(mount, date, beneficiary, concept);
-            MessageBox.Show("Pase creación");
 
             CleanTextBoxes();
             UpdateChecksTable();
