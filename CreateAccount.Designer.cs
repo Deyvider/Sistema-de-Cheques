@@ -52,6 +52,7 @@
             this.txtName.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.Location = new System.Drawing.Point(312, 330);
             this.txtName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(522, 46);
             this.txtName.TabIndex = 0;
@@ -65,7 +66,7 @@
             this.label1.Location = new System.Drawing.Point(312, 283);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 39);
+            this.label1.Size = new System.Drawing.Size(95, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nombre";
             // 
@@ -78,7 +79,7 @@
             this.label2.Location = new System.Drawing.Point(882, 283);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(217, 39);
+            this.label2.Size = new System.Drawing.Size(138, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "Monto inicial";
             // 
@@ -102,7 +103,7 @@
             this.label3.Location = new System.Drawing.Point(882, 394);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(316, 39);
+            this.label3.Size = new System.Drawing.Size(209, 24);
             this.label3.TabIndex = 7;
             this.label3.Text = "Número de cuenta";
             // 
@@ -126,10 +127,9 @@
             this.label4.Location = new System.Drawing.Point(312, 394);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(318, 39);
+            this.label4.Size = new System.Drawing.Size(209, 24);
             this.label4.TabIndex = 5;
             this.label4.Text = "Nombre del banco";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtBankName
             // 
@@ -141,7 +141,6 @@
             this.txtBankName.Name = "txtBankName";
             this.txtBankName.Size = new System.Drawing.Size(522, 45);
             this.txtBankName.TabIndex = 4;
-            this.txtBankName.TextChanged += new System.EventHandler(this.txtBankName_TextChanged);
             // 
             // panel2
             // 
@@ -201,7 +200,7 @@
             this.label5.Location = new System.Drawing.Point(431, 114);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(735, 70);
+            this.label5.Size = new System.Drawing.Size(489, 47);
             this.label5.TabIndex = 15;
             this.label5.Text = "Añade cuenta bancaria";
             // 
@@ -214,10 +213,9 @@
             this.label6.Location = new System.Drawing.Point(315, 520);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(187, 39);
+            this.label6.Size = new System.Drawing.Size(117, 24);
             this.label6.TabIndex = 17;
             this.label6.Text = "Folio inicial";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtFirstInvoice
             // 
@@ -229,7 +227,6 @@
             this.txtFirstInvoice.Name = "txtFirstInvoice";
             this.txtFirstInvoice.Size = new System.Drawing.Size(519, 50);
             this.txtFirstInvoice.TabIndex = 16;
-            this.txtFirstInvoice.TextChanged += new System.EventHandler(this.txtFirstInvoice_TextChanged);
             // 
             // label7
             // 
@@ -240,7 +237,7 @@
             this.label7.Location = new System.Drawing.Point(882, 521);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(162, 39);
+            this.label7.Size = new System.Drawing.Size(104, 24);
             this.label7.TabIndex = 19;
             this.label7.Text = "Folio final";
             // 
@@ -257,7 +254,7 @@
             // 
             // CreateAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1646, 950);
@@ -282,7 +279,6 @@
             this.Name = "CreateAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateAccount";
-            this.Load += new System.EventHandler(this.CreateAccount_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
