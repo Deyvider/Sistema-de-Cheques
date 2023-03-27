@@ -168,6 +168,11 @@ namespace Sistema_de_Cheques
             txtLastInvoice.Text = "";
             txtLastMount.Text = "";
             cbBeneficiaries.SelectedIndex = -1;
+            cbBeneficiary.Checked = false;
+            cbConcept.Checked = false;
+            cbDate.Checked = false;
+            cbMount.Checked = false;
+            cbInvoice.Checked = false;
         }
 
         private void cbDate_CheckedChanged(object sender, EventArgs e)
@@ -239,13 +244,13 @@ namespace Sistema_de_Cheques
 
             filterChecks = checkSQL.GetChecksByValuesSQL(filters, beneficiary, mounts, dates, invoices, concept);
             InitChecksTable(filterChecks);
-            InitTextBoxes();
+            //InitTextBoxes();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            if (dashboard != null) dashboard.openChildForm(new CheckPage());
-            this.Close();
+            checksTable.Rows.Clear();
+            InitTextBoxes();
         }
 
         private void cbConcept_CheckedChanged(object sender, EventArgs e)
