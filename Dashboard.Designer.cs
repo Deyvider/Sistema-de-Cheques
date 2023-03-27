@@ -45,7 +45,6 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panelCuentaSubmenu = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
@@ -171,7 +170,7 @@
             this.btnAyuda.FlatAppearance.BorderSize = 0;
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyuda.ForeColor = System.Drawing.Color.Silver;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 624);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 578);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAyuda.Size = new System.Drawing.Size(250, 45);
@@ -186,7 +185,7 @@
             this.panelChequesSubmenu.Controls.Add(this.button14);
             this.panelChequesSubmenu.Controls.Add(this.button15);
             this.panelChequesSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelChequesSubmenu.Location = new System.Drawing.Point(0, 544);
+            this.panelChequesSubmenu.Location = new System.Drawing.Point(0, 498);
             this.panelChequesSubmenu.Name = "panelChequesSubmenu";
             this.panelChequesSubmenu.Size = new System.Drawing.Size(250, 80);
             this.panelChequesSubmenu.TabIndex = 8;
@@ -231,7 +230,7 @@
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.ForeColor = System.Drawing.Color.Silver;
-            this.button12.Location = new System.Drawing.Point(0, 499);
+            this.button12.Location = new System.Drawing.Point(0, 453);
             this.button12.Name = "button12";
             this.button12.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button12.Size = new System.Drawing.Size(250, 45);
@@ -246,7 +245,7 @@
             this.panelBeneSubmenu.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panelBeneSubmenu.Controls.Add(this.button10);
             this.panelBeneSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBeneSubmenu.Location = new System.Drawing.Point(0, 459);
+            this.panelBeneSubmenu.Location = new System.Drawing.Point(0, 413);
             this.panelBeneSubmenu.Name = "panelBeneSubmenu";
             this.panelBeneSubmenu.Size = new System.Drawing.Size(250, 40);
             this.panelBeneSubmenu.TabIndex = 6;
@@ -274,7 +273,7 @@
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.Color.Silver;
-            this.button8.Location = new System.Drawing.Point(0, 414);
+            this.button8.Location = new System.Drawing.Point(0, 368);
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button8.Size = new System.Drawing.Size(250, 45);
@@ -287,32 +286,14 @@
             // panelCuentaSubmenu
             // 
             this.panelCuentaSubmenu.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panelCuentaSubmenu.Controls.Add(this.button5);
             this.panelCuentaSubmenu.Controls.Add(this.button6);
             this.panelCuentaSubmenu.Controls.Add(this.button7);
             this.panelCuentaSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCuentaSubmenu.Location = new System.Drawing.Point(0, 288);
             this.panelCuentaSubmenu.Name = "panelCuentaSubmenu";
-            this.panelCuentaSubmenu.Size = new System.Drawing.Size(250, 126);
+            this.panelCuentaSubmenu.Size = new System.Drawing.Size(250, 80);
             this.panelCuentaSubmenu.TabIndex = 4;
             this.panelCuentaSubmenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCuentaSubmenu_Paint);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(0, 80);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(250, 40);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Generar Reporte";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -412,7 +393,6 @@
         private Button button10;
         private Button button8;
         private Panel panelCuentaSubmenu;
-        private Button button5;
         private Button button6;
         private Button button7;
         private Panel panelContenedor;
