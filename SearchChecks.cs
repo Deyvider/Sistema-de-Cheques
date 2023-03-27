@@ -281,7 +281,7 @@ namespace Sistema_de_Cheques
 
                 // Crear la tabla
                 PdfPTable table = new PdfPTable(6); // 5 columnas
-                float[] anchoColumnas = { 7f, 13f, 32f, 32f, 9f, 7f};
+                float[] anchoColumnas = { 7f, 13f, 31f, 31f, 9f, 9f};
                 table.SetWidths(anchoColumnas);
 
                 // Agregar los títulos de las columnas
